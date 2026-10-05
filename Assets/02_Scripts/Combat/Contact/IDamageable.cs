@@ -19,9 +19,9 @@ namespace FindTheLover.Combat
         void TakeDamage(float damage, Vector3 hitPoint, Vector3 hitNormal);
         
         //current health point of the entity
-        float CurrentHealt { get; }
+        float CurrentHealth { get; }
 
         // Indicates whether the entit been destroyed or killed
-        bool isDead { get; }
+        bool IsDead { get; }
     }
 }

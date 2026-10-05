@@ -1,0 +1,485 @@
+fileFormatVersion: 2
+guid: be012fa5691e9f241ae26beeb1010f14
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3659678549676322438
+    second: Goblin_Idle_fw_0
+  - first:
+      213: -7694583786994785651
+    second: Goblin_Idle_fw_1
+  - first:
+      213: 4736090964826341541
+    second: Goblin_Idle_fw_2
+  - first:
+      213: -934320574499422654
+    second: Goblin_Idle_fw_3
+  - first:
+      213: 2005734343363857798
+    second: Goblin_Idle_fw_4
+  - first:
+      213: 2566764312202408351
+    second: Goblin_Idle_fw_5
+  - first:
+      213: 8410191097292527612
+    second: Goblin_Idle_fw_6
+  - first:
+      213: -1144101015164109361
+    second: Goblin_Idle_fw_7
+  - first:
+      213: 3540552935000651246
+    second: Goblin_Idle_fw_8
+  - first:
+      213: -9615021244858548
+    second: Goblin_Idle_fw_9
+  - first:
+      213: 3569365831420296575
+    second: Goblin_Idle_fw_10
+  - first:
+      213: -1007144365088614307
+    second: Goblin_Idle_fw_11
+  - first:
+      213: 8865687404576470721
+    second: Goblin_Idle_fw_12
+  - first:
+      213: -7249040835712139103
+    second: Goblin_Idle_fw_13
+  - first:
+      213: -7535627404658820240
+    second: Goblin_Idle_fw_14
+  - first:
+      213: -2746941712917863904
+    second: Goblin_Idle_fw_15
+  - first:
+      213: 317691742852413571
+    second: Goblin_Idle_fw_16
+  - first:
+      213: -6459995584274037168
+    second: Goblin_Idle_fw_17
+  - first:
+      213: -9136371538608261553
+    second: Goblin_Idle_fw_18
+  - first:
+      213: -7612725129217344843
+    second: Goblin_Idle_fw_19
+  - first:
+      213: -9208673379213494581
+    second: Goblin_Idle_fw_20
+  - first:
+      213: 3780141272723908763
+    second: Goblin_Idle_fw_21
+  - first:
+      213: 7407029439651768285
+    second: Goblin_Idle_fw_22
+  - first:
+      213: -2659710379165759010
+    second: Goblin_Idle_fw_23
+  - first:
+      213: 2029168121358663720
+    second: Goblin_Idle_fw_24
+  - first:
+      213: -447764722901741744
+    second: Goblin_Idle_fw_25
+  - first:
+      213: -7123065258529091733
+    second: Goblin_Idle_fw_26
+  - first:
+      213: 7625557543431386767
+    second: Goblin_Idle_fw_27
+  - first:
+      213: 1307491299805345801
+    second: Goblin_Idle_fw_28
+  - first:
+      213: 2526883106364667573
+    second: Goblin_Idle_fw_29
+  - first:
+      213: 229328884279786023
+    second: Goblin_Idle_fw_30
+  - first:
+      213: -7037365891122241635
+    second: Goblin_Idle_fw_31
+  - first:
+      213: 6554750548579762955
+    second: Goblin_Idle_fw_32
+  - first:
+      213: 6101687134539354950
+    second: Goblin_Idle_fw_33
+  - first:
+      213: 1910204784116705616
+    second: Goblin_Idle_fw_34
+  - first:
+      213: -9111721510851835678
+    second: Goblin_Idle_fw_35
+  - first:
+      213: 1272363705891928919
+    second: Goblin_Idle_fw_36
+  - first:
+      213: 6870979152260346179
+    second: Goblin_Idle_fw_37
+  - first:
+      213: -2936556891786696247
+    second: Goblin_Idle_fw_38
+  - first:
+      213: -6545848232137195638
+    second: Goblin_Idle_fw_39
+  - first:
+      213: 8793931650903812533
+    second: Goblin_Idle_fw_40
+  - first:
+      213: -6423389629100552679
+    second: Goblin_Idle_fw_41
+  - first:
+      213: -6702751719681449691
+    second: Goblin_Idle_fw_42
+  - first:
+      213: 2421210025317284360
+    second: Goblin_Idle_fw_43
+  - first:
+      213: 5483076368879970785
+    second: Goblin_Idle_fw_44
+  - first:
+      213: 5177705458111830374
+    second: Goblin_Idle_fw_45
+  - first:
+      213: 5503481514953426355
+    second: Goblin_Idle_fw_46
+  - first:
+      213: -8017862400310718150
+    second: Goblin_Idle_fw_47
+  - first:
+      213: -2480930037486604917
+    second: Goblin_Idle_fw_48
+  - first:
+      213: -240572092666268711
+    second: Goblin_Idle_fw_49
+  - first:
+      213: -7157056493949497191
+    second: Goblin_Idle_fw_50
+  - first:
+      213: 2942657460810928429
+    second: Goblin_Idle_fw_51
+  - first:
+      213: 7186831860939784917
+    second: Goblin_Idle_fw_52
+  - first:
+      213: 3534893575836343878
+    second: Goblin_Idle_fw_53
+  - first:
+      213: 8371594881579586530
+    second: Goblin_Idle_fw_54
+  - first:
+      213: 6887664155056887019
+    second: Goblin_Idle_fw_55
+  - first:
+      213: 4671745566636745204
+    second: Goblin_Idle_fw_56
+  - first:
+      213: 2358791659142664340
+    second: Goblin_Idle_fw_57
+  - first:
+      213: 4162825765841059728
+    second: Goblin_Idle_fw_58
+  - first:
+      213: -5479411042924659146
+    second: Goblin_Idle_fw_59
+  - first:
+      213: 305085923888012236
+    second: Goblin_Idle_fw_60
+  - first:
+      213: 1205999484454118492
+    second: Goblin_Idle_fw_61
+  - first:
+      213: -4587214017410098882
+    second: Goblin_Idle_fw_62
+  - first:
+      213: -8323758847368933833
+    second: Goblin_Idle_fw_63
+  - first:
+      213: -4475510732072515871
+    second: Goblin_Idle_fw_64
+  - first:
+      213: -6606131578046701933
+    second: Goblin_Idle_fw_65
+  - first:
+      213: -6552385745457449210
+    second: Goblin_Idle_fw_66
+  - first:
+      213: 6693950443694249257
+    second: Goblin_Idle_fw_67
+  - first:
+      213: 1889993476797878327
+    second: Goblin_Idle_fw_68
+  - first:
+      213: -1789680370419487904
+    second: Goblin_Idle_fw_69
+  - first:
+      213: 3614997074242012957
+    second: Goblin_Idle_fw_70
+  - first:
+      213: 7155859563519122381
+    second: Goblin_Idle_fw_71
+  - first:
+      213: -5479702519524047050
+    second: Goblin_Idle_fw_72
+  - first:
+      213: -8493501472987908673
+    second: Goblin_Idle_fw_73
+  - first:
+      213: 3817211851555739286
+    second: Goblin_Idle_fw_74
+  - first:
+      213: 3124611771880011712
+    second: Goblin_Idle_fw_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 132
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goblin_Idle_fw_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 362
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ee299404ac9c230800000000000000
+      internalID: 3659678549676322438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_Idle_fw_1
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 0
+        width: 362
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8222b930d8573590800000000000000
+      internalID: -7694583786994785651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_Idle_fw_2
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 0
+        width: 362
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a0496eb3a9f9b140800000000000000
+      internalID: 4736090964826341541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_Idle_fw_3
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 362
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e7f924360a803f0800000000000000
+      internalID: -934320574499422654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_Idle_fw_4
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 0
+        width: 362
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d010a22ccc5db10800000000000000
+      internalID: 2005734343363857798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_Idle_fw_5
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 0
+        width: 362
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9179faea8afe9320800000000000000
+      internalID: 2566764312202408351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5b6a58abf6dfdd54c8fdf4df7e95eb5c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":362.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Goblin_Idle_fw_0: 3659678549676322438
+      Goblin_Idle_fw_1: -7694583786994785651
+      Goblin_Idle_fw_2: 4736090964826341541
+      Goblin_Idle_fw_3: -934320574499422654
+      Goblin_Idle_fw_4: 2005734343363857798
+      Goblin_Idle_fw_5: 2566764312202408351
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: a22eb87578883f94ba78816d21f66baf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3670013610854170057
+    second: Goblin_laugh_fw_0
+  - first:
+      213: -4219554536499695601
+    second: Goblin_laugh_fw_1
+  - first:
+      213: 1128062594574817277
+    second: Goblin_laugh_fw_2
+  - first:
+      213: -6116691308502779569
+    second: Goblin_laugh_fw_3
+  - first:
+      213: -2632932261075427869
+    second: Goblin_laugh_fw_4
+  - first:
+      213: 3965064820620392961
+    second: Goblin_laugh_fw_5
+  - first:
+      213: -208589379447124313
+    second: Goblin_laugh_fw_6
+  - first:
+      213: 729042217149733295
+    second: Goblin_laugh_fw_7
+  - first:
+      213: -7839754238202020278
+    second: Goblin_laugh_fw_8
+  - first:
+      213: -7237389978763132790
+    second: Goblin_laugh_fw_9
+  - first:
+      213: -5693368317383923058
+    second: Goblin_laugh_fw_10
+  - first:
+      213: 8847842958240049658
+    second: Goblin_laugh_fw_11
+  - first:
+      213: 6214734890025036473
+    second: Goblin_laugh_fw_12
+  - first:
+      213: -9208527522940915975
+    second: Goblin_laugh_fw_13
+  - first:
+      213: 8654202121329712428
+    second: Goblin_laugh_fw_14
+  - first:
+      213: -9209311498981728283
+    second: Goblin_laugh_fw_15
+  - first:
+      213: -1801363981293930796
+    second: Goblin_laugh_fw_16
+  - first:
+      213: -9140561866808168794
+    second: Goblin_laugh_fw_17
+  - first:
+      213: 4015502036507269520
+    second: Goblin_laugh_fw_18
+  - first:
+      213: 287340520915984263
+    second: Goblin_laugh_fw_19
+  - first:
+      213: 1511385214715799736
+    second: Goblin_laugh_fw_20
+  - first:
+      213: -1157160400062489019
+    second: Goblin_laugh_fw_21
+  - first:
+      213: -838508172333507027
+    second: Goblin_laugh_fw_22
+  - first:
+      213: 8923219109176595945
+    second: Goblin_laugh_fw_23
+  - first:
+      213: 8710200683564093103
+    second: Goblin_laugh_fw_24
+  - first:
+      213: 5407171509640444182
+    second: Goblin_laugh_fw_25
+  - first:
+      213: 6523455230174015893
+    second: Goblin_laugh_fw_26
+  - first:
+      213: -9190409599611176267
+    second: Goblin_laugh_fw_27
+  - first:
+      213: 6515051027644259145
+    second: Goblin_laugh_fw_28
+  - first:
+      213: 4498719344488934212
+    second: Goblin_laugh_fw_29
+  - first:
+      213: -6554679419530100090
+    second: Goblin_laugh_fw_30
+  - first:
+      213: -6889195841964458498
+    second: Goblin_laugh_fw_31
+  - first:
+      213: -8650284053758858095
+    second: Goblin_laugh_fw_32
+  - first:
+      213: -6129508924248346249
+    second: Goblin_laugh_fw_33
+  - first:
+      213: -6082635051078147174
+    second: Goblin_laugh_fw_34
+  - first:
+      213: 4184505824861139408
+    second: Goblin_laugh_fw_35
+  - first:
+      213: 4578916436124593404
+    second: Goblin_laugh_fw_36
+  - first:
+      213: -1461304127532052107
+    second: Goblin_laugh_fw_37
+  - first:
+      213: -5228998516496557141
+    second: Goblin_laugh_fw_38
+  - first:
+      213: -226870458823113418
+    second: Goblin_laugh_fw_39
+  - first:
+      213: 8295458410671414715
+    second: Goblin_laugh_fw_40
+  - first:
+      213: -449412175480592057
+    second: Goblin_laugh_fw_41
+  - first:
+      213: 4179752547942529620
+    second: Goblin_laugh_fw_42
+  - first:
+      213: -1984093759290328258
+    second: Goblin_laugh_fw_43
+  - first:
+      213: -793467464344300843
+    second: Goblin_laugh_fw_44
+  - first:
+      213: -670999694640683464
+    second: Goblin_laugh_fw_45
+  - first:
+      213: 4559427063834822929
+    second: Goblin_laugh_fw_46
+  - first:
+      213: 8493497684878268426
+    second: Goblin_laugh_fw_47
+  - first:
+      213: -4621149778151879700
+    second: Goblin_laugh_fw_48
+  - first:
+      213: -5774813120398946760
+    second: Goblin_laugh_fw_49
+  - first:
+      213: -250828911670149426
+    second: Goblin_laugh_fw_50
+  - first:
+      213: 3423815392041454793
+    second: Goblin_laugh_fw_51
+  - first:
+      213: -6334076693528139116
+    second: Goblin_laugh_fw_52
+  - first:
+      213: -446553568134139910
+    second: Goblin_laugh_fw_53
+  - first:
+      213: 8869861811854887457
+    second: Goblin_laugh_fw_54
+  - first:
+      213: 3737699463938984341
+    second: Goblin_laugh_fw_55
+  - first:
+      213: -8627436516514165757
+    second: Goblin_laugh_fw_56
+  - first:
+      213: 3145413294818313693
+    second: Goblin_laugh_fw_57
+  - first:
+      213: 7589355597785550605
+    second: Goblin_laugh_fw_58
+  - first:
+      213: -867892923735447368
+    second: Goblin_laugh_fw_59
+  - first:
+      213: 1857925171483963346
+    second: Goblin_laugh_fw_60
+  - first:
+      213: -6807958896508083351
+    second: Goblin_laugh_fw_61
+  - first:
+      213: 5136002087444482947
+    second: Goblin_laugh_fw_62
+  - first:
+      213: -2030011808884344963
+    second: Goblin_laugh_fw_63
+  - first:
+      213: -7163928634435971495
+    second: Goblin_laugh_fw_64
+  - first:
+      213: -654905059954691538
+    second: Goblin_laugh_fw_65
+  - first:
+      213: 2993713247146847028
+    second: Goblin_laugh_fw_66
+  - first:
+      213: 6535181556977522082
+    second: Goblin_laugh_fw_67
+  - first:
+      213: 8411425211659902917
+    second: Goblin_laugh_fw_68
+  - first:
+      213: 3867534062282361264
+    second: Goblin_laugh_fw_69
+  - first:
+      213: -3927551311664001447
+    second: Goblin_laugh_fw_70
+  - first:
+      213: -688532039114047395
+    second: Goblin_laugh_fw_71
+  - first:
+      213: 4231964406955273470
+    second: Goblin_laugh_fw_72
+  - first:
+      213: 7108746611033021078
+    second: Goblin_laugh_fw_73
+  - first:
+      213: 6266128837885879149
+    second: Goblin_laugh_fw_74
+  - first:
+      213: 8559960505418669918
+    second: Goblin_laugh_fw_75
+  - first:
+      213: 9108070755088917146
+    second: Goblin_laugh_fw_76
+  - first:
+      213: -1872119255455349953
+    second: Goblin_laugh_fw_77
+  - first:
+      213: -596069081877820649
+    second: Goblin_laugh_fw_78
+  - first:
+      213: 8284536846792068812
+    second: Goblin_laugh_fw_79
+  - first:
+      213: 821295515071962458
+    second: Goblin_laugh_fw_80
+  - first:
+      213: -8464218136239363853
+    second: Goblin_laugh_fw_81
+  - first:
+      213: 8494055944146479856
+    second: Goblin_laugh_fw_82
+  - first:
+      213: -6642505712213193087
+    second: Goblin_laugh_fw_83
+  - first:
+      213: 3782848145311356782
+    second: Goblin_laugh_fw_84
+  - first:
+      213: 8943908550024475894
+    second: Goblin_laugh_fw_85
+  - first:
+      213: -3086384392262840261
+    second: Goblin_laugh_fw_86
+  - first:
+      213: 8256016326642767754
+    second: Goblin_laugh_fw_87
+  - first:
+      213: 4201042037370150481
+    second: Goblin_laugh_fw_88
+  - first:
+      213: -8898085933777862568
+    second: Goblin_laugh_fw_89
+  - first:
+      213: 8472364180131934909
+    second: Goblin_laugh_fw_90
+  - first:
+      213: -396712454648126022
+    second: Goblin_laugh_fw_91
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 164
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goblin_laugh_fw_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 543
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7324034c01e711dc0800000000000000
+      internalID: -3670013610854170057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_laugh_fw_1
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 0
+        width: 543
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f003c8551812175c0800000000000000
+      internalID: -4219554536499695601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_laugh_fw_2
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 0
+        width: 564
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7990af3fea7af00800000000000000
+      internalID: 1128062594574817277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_laugh_fw_3
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 0
+        width: 516
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49f8fb99a52d1ba0800000000000000
+      internalID: -6116691308502779569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 207313b20711aca4cbc48fe358eadd59
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":543.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Goblin_laugh_fw_0: -3670013610854170057
+      Goblin_laugh_fw_1: -4219554536499695601
+      Goblin_laugh_fw_2: 1128062594574817277
+      Goblin_laugh_fw_3: -6116691308502779569
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

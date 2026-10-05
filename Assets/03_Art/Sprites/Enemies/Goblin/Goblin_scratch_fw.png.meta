@@ -1,0 +1,378 @@
+fileFormatVersion: 2
+guid: a932d481324fcff428cc576927ca683f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8918614425397464326
+    second: Goblin_scratch_fw_0
+  - first:
+      213: -2953975022606823348
+    second: Goblin_scratch_fw_1
+  - first:
+      213: 5919120911239070940
+    second: Goblin_scratch_fw_2
+  - first:
+      213: -2656384621018582169
+    second: Goblin_scratch_fw_3
+  - first:
+      213: -2091670258654266553
+    second: Goblin_scratch_fw_4
+  - first:
+      213: -4697003242112877221
+    second: Goblin_scratch_fw_5
+  - first:
+      213: -2964399630276424564
+    second: Goblin_scratch_fw_6
+  - first:
+      213: -5645135268265787844
+    second: Goblin_scratch_fw_7
+  - first:
+      213: 8051520664959660040
+    second: Goblin_scratch_fw_8
+  - first:
+      213: -4960498690470856578
+    second: Goblin_scratch_fw_9
+  - first:
+      213: 2503270100789596778
+    second: Goblin_scratch_fw_10
+  - first:
+      213: 2782216025729874765
+    second: Goblin_scratch_fw_11
+  - first:
+      213: -8559879827365817912
+    second: Goblin_scratch_fw_12
+  - first:
+      213: -2800324420577858127
+    second: Goblin_scratch_fw_13
+  - first:
+      213: -1905073002538076810
+    second: Goblin_scratch_fw_14
+  - first:
+      213: 6247373915887385643
+    second: Goblin_scratch_fw_15
+  - first:
+      213: -6311564423647489571
+    second: Goblin_scratch_fw_16
+  - first:
+      213: -3203872729248448529
+    second: Goblin_scratch_fw_17
+  - first:
+      213: 245915703803023424
+    second: Goblin_scratch_fw_18
+  - first:
+      213: -7423308200883999391
+    second: Goblin_scratch_fw_19
+  - first:
+      213: 8117330464533730245
+    second: Goblin_scratch_fw_20
+  - first:
+      213: -6667014357664888594
+    second: Goblin_scratch_fw_21
+  - first:
+      213: 4212914137694074617
+    second: Goblin_scratch_fw_22
+  - first:
+      213: 5176967924735242789
+    second: Goblin_scratch_fw_23
+  - first:
+      213: 841172679144308083
+    second: Goblin_scratch_fw_24
+  - first:
+      213: -5172699960093722149
+    second: Goblin_scratch_fw_25
+  - first:
+      213: -1103173784573566659
+    second: Goblin_scratch_fw_26
+  - first:
+      213: -5995038426126691236
+    second: Goblin_scratch_fw_27
+  - first:
+      213: -8624434643922955913
+    second: Goblin_scratch_fw_28
+  - first:
+      213: -3128865666272980755
+    second: Goblin_scratch_fw_29
+  - first:
+      213: -1435656560534917823
+    second: Goblin_scratch_fw_30
+  - first:
+      213: 6218558307207002261
+    second: Goblin_scratch_fw_31
+  - first:
+      213: 952846792117510893
+    second: Goblin_scratch_fw_32
+  - first:
+      213: -4550140942335059401
+    second: Goblin_scratch_fw_33
+  - first:
+      213: 7143009258210940253
+    second: Goblin_scratch_fw_34
+  - first:
+      213: -184086929923408255
+    second: Goblin_scratch_fw_35
+  - first:
+      213: 2336957023580407887
+    second: Goblin_scratch_fw_36
+  - first:
+      213: 8651539974479396513
+    second: Goblin_scratch_fw_37
+  - first:
+      213: 4038718750889718545
+    second: Goblin_scratch_fw_38
+  - first:
+      213: 7571533284366594920
+    second: Goblin_scratch_fw_39
+  - first:
+      213: -7206623471907760702
+    second: Goblin_scratch_fw_40
+  - first:
+      213: 8817351415574992524
+    second: Goblin_scratch_fw_41
+  - first:
+      213: 5855658469299810541
+    second: Goblin_scratch_fw_42
+  - first:
+      213: -5308181688684572336
+    second: Goblin_scratch_fw_43
+  - first:
+      213: 6885846927674382014
+    second: Goblin_scratch_fw_44
+  - first:
+      213: -8133975540065463384
+    second: Goblin_scratch_fw_45
+  - first:
+      213: -198743232322178659
+    second: Goblin_scratch_fw_46
+  - first:
+      213: 3929046959638659865
+    second: Goblin_scratch_fw_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 120
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goblin_scratch_fw_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 434
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d8d7a219845cb70800000000000000
+      internalID: 8918614425397464326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_scratch_fw_1
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 0
+        width: 434
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40d4262e5f5107d0800000000000000
+      internalID: -2953975022606823348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_scratch_fw_2
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 0
+        width: 434
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd4cdf0ab11f42250800000000000000
+      internalID: 5919120911239070940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_scratch_fw_3
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 0
+        width: 434
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7637065e240a22bd0800000000000000
+      internalID: -2656384621018582169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin_scratch_fw_4
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 0
+        width: 434
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74bb9ad5bf4e8f2e0800000000000000
+      internalID: -2091670258654266553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bc9875eeb0bc8ad469c8536ff37090f7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":434.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Goblin_scratch_fw_0: 8918614425397464326
+      Goblin_scratch_fw_1: -2953975022606823348
+      Goblin_scratch_fw_2: 5919120911239070940
+      Goblin_scratch_fw_3: -2656384621018582169
+      Goblin_scratch_fw_4: -2091670258654266553
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

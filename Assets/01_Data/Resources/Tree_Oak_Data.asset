@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ff8297ea5e3a74a9d9ed4f5671eb63, type: 3}
+  m_Name: Tree_Oak_Data
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Combat.ResourceDataSO
+  resourceName: Oak Tree
+  resourceType: 0
+  maxHealth: 60
+  hitShakeIntensity: 0.2
+  hitShakeDuration: 0.18
+  hitSound: {fileID: 0}
+  breakSound: {fileID: 0}
+  dropPrefab: {fileID: 6306757200573387318, guid: 31b203235c3986a438581054b45a1948, type: 3}
+  minDropCount: 2
+  maxDropCount: 4
+  dropEjectionForce: 4

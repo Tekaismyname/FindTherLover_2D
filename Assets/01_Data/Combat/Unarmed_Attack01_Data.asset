@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: Punch
   animatorTrigger: Attack
   comboStep: 1
-  damage: 10
+  damage: 5
   knockbackForce: 3
   lockMovementDuration: 0.3
   comboChainWindow: 0.8

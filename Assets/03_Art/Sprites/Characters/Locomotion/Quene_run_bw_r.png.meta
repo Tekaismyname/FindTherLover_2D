@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: 5d6ba375c57cd644bab5bb011c48fe4c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7379798754383745489
+    second: Quene_run_bw_r_0
+  - first:
+      213: 8880114841415682389
+    second: Quene_run_bw_r_1
+  - first:
+      213: -5167305926509714129
+    second: Quene_run_bw_r_2
+  - first:
+      213: 7138850649056900022
+    second: Quene_run_bw_r_3
+  - first:
+      213: 802724060059448970
+    second: Quene_run_bw_r_4
+  - first:
+      213: 5868568452686550046
+    second: Quene_run_bw_r_5
+  - first:
+      213: -7936405650217680443
+    second: Quene_run_bw_r_6
+  - first:
+      213: 361729616270143316
+    second: Quene_run_bw_r_7
+  - first:
+      213: 4032187305321085633
+    second: Quene_run_bw_r_8
+  - first:
+      213: 8476744810903316678
+    second: Quene_run_bw_r_9
+  - first:
+      213: 1279634233528237656
+    second: Quene_run_bw_r_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Quene_run_bw_r_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 93
+        width: 281
+        height: 613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e261bf120b59990800000000000000
+      internalID: -7379798754383745489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_run_bw_r_1
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 660
+        width: 82
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 559814f36618c3b70800000000000000
+      internalID: 8880114841415682389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_run_bw_r_2
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 93
+        width: 296
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f252e9c23aa0a48b0800000000000000
+      internalID: -5167305926509714129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_run_bw_r_3
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 678
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b37a9197da421360800000000000000
+      internalID: 7138850649056900022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_run_bw_r_4
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 23
+        width: 341
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a86b0849749d32b00800000000000000
+      internalID: 802724060059448970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_run_bw_r_5
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 89
+        width: 333
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e14127a2ae7517150800000000000000
+      internalID: 5868568452686550046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_run_bw_r_6
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 81
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c14f592c193cd190800000000000000
+      internalID: -7936405650217680443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_run_bw_r_7
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 21
+        width: 337
+        height: 647
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f25826b2f150500800000000000000
+      internalID: 361729616270143316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_run_bw_r_8
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 93
+        width: 297
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cab081adf435f730800000000000000
+      internalID: 4032187305321085633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_run_bw_r_9
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 36
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c827896e7273a570800000000000000
+      internalID: 8476744810903316678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_run_bw_r_10
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 81
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e31eb3e8c22c110800000000000000
+      internalID: 1279634233528237656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Quene_run_bw_r_0: -7379798754383745489
+      Quene_run_bw_r_1: 8880114841415682389
+      Quene_run_bw_r_10: 1279634233528237656
+      Quene_run_bw_r_2: -5167305926509714129
+      Quene_run_bw_r_3: 7138850649056900022
+      Quene_run_bw_r_4: 802724060059448970
+      Quene_run_bw_r_5: 5868568452686550046
+      Quene_run_bw_r_6: -7936405650217680443
+      Quene_run_bw_r_7: 361729616270143316
+      Quene_run_bw_r_8: 4032187305321085633
+      Quene_run_bw_r_9: 8476744810903316678
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

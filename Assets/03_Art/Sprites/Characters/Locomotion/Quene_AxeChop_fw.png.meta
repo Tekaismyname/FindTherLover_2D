@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: 26e6e1d7af7a45040a2bc012171887ff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2481958542150786418
+    second: Quene_AxeChop_fw_0
+  - first:
+      213: 8331104926388947363
+    second: Quene_AxeChop_fw_1
+  - first:
+      213: 181414263783227645
+    second: Quene_AxeChop_fw_2
+  - first:
+      213: -4501556493973680710
+    second: Quene_AxeChop_fw_3
+  - first:
+      213: 98458281009352429
+    second: Quene_AxeChop_fw_4
+  - first:
+      213: -5108790286674014028
+    second: Quene_AxeChop_fw_5
+  - first:
+      213: -898658926460458734
+    second: Quene_AxeChop_fw_6
+  - first:
+      213: 2325219510190060700
+    second: Quene_AxeChop_fw_7
+  - first:
+      213: 320624313722600803
+    second: Quene_AxeChop_fw_8
+  - first:
+      213: 8462723316580724831
+    second: Quene_AxeChop_fw_9
+  - first:
+      213: -2027747991301616496
+    second: Quene_AxeChop_fw_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_0
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 45
+        width: 274
+        height: 679
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27dd424e420b17220800000000000000
+      internalID: 2481958542150786418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_1
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 602
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a98beb5ac70e9370800000000000000
+      internalID: 8331104926388947363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_2
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 616
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df00dfdcf43848200800000000000000
+      internalID: 181414263783227645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_3
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 46
+        width: 285
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd885018324781c0800000000000000
+      internalID: -4501556493973680710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_4
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 45
+        width: 244
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee02c0f84bcd5100800000000000000
+      internalID: 98458281009352429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_5
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 15
+        width: 229
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b054d24d4ee919b0800000000000000
+      internalID: -5108790286674014028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_6
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 488
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 219271ab7725783f0800000000000000
+      internalID: -898658926460458734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_7
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 15
+        width: 339
+        height: 486
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c94bfa133d6d44020800000000000000
+      internalID: 2325219510190060700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_8
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 46
+        width: 279
+        height: 559
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36df9c55d16137400800000000000000
+      internalID: 320624313722600803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_9
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 284
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50b53dd402a17570800000000000000
+      internalID: 8462723316580724831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_AxeChop_fw_10
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 284
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c847402fdfbd3e0800000000000000
+      internalID: -2027747991301616496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Quene_AxeChop_fw_0: 2481958542150786418
+      Quene_AxeChop_fw_1: 8331104926388947363
+      Quene_AxeChop_fw_10: -2027747991301616496
+      Quene_AxeChop_fw_2: 181414263783227645
+      Quene_AxeChop_fw_3: -4501556493973680710
+      Quene_AxeChop_fw_4: 98458281009352429
+      Quene_AxeChop_fw_5: -5108790286674014028
+      Quene_AxeChop_fw_6: -898658926460458734
+      Quene_AxeChop_fw_7: 2325219510190060700
+      Quene_AxeChop_fw_8: 320624313722600803
+      Quene_AxeChop_fw_9: 8462723316580724831
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

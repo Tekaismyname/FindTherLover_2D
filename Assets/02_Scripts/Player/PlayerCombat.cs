@@ -1,5 +1,7 @@
+using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FindTheLover.Combat.Data;
 
 namespace FindTheLover.Combat
 {
@@ -16,6 +18,17 @@ namespace FindTheLover.Combat
 
         [Header("References")]
         [SerializeField] private Animator animator;
+
+        [Header("Hitbox Detection")]
+        [Tooltip("Distance in front of player where hitbox center is placed")]
+        [SerializeField] private float attackRange = 1.5f;
+
+        [Tooltip("Radius  of the sphere hitbox")]
+        [SerializeField] private float attackRadius = 1.2f;
+
+        [Tooltip("Layer that can be hit (Environment, Enemies)")]
+        [SerializeField] private LayerMask hitLayers = ~0;
+
 
         // Internal combat state tracking
         private int currentComboIndex = 0;
@@ -92,13 +105,18 @@ namespace FindTheLover.Combat
             ExecuteAttack();
         }
 
-                /// <summary>
-        /// Triggers animation, sets combo step, plays swing audio, and advances combo.
+        /// <summary>
+        /// Detects all IDamageable entities in front of the player and applies damage.
         /// </summary>
         private void ExecuteAttack()
         {
+
+
             AttackDataSO attackData = currentCombo.GetAttack(currentComboIndex);
             if (attackData == null) return;
+
+
+            
 
             // 1. Send ComboStep (1, 2, 3) and Trigger to Animator
             animator.SetInteger("ComboStep", attackData.comboStep);
@@ -113,6 +131,28 @@ namespace FindTheLover.Combat
             {
                 AudioSource.PlayClipAtPoint(attackData.swingSound, transform.position);
             }
+
+            Vector3 hitboxCenter = transform.position + transform.forward * attackRange + Vector3.up * 1.0f;
+            Collider[] colliders = Physics.OverlapSphere(hitboxCenter, attackRadius, hitLayers);
+
+            foreach (var col in colliders)
+            {
+                if (col.transform.root == transform.root) continue;
+
+                if(col.TryGetComponent<IDamageable>(out var damageable))
+                {
+                    Vector3 hitPoint = col.ClosestPoint(hitboxCenter);
+                    damageable.TakeDamage(attackData.damage, hitPoint, -transform.forward);
+
+                    if (attackData.hitImpactSound != null)
+                    {
+                        AudioSource.PlayClipAtPoint(attackData.hitImpactSound, hitPoint);
+                    }
+                    break;
+                }
+            }    
+
+
 
             // 3. Update combat state tracking
             lastAttackTime = Time.time;
@@ -152,5 +192,13 @@ namespace FindTheLover.Combat
             if (!isAttacking || lastExecutedAttack == null) return false;
             return Time.time < lastAttackTime + lastExecutedAttack.lockMovementDuration;
         }
+
+         private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Vector3 hitboxCenter = transform.position + transform.forward * attackRange + Vector3.up * 1.0f;
+            Gizmos.DrawWireSphere(hitboxCenter, attackRadius);
+        }
+    
     }
 }

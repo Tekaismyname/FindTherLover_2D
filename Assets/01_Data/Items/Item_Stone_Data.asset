@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e2eda20039c8547ac0435287fe907d, type: 3}
+  m_Name: Item_Stone_Data
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Items.ItemDataSO
+  itemId: stone
+  itemName: Stone
+  itemType: 0
+  icon: {fileID: 8920962701577012002, guid: 086e794544d022945939c2533163bf0b, type: 3}
+  description: 'A sturdy piece of Stone gathered from Rock
+
+'
+  maxStack: 99
+  worldPrefab: {fileID: 154152484307240778, guid: e31aacb918f38b84b8ecbb8c9ecc43e0, type: 3}

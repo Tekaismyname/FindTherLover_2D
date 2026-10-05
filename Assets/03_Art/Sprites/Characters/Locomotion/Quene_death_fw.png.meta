@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 4839df825a046d2468b846c7d18690ba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4671627242979626992
+    second: Quene_death_fw_0
+  - first:
+      213: 1529155217632402308
+    second: Quene_death_fw_1
+  - first:
+      213: -5424838337061283460
+    second: Quene_death_fw_2
+  - first:
+      213: -1791832012842908944
+    second: Quene_death_fw_3
+  - first:
+      213: 648739307421571406
+    second: Quene_death_fw_4
+  - first:
+      213: 8581476004978670843
+    second: Quene_death_fw_5
+  - first:
+      213: -7004162531731049413
+    second: Quene_death_fw_6
+  - first:
+      213: 2493860347468128704
+    second: Quene_death_fw_7
+  - first:
+      213: -1046717108427795058
+    second: Quene_death_fw_8
+  - first:
+      213: 9020829652433362538
+    second: Quene_death_fw_9
+  - first:
+      213: 3517266303943500631
+    second: Quene_death_fw_10
+  - first:
+      213: 8478548374950759486
+    second: Quene_death_fw_11
+  - first:
+      213: -5866860638620302210
+    second: Quene_death_fw_12
+  - first:
+      213: 1177938866327478856
+    second: Quene_death_fw_13
+  - first:
+      213: -5364001498092633184
+    second: Quene_death_fw_14
+  - first:
+      213: -264158435758278086
+    second: Quene_death_fw_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Quene_death_fw_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 610
+        width: 49
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 010792b16cb0b2fb0800000000000000
+      internalID: -4671627242979626992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 110
+        width: 277
+        height: 495
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48b1a619196a83510800000000000000
+      internalID: 1529155217632402308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_2
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 546
+        width: 51
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c799a83464a17b4b0800000000000000
+      internalID: -5424838337061283460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_3
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 546
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f2435127422227e0800000000000000
+      internalID: -1791832012842908944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_4
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 549
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4912b286f8c00900800000000000000
+      internalID: 648739307421571406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_5
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 441
+        width: 126
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfcba4db5f6871770800000000000000
+      internalID: 8581476004978670843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_6
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 109
+        width: 230
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b34f11b79473cce90800000000000000
+      internalID: -7004162531731049413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_7
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 449
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c12542e5c8fb9220800000000000000
+      internalID: 2493860347468128704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_8
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 457
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8556dbe5505971f0800000000000000
+      internalID: -1046717108427795058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_9
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 454
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ed99446cc603d70800000000000000
+      internalID: 9020829652433362538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_10
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 110
+        width: 323
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 753e0037117dfc030800000000000000
+      internalID: 3517266303943500631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_11
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 443
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3cc7e363dad9a570800000000000000
+      internalID: 8478548374950759486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_12
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 103
+        width: 263
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e74c0584559b49ea0800000000000000
+      internalID: -5866860638620302210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_13
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 108
+        width: 405
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 842639e6821e85010800000000000000
+      internalID: 1177938866327478856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_14
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 108
+        width: 411
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a38683ae0d3f85b0800000000000000
+      internalID: -5364001498092633184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_death_fw_15
+      rect:
+        serializedVersion: 2
+        x: 1866
+        y: 331
+        width: 52
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a74306d45855cf0800000000000000
+      internalID: -264158435758278086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Quene_death_fw_0: -4671627242979626992
+      Quene_death_fw_1: 1529155217632402308
+      Quene_death_fw_10: 3517266303943500631
+      Quene_death_fw_11: 8478548374950759486
+      Quene_death_fw_12: -5866860638620302210
+      Quene_death_fw_13: 1177938866327478856
+      Quene_death_fw_14: -5364001498092633184
+      Quene_death_fw_15: -264158435758278086
+      Quene_death_fw_2: -5424838337061283460
+      Quene_death_fw_3: -1791832012842908944
+      Quene_death_fw_4: 648739307421571406
+      Quene_death_fw_5: 8581476004978670843
+      Quene_death_fw_6: -7004162531731049413
+      Quene_death_fw_7: 2493860347468128704
+      Quene_death_fw_8: -1046717108427795058
+      Quene_death_fw_9: 9020829652433362538
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
