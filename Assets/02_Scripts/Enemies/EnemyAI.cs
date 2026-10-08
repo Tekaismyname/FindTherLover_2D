@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using FindTheLover.Combat;
 using FindTheLover.Enemies.Data;
+using System.Collections;
+using Unity.AppUI.Core;
 
 namespace FindTheLover.Enemies
 {
@@ -21,7 +23,7 @@ namespace FindTheLover.Enemies
     /// </summary>
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(HealthSystem))]
-    public class EnemyAI : MonoBehaviour
+    public class EnemyAI : MonoBehaviour , Iknockbackable
     {
         // =========================================================================================
         // KHỐI 1: KHAI BÁO BIẾN CẤU HÌNH & THÀNH PHẦN
@@ -43,6 +45,7 @@ namespace FindTheLover.Enemies
         private Transform _targetPlayer;
         private float _lastAttackTime;
 
+        private Coroutine _knockbackCoroutine;
         // Animator parameter hash IDs for performance
         private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
         private static readonly int AttackHash = Animator.StringToHash("Attack");
@@ -344,6 +347,69 @@ namespace FindTheLover.Enemies
             }
 
             Destroy(gameObject, 1.5f);
+        }
+
+        /// <summary>
+        /// Pushes the enemy backward safely along the NavMesh surface.
+        /// </summary>
+        public void ApplyKnockBack(Vector3 direction, float force)
+        {
+            if (_currentState == EnemyState.Dead || force <= 0) return;
+
+            // Stop existing knockback to rpevent conflicting displacement
+            if (_knockbackCoroutine != null)
+            {
+                StopCoroutine(_knockbackCoroutine);
+            }
+
+            _knockbackCoroutine = StartCoroutine(KnockBackRoutine(direction.normalized, force));
+        }
+
+
+        private IEnumerator KnockBackRoutine(Vector3 direction, float force)
+        {
+            // 1. temporarily pause normal A pathfiding velocity
+            if (_navAgent != null && _navAgent.isOnNavMesh)
+            {
+                _navAgent.isStopped = true;
+                _navAgent.velocity = Vector3.zero;
+            }
+
+            float duration = 0.2f;
+            float elapsed = 0f;
+
+            // Flatten direction onto horizontal XZ plane so enemy doesn't fly into ait
+            direction.y = 0f;
+            direction = direction.normalized;
+
+            while (elapsed < duration)
+            {
+                if (_currentState == EnemyState.Dead) yield break;
+
+                // Quadratic friction falloff curve: fast initial burst, smooth halt
+                float remainingRatio = 1f - (elapsed / duration);
+                float currentSpeed = force * remainingRatio * remainingRatio;
+
+                // Safely displace agent within baked NavMesh borders ( prevents all clipping)
+                if (_navAgent != null && _navAgent.isOnNavMesh)
+                {
+                    _navAgent.Move(direction * currentSpeed * Time.deltaTime);
+                }
+
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            // 2. Resume normal pathfinding if enemy is still alive and chasing 
+            if (_currentState != EnemyState.Dead && _navAgent != null && _navAgent.isOnNavMesh)
+            {
+                if (_currentState == EnemyState.Chase)
+                {
+                    _navAgent.isStopped = false;
+                }
+            }
+
+            _knockbackCoroutine = null;
         }
 
         private void OnDrawGizmosSelected()

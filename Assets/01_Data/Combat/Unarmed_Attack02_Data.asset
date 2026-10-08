@@ -15,10 +15,11 @@ MonoBehaviour:
   attackName: Punch
   animatorTrigger: Attack
   comboStep: 2
-  damage: 7
-  knockbackForce: 3
+  damage: 12
+  knockbackForce: 3.5
   lockMovementDuration: 0.3
   comboChainWindow: 0.8
+  hitStopDuration: 0.06
   swingSound: {fileID: 0}
   hitImpactSound: {fileID: 0}
-  screenShakeIntensity: 0.1
+  screenShakeIntensity: 0.18

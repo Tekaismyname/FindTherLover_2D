@@ -1,10 +1,14 @@
-using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FindTheLover.Combat.Data;
+using FindTheLover.CameraSystem;
 
 namespace FindTheLover.Combat
 {
+    /// <summary>
+    /// Logic Layer: Executes multi-step melee attack combos, detects hitboxes,
+    /// applies damage & knockback, and triggers CameraShake + HitStop feedback.
+    /// </summary>
     [RequireComponent(typeof(Animator))]
     public class PlayerCombat : MonoBehaviour
     {
@@ -23,12 +27,20 @@ namespace FindTheLover.Combat
         [Tooltip("Distance in front of player where hitbox center is placed")]
         [SerializeField] private float attackRange = 1.5f;
 
-        [Tooltip("Radius  of the sphere hitbox")]
+        [Tooltip("Radius of the sphere hitbox")]
         [SerializeField] private float attackRadius = 1.2f;
 
         [Tooltip("Layer that can be hit (Environment, Enemies)")]
         [SerializeField] private LayerMask hitLayers = ~0;
 
+        [Header("Juice & VFX")]
+        [Tooltip("Particle system prefab spawned at contact points upon impact")]
+        [SerializeField] private GameObject hitSparkPrefab;
+
+        [SerializeField] private SpriteRenderer spriteRenderer;
+        private PlayerLocomotion.PlayerLocomotion _locomotion;
+        private static readonly int PosXHash = Animator.StringToHash("PosX");
+        private static readonly int PosYHash = Animator.StringToHash("PosY");
 
         // Internal combat state tracking
         private int currentComboIndex = 0;
@@ -46,7 +58,6 @@ namespace FindTheLover.Combat
 
         private void OnEnable()
         {
-            // Safely enable the Attack action when the player awakens
             if (attackAction != null && attackAction.action != null)
             {
                 attackAction.action.Enable();
@@ -55,7 +66,6 @@ namespace FindTheLover.Combat
 
         private void OnDisable()
         {
-            // Safely disable the Attack action to prevent memory leaks and ghost inputs
             if (attackAction != null && attackAction.action != null)
             {
                 attackAction.action.Disable();
@@ -75,7 +85,6 @@ namespace FindTheLover.Combat
         {
             if (attackAction == null || attackAction.action == null) return;
 
-            // Pure New Input System: Triggered on the frame the button/click is pressed
             if (attackAction.action.WasPressedThisFrame())
             {
                 TryExecuteAttack();
@@ -83,7 +92,7 @@ namespace FindTheLover.Combat
         }
 
         /// <summary>
-        /// Validates timing and combo flow before executing the next strike.
+        /// Validates timing and lock duration before executing the next strike.
         /// </summary>
         private void TryExecuteAttack()
         {
@@ -106,17 +115,27 @@ namespace FindTheLover.Combat
         }
 
         /// <summary>
-        /// Detects all IDamageable entities in front of the player and applies damage.
+        /// Detects all IDamageable entities, applies damage, knockback, and triggers Combat Juice.
         /// </summary>
         private void ExecuteAttack()
         {
-
-
             AttackDataSO attackData = currentCombo.GetAttack(currentComboIndex);
             if (attackData == null) return;
 
-
-            
+            Vector2 facing2D = _locomotion != null ? _locomotion.LastFacingDirection : Vector2.down;
+            Vector3 worldFacing = _locomotion != null ? _locomotion.LastWorldFacingDirection : transform.forward;
+            worldFacing.y = 0f;
+            if (worldFacing.sqrMagnitude < 0.01f) worldFacing = Vector3.back;
+            worldFacing.Normalize();
+            // Gửi tọa độ vào BlendTree của đòn đánh
+            animator.SetFloat(PosXHash, facing2D.x);
+            animator.SetFloat(PosYHash, facing2D.y);
+            // Lật hình nhân vật khi đánh sang trái
+            if (spriteRenderer != null)
+            {
+                if (facing2D.x > 0.05f) spriteRenderer.flipX = false;
+                else if (facing2D.x < -0.05f) spriteRenderer.flipX = true;
+            }
 
             // 1. Send ComboStep (1, 2, 3) and Trigger to Animator
             animator.SetInteger("ComboStep", attackData.comboStep);
@@ -132,34 +151,70 @@ namespace FindTheLover.Combat
                 AudioSource.PlayClipAtPoint(attackData.swingSound, transform.position);
             }
 
-            Vector3 hitboxCenter = transform.position + transform.forward * attackRange + Vector3.up * 1.0f;
+            // 3. Evaluate sphere hitbox in front of player
+            Vector3 hitboxCenter = transform.position + worldFacing * attackRange + Vector3.up * 1.0f;
             Collider[] colliders = Physics.OverlapSphere(hitboxCenter, attackRadius, hitLayers);
+
+            bool hasHitAnyTarget = false;
 
             foreach (var col in colliders)
             {
                 if (col.transform.root == transform.root) continue;
 
-                if(col.TryGetComponent<IDamageable>(out var damageable))
+                // A. Apply Damage via IDamageable
+                var damageable = col.GetComponentInParent<IDamageable>() ?? col.GetComponentInChildren<IDamageable>();
+                if (damageable != null && !damageable.IsDead)
                 {
                     Vector3 hitPoint = col.ClosestPoint(hitboxCenter);
-                    damageable.TakeDamage(attackData.damage, hitPoint, -transform.forward);
+                    damageable.TakeDamage(attackData.damage, hitPoint, -worldFacing);
 
-                    if (attackData.hitImpactSound != null)
+                    // B. Apply Knockback via IKnockbackable
+                    var knockbackable = col.GetComponentInParent<Iknockbackable>() ?? col.GetComponentInChildren<Iknockbackable>();
+                    if (knockbackable != null)
                     {
-                        AudioSource.PlayClipAtPoint(attackData.hitImpactSound, hitPoint);
+                        Vector3 knockbackDir = (col.transform.position - transform.position).normalized;
+                        knockbackDir.y = 0f;
+                        knockbackable.ApplyKnockBack(knockbackDir, attackData.knockbackForce);
                     }
-                    break;
+
+                    // C. Spawn Hit Spark VFX
+                    if (hitSparkPrefab != null)
+                    {
+                        Instantiate(hitSparkPrefab, hitPoint, Quaternion.LookRotation(worldFacing));
+                    }
+
+                    hasHitAnyTarget = true;
                 }
-            }    
+            }
 
+            // 4. Trigger synchronized Combat Juice if at least one target was struck
+            if (hasHitAnyTarget)
+            {
+                // Screen Shake (Presentation Layer)
+                if (CameraShake.Instance != null && attackData.screenShakeIntensity > 0f)
+                {
+                    CameraShake.Instance.Shake(attackData.screenShakeIntensity, 0.15f);
+                }
 
+                // Freeze Frame Hit Stop (Logic Layer)
+                if (HitStopManager.Instance != null && attackData.hitStopDuration > 0f)
+                {
+                    HitStopManager.Instance.TriggerHitStop(attackData.hitStopDuration);
+                }
 
-            // 3. Update combat state tracking
+                // Audio Impact
+                if (attackData.hitImpactSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(attackData.hitImpactSound, hitboxCenter);
+                }
+            }
+
+            // 5. Update combat state tracking
             lastAttackTime = Time.time;
             lastExecutedAttack = attackData;
             isAttacking = true;
 
-            // 4. Advance to next attack or loop back to 0
+            // Advance combo index (loops back to 0 at end of combo chain)
             currentComboIndex++;
             if (currentComboIndex >= currentCombo.TotalAttacks)
             {
@@ -174,7 +229,6 @@ namespace FindTheLover.Combat
         {
             if (currentComboIndex == 0 || lastExecutedAttack == null) return;
 
-            // Use the specific comboChainWindow defined in the attack itself
             if (Time.time > lastAttackTime + lastExecutedAttack.comboChainWindow)
             {
                 currentComboIndex = 0;
@@ -185,7 +239,6 @@ namespace FindTheLover.Combat
 
         /// <summary>
         /// Helper property to check if the player is currently locked in an attack animation.
-        /// Useful for PlayerLocomotion to temporarily stop movement.
         /// </summary>
         public bool IsMovementLocked()
         {
@@ -193,12 +246,15 @@ namespace FindTheLover.Combat
             return Time.time < lastAttackTime + lastExecutedAttack.lockMovementDuration;
         }
 
-         private void OnDrawGizmosSelected()
+        private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Vector3 hitboxCenter = transform.position + transform.forward * attackRange + Vector3.up * 1.0f;
+            Vector3 worldFacing = _locomotion != null ? _locomotion.LastWorldFacingDirection : transform.forward;
+            worldFacing.y = 0f;
+            if (worldFacing.sqrMagnitude < 0.01f) worldFacing = Vector3.back;
+            worldFacing.Normalize();
+            Vector3 hitboxCenter = transform.position + worldFacing * attackRange + Vector3.up * 1.0f;
             Gizmos.DrawWireSphere(hitboxCenter, attackRadius);
         }
-    
     }
 }

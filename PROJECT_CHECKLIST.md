@@ -87,11 +87,12 @@
 - [x] **Task 10.4:** Tạo Prefab quái mẫu `Enemy_Goblin.prefab` (NavMeshAgent, HealthSystem, DamageFlash, HealthBarView, Visual 4 hướng).
 - [x] **Task 10.5:** Test thực chiến: Quái đuổi theo Player vòng qua các gốc cây và cắn tụt máu!
 
-### [ ] Ngày 11: Melee Combat System & Combat Juice
-- [ ] Chuỗi Combo 3 đòn đánh tay/vũ khí mượt mà.
-- [ ] Hiệu ứng khựng hình khi chém trúng (`Hit Stop`).
-- [ ] Hiệu ứng rung màn hình (`Camera Screen Shake`).
-- [ ] Particle chém trúng tóe tia lửa/vết chém.
+### [x] Ngày 11: Melee Combat System & Combat Juice (HOÀN THÀNH)
+- [x] **Task 11.1:** Viết `CameraShake.cs` (Presentation: Thuật toán rung suy giảm chấn động bậc 2).
+- [x] **Task 11.2:** Viết `HitStopManager.cs` (Logic: Khựng hình freeze-frame với `WaitForSecondsRealtime`).
+- [x] **Task 11.3:** Tạo `IKnockbackable.cs` & nâng cấp `EnemyAI.cs` đẩy lùi quái vật trên NavMesh (`_navAgent.Move`).
+- [x] **Task 11.4:** Nâng cấp `PlayerCombat.cs` kích hoạt chuỗi phản ứng Combat Juice (Damage + Knockback + VFX + Shake + HitStop).
+- [x] **Task 11.5:** Tạo Prefab hạt tia lửa `HitSpark_VFX.prefab` (URP Particle Burst, Auto Destroy) & liên kết vào Player.
 
 ### [ ] Ngày 12: Seamless Day/Night Cycle & Atmosphere Transition
 - [ ] Script xoay mặt trời $360^\circ$ theo thời gian thực (1 ngày = 10 phút chơi).

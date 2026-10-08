@@ -139,12 +139,12 @@ Quái vật bay lơ lửng trên không, xuất hiện khi trời tối mịt. M
 | Tên Animation Clip | Số Frame | Mô tả hành vi chuyển động |
 | :--- | :--- | :--- |
 | **`Bat_Fly`** | 6 frames | Đập cánh dập dờn bồng bềnh trên không, đầu ngó nghiêng tìm mồi. |
-| **`Bat_DiveAttack`** *(Signature)* | 6 frames | Xếp cánh lao vút xuống theo đường cong parabol cắn xoẹt qua người chơi rồi vút bay lên lại. |
-| **`Bat_Hurt`** | 2 frames | Khựng lại giữa không trung, cánh co giật dữ dội khi bị đấm trúng. |
-| **`Bat_Die`** | 4 frames | Cánh gãy gập, rớt cắm đầu xuống mặt đất và tan biến thành làn khói đen. |
+| **`Bat_DiveAttack`** *(Signature)* | 8 frames | Xếp cánh lao vút xuống theo đường cong parabol cắn xoẹt qua người chơi rồi vút bay lên lại. |
+| **`Bat_Bite` / `Bat_Screech`** | 5 frames | Đớp ngoạm cự ly gần hoặc phát sóng âm rung rinh làm choáng người chơi. |
+| **`Bat_Hurt`** | 3 frames | Khựng lại giữa không trung, cánh co giật dữ dội khi bị đấm trúng. |
+| **`Bat_Die`** | 6 frames | Cánh gãy gập, rớt cắm đầu xuống đất và tan biến thành làn khói đen bóng đêm. |
 
-> 🤖 **Prompt AI Gen Ảnh:**  
-> `Pixel art sprite sheet, shadow vampire bat monster, demonic red glowing eyes, dark purple fur, leathery wings with red veins, sharp fangs, white background, isolated, 16-bit RPG asset.`
+> 📄 **Tài liệu chi tiết & Prompt AI 3 góc:** Xem chi tiết tại [SHADOW_BAT_SPRITESHEET_SPEC.md](file:///C:/Users/hokha/Dropbox/PC/Downloads/Unity/FindTherLover/SHADOW_BAT_SPRITESHEET_SPEC.md)
 
 ---
 

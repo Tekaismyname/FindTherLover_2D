@@ -15,6 +15,6 @@ MonoBehaviour:
   sensitivityX: 0.15
   sensitivityY: 0.15
   inverY: 0
-  minPitch: -75
-  maxPitch: 75
+  minPitch: -15
+  maxPitch: 45
   smoothTime: 0.02

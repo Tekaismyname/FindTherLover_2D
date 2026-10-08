@@ -35,6 +35,9 @@ namespace FindTheLover.Combat.Data
         [Tooltip("Time window after this attack where the player can chain the next attack")]
         public float comboChainWindow = 0.8f;
 
+        [Tooltip("Duration of the frame freeze (hit stop) int seconds")]
+        [Range(0f, 0.2f)] public float hitStopDuration = 0.06f;
+
         [Header("Audio &  Juice")]
         [Tooltip("Sound played when swinging this attack")]
         public AudioClip swingSound;

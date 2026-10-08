@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 2410777192699165918}
   - component: {fileID: 679925701255411860}
   - component: {fileID: 3451961815106050389}
+  - component: {fileID: 7013719564641651857}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -336,6 +337,9 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 2d53e8d2fc2c4da48baf11b7dd556f31, type: 2}
   pitchTransform: {fileID: 8436359395440279763}
   yawTransform: {fileID: 5365652123154711377}
+  target: {fileID: 0}
+  targetOffset: {x: 0, y: 1.2, z: 0}
+  distance: 10.5
 --- !u!114 &3451961815106050389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +353,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.CameraSystem.InputSystemLookProvider
   lookAction: {fileID: -5630151704836100654, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+--- !u!114 &7013719564641651857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263545312617427275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ecde2e3b4ab27144a8bb14da11e5b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.CameraSystem.CameraShake
+  globalShakeMultiplier: 1
+  applyDirectlyToTransform: 1
 --- !u!1 &7651952732934540847
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +505,7 @@ GameObject:
   - component: {fileID: 4916589131782001243}
   - component: {fileID: 6943998060536648270}
   - component: {fileID: 1741796502051023349}
+  - component: {fileID: 871445994574338272}
   m_Layer: 0
   m_Name: Quene_Player
   m_TagString: Player
@@ -632,6 +651,8 @@ MonoBehaviour:
   hitLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+  hitSparkPrefab: {fileID: 3115130655995023840, guid: 10f8073f238fe4e46901ff55b6c0e00b, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!143 &16444071852096524
 CharacterController:
   m_ObjectHideFlags: 0
@@ -731,3 +752,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33963ed6cd02e2e4ea43f1d635bbc692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Combat.HealthTestInput
+--- !u!114 &871445994574338272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352934862687148613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3bc21f83c41cf46a67550a7eee2413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Environment.DynamicBillboard
+  mode: 0
+  instantRotation: 1
+  smoothRotationSpeed: 15
+  activeDistance: 50
+  lockYAxis: 1

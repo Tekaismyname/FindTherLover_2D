@@ -50,9 +50,16 @@ namespace FindTheLover.PlayerLocomotion
         private float verticalVelocity;
         private bool isSprinting;
 
+        private Vector2 lastFacingDirection = new Vector2(0f, -1f);
+        private Vector3 lastWorldFacingDirection = Vector3.back;
+
+
+        public Vector2 LastFacingDirection => lastFacingDirection;
+        public Vector3 LastWorldFacingDirection => lastWorldFacingDirection;
         // Pre-computed Animator parameter hashes for optimal performance
         private static readonly int PosXHash = Animator.StringToHash("PosX");
         private static readonly int PosYHash = Animator.StringToHash("PosY");
+        private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
 
         private void Awake()
         {
@@ -120,6 +127,11 @@ namespace FindTheLover.PlayerLocomotion
                 if (moveInput.x > 0.05f) spriteRenderer.flipX = false;
                 else if (moveInput.x < -0.05f) spriteRenderer.flipX = true;
             }
+
+            if (moveInput.sqrMagnitude > 0.05f)
+            {
+                lastFacingDirection = moveInput.normalized;
+            }
         }
 
         /// <summary>
@@ -144,8 +156,10 @@ namespace FindTheLover.PlayerLocomotion
             camRight.Normalize();
 
             Vector3 targetDirection = (camRight * moveInput.x + camForward * moveInput.y);
-            if (targetDirection.sqrMagnitude > 1f) targetDirection.Normalize();
-
+            if (targetDirection.sqrMagnitude > 0.05f)
+            {
+                lastWorldFacingDirection = targetDirection.normalized;
+            }
             // 2. Target horizontal speed
             float targetSpeed = (moveInput.sqrMagnitude > 0.01f) ? (isSprinting ? runSpeed : walkSpeed) : 0f;
             Vector3 targetHorizontalVelocity = targetDirection * targetSpeed;
@@ -178,18 +192,25 @@ namespace FindTheLover.PlayerLocomotion
         {
             if (animator == null) return;
 
+            // Không ghi đè khi nhân vật đang vung kiếm
+            if (playerCombat != null && playerCombat.IsMovementLocked()) return;
+
             if (moveInput.sqrMagnitude > 0.01f)
             {
-                // Multiplier of 2 matches sprint BlendTree coordinates (-2 to 2)
+                // ĐANG DI CHUYỂN
+                animator.SetBool(IsMovingHash, true);
+
                 float blendMultiplier = isSprinting ? 2.0f : 1.0f;
                 animator.SetFloat(PosXHash, moveInput.x * blendMultiplier);
                 animator.SetFloat(PosYHash, moveInput.y * blendMultiplier);
             }
             else
             {
-                // Return to (0, 0) Idle
-                animator.SetFloat(PosXHash, 0f);
-                animator.SetFloat(PosYHash, 0f);
+                // ĐỨNG YÊN: Giữ nguyên hướng nhìn cuối cùng để Animator phát đúng Idle tương ứng!
+                animator.SetBool(IsMovingHash, false);
+
+                animator.SetFloat(PosXHash, lastFacingDirection.x);
+                animator.SetFloat(PosYHash, lastFacingDirection.y);
             }
         }
     }

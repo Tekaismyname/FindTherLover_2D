@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 112
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,10 +103,10 @@ TextureImporter:
       name: Quene_idle_fw_0
       rect:
         serializedVersion: 2
-        x: 87
-        y: 89
-        width: 223
-        height: 468
+        x: 0
+        y: 0
+        width: 362
+        height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,10 +125,10 @@ TextureImporter:
       name: Quene_idle_fw_1
       rect:
         serializedVersion: 2
-        x: 419
-        y: 89
-        width: 218
-        height: 468
+        x: 380
+        y: 0
+        width: 362
+        height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Quene_idle_fw_2
       rect:
         serializedVersion: 2
-        x: 744
-        y: 89
-        width: 223
-        height: 470
+        x: 728
+        y: 0
+        width: 362
+        height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: Quene_idle_fw_3
       rect:
         serializedVersion: 2
-        x: 1071
-        y: 89
-        width: 225
-        height: 468
+        x: 1072
+        y: 0
+        width: 362
+        height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: Quene_idle_fw_4
       rect:
         serializedVersion: 2
-        x: 1403
-        y: 89
-        width: 221
-        height: 468
+        x: 1427
+        y: 0
+        width: 362
+        height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +213,10 @@ TextureImporter:
       name: Quene_idle_fw_5
       rect:
         serializedVersion: 2
-        x: 1733
-        y: 89
-        width: 224
-        height: 468
+        x: 1779
+        y: 0
+        width: 362
+        height: 724
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,7 +245,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":362.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Quene_idle_fw_0: 6809055083727013752
       Quene_idle_fw_1: 304615756
