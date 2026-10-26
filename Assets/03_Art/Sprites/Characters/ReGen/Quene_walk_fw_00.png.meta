@@ -1,0 +1,440 @@
+fileFormatVersion: 2
+guid: b301d69cd96866e43b67a8c14c7d2ef7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7329555906918560947
+    second: Quene_walk_fw_00_0
+  - first:
+      213: -1335693988319974011
+    second: Quene_walk_fw_00_1
+  - first:
+      213: 8110910635456327262
+    second: Quene_walk_fw_00_2
+  - first:
+      213: 59399450595258584
+    second: Quene_walk_fw_00_3
+  - first:
+      213: 5801916174958060387
+    second: Quene_walk_fw_00_4
+  - first:
+      213: 8227892827157465137
+    second: Quene_walk_fw_00_5
+  - first:
+      213: 6277634801173293517
+    second: Quene_walk_fw_00_6
+  - first:
+      213: 1376128231011903172
+    second: Quene_walk_fw_00_7
+  - first:
+      213: 186192500293542934
+    second: Quene_walk_fw_00_8
+  - first:
+      213: -1577141244696575241
+    second: Quene_walk_fw_00_9
+  - first:
+      213: 5747519247726682213
+    second: Quene_walk_fw_00_10
+  - first:
+      213: 8168552405294659849
+    second: Quene_walk_fw_00_11
+  - first:
+      213: -1939679222778968542
+    second: Quene_walk_fw_00_12
+  - first:
+      213: -5481469253163062970
+    second: Quene_walk_fw_00_13
+  - first:
+      213: 3901831505509635765
+    second: Quene_walk_fw_00_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 194
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4bc0ce7cbf284a90800000000000000
+      internalID: -7329555906918560947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_1
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58d2099f469a67de0800000000000000
+      internalID: -1335693988319974011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_2
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5eef4fdf3ebf8070800000000000000
+      internalID: 8110910635456327262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_3
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d075905c7703d000800000000000000
+      internalID: 59399450595258584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_4
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 363e7f0750c848050800000000000000
+      internalID: 5801916174958060387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_5
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13884bcdee85f2270800000000000000
+      internalID: 8227892827157465137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_6
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc960916793ae1750800000000000000
+      internalID: 6277634801173293517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_7
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c6e9d6c55df81310800000000000000
+      internalID: 1376128231011903172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_8
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 614a6dfa71d759200800000000000000
+      internalID: 186192500293542934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_9
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f24e3dd46edc1ae0800000000000000
+      internalID: -1577141244696575241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_10
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560287cdd4a43cf40800000000000000
+      internalID: 5747519247726682213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quene_walk_fw_00_11
+      rect:
+        serializedVersion: 2
+        x: 1973
+        y: 0
+        width: 181
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90930ce32278c5170800000000000000
+      internalID: 8168552405294659849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1fdee7857113bdc4ea7accd4a0985a7b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":12.0,"y":1.0},"gridSpriteSize":{"x":181.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Quene_walk_fw_00_0: -7329555906918560947
+      Quene_walk_fw_00_1: -1335693988319974011
+      Quene_walk_fw_00_10: 5747519247726682213
+      Quene_walk_fw_00_11: 8168552405294659849
+      Quene_walk_fw_00_2: 8110910635456327262
+      Quene_walk_fw_00_3: 59399450595258584
+      Quene_walk_fw_00_4: 5801916174958060387
+      Quene_walk_fw_00_5: 8227892827157465137
+      Quene_walk_fw_00_6: 6277634801173293517
+      Quene_walk_fw_00_7: 1376128231011903172
+      Quene_walk_fw_00_8: 186192500293542934
+      Quene_walk_fw_00_9: -1577141244696575241
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

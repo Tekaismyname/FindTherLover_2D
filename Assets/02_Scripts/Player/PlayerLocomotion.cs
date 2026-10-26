@@ -26,7 +26,8 @@ namespace FindTheLover.PlayerLocomotion
         [SerializeField] private float runSpeed = 7.0f;
         [Tooltip("Acceleration smoothing factor")]
         [SerializeField] private float acceleration = 12.0f;
-
+        [Tooltip("Braking deceleration rate when releasing movement keys (higher = less sliding)")]
+        [SerializeField] private float deceleration = 80.0f;
         [Header("Physics & Ground Snapping")]
         [Tooltip("Gravity multiplier applied when falling")]
         [SerializeField] private float gravityMultiplier = 2.0f;
@@ -36,6 +37,10 @@ namespace FindTheLover.PlayerLocomotion
         [Header("Sprite Settings")]
         [Tooltip("Automatically flip sprite horizontally when moving left")]
         [SerializeField] private bool autoFlipX = false;
+
+        [Header("Juice & Effects")]
+        [Tooltip("Particle system spawned at player feed while spriting")]
+        [SerializeField] private ParticleSystem footstepDustParticle;
 
         // Component references
         private CharacterController characterController;
@@ -160,13 +165,18 @@ namespace FindTheLover.PlayerLocomotion
             {
                 lastWorldFacingDirection = targetDirection.normalized;
             }
-            // 2. Target horizontal speed
-            float targetSpeed = (moveInput.sqrMagnitude > 0.01f) ? (isSprinting ? runSpeed : walkSpeed) : 0f;
+                        // 2. Check if the player is actively pressing movement keys
+            bool hasMoveInput = moveInput.sqrMagnitude > 0.01f;
+
+            // Calculate target horizontal speed (Run speed, Walk speed, or 0 when stopping)
+            float targetSpeed = hasMoveInput ? (isSprinting ? runSpeed : walkSpeed) : 0f;
             Vector3 targetHorizontalVelocity = targetDirection * targetSpeed;
 
-            // Smooth horizontal velocity acceleration
-            currentVelocity = Vector3.MoveTowards(currentVelocity, targetHorizontalVelocity, acceleration * Time.deltaTime);
+            // Select acceleration when moving, or high-friction deceleration when stopping to prevent foot sliding
+            float speedChangeRate = hasMoveInput ? acceleration : deceleration;
 
+            // Smoothly move current velocity toward target velocity using the selected rate
+            currentVelocity = Vector3.MoveTowards(currentVelocity, targetHorizontalVelocity, speedChangeRate * Time.deltaTime);
             // 3. Gravity and slope grounding
             if (characterController.isGrounded)
             {
@@ -181,6 +191,20 @@ namespace FindTheLover.PlayerLocomotion
             // 4. Combine horizontal motion and vertical gravity
             Vector3 finalMotion = currentVelocity;
             finalMotion.y = verticalVelocity;
+
+            // Handle footstep dust particles when sprinting
+            if (footstepDustParticle != null)
+            {
+                bool shouldEmitDust = isSprinting && moveInput.sqrMagnitude > 0.1f && characterController.isGrounded;
+                if (shouldEmitDust && !footstepDustParticle.isPlaying)
+                {
+                    footstepDustParticle.Play();
+                }
+                else if (!shouldEmitDust && footstepDustParticle.isPlaying)
+                {
+                    footstepDustParticle.Stop();
+                }
+            }
 
             characterController.Move(finalMotion * Time.deltaTime);
         }

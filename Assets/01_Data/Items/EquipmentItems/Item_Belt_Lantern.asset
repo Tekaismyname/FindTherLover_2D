@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb827fad259461459e2c186dd300101, type: 3}
+  m_Name: Item_Belt_Lantern
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Equipment.Data.EquipmentItemDataSO
+  itemId: item_lantern
+  displayName: Belt Lantern
+  equipmentType: 1
+  heldPrefab: {fileID: 3441745672565233398, guid: b3274251e84188848b77df5d302d08bc, type: 3}
+  localOffset: {x: 0.18, y: -0.79, z: 0}
+  localRotation: {x: 0, y: 0, z: 0}

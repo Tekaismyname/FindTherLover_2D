@@ -18,7 +18,7 @@ MonoBehaviour:
   angularSpeed: 480
   acceleration: 12
   stoppingDistance: 1.8
-  detectRadius: 10
+  detectRadius: 25
   attackRange: 2.2
   attackDamage: 8
   attackCooldown: 1.5

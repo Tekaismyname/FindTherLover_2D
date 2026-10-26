@@ -4,6 +4,8 @@ using FindTheLover.Combat;
 using FindTheLover.Enemies.Data;
 using System.Collections;
 using Unity.AppUI.Core;
+using FindTheLover.Environment;
+using UnityEditor.EditorTools;
 
 namespace FindTheLover.Enemies
 {
@@ -23,7 +25,7 @@ namespace FindTheLover.Enemies
     /// </summary>
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(HealthSystem))]
-    public class EnemyAI : MonoBehaviour , Iknockbackable
+    public class EnemyAI : MonoBehaviour, Iknockbackable
     {
         // =========================================================================================
         // KHỐI 1: KHAI BÁO BIẾN CẤU HÌNH & THÀNH PHẦN
@@ -39,11 +41,40 @@ namespace FindTheLover.Enemies
         [Tooltip("Animator reference for controlling sprite animation states.")]
         [SerializeField] private Animator animator;
 
+        [Header("Night Frenzy Settings")]
+        [Tooltip("speed multiplier applied during nighttime")]
+        [SerializeField] private float nightSpeedMultiplier = 1.3f;
+
+        [Tooltip("Damage multiplier applied during nighttime")]
+        [SerializeField] private float nightDamageMultiplier = 1.5f;
+
+        [Tooltip("Detection darius multiplier applied during nighttime")]
+        [SerializeField] private float nightDetectionMultiplier = 1.6f;
+
+        [Header("Night Frenzy Visual Feedback")]
+        [Tooltip("Visual tint applied to the sprite when frenzied at night")]
+        [SerializeField] private Color frenziedColor = new Color(1f, 0.45f, 1f);
+
+        [Tooltip("Scale multiplier making the moster look larger and more threatening.")]
+        [SerializeField] private float enrageScaleMultiplier = 1.2f;
+
+        [Tooltip("Red eye glow light or visual object shining through the night fog.")]
+        [SerializeField] private GameObject eyeGlowObject;
+
         private EnemyState _currentState = EnemyState.Idle;
         private NavMeshAgent _navAgent;
         private HealthSystem _healthSystem;
         private Transform _targetPlayer;
         private float _lastAttackTime;
+
+        //Dynamic runtime metrics
+        private float _currentMoveSpeed;
+        private float _currentAttackDamage;
+        private float _currentDetectRadius;
+        private bool _isNightFrenzied;
+        private Color _originalSpriteColor = Color.white;
+        private Vector3 _originalScale = Vector3.one;
+
 
         private Coroutine _knockbackCoroutine;
         // Animator parameter hash IDs for performance
@@ -63,10 +94,16 @@ namespace FindTheLover.Enemies
         {
             _navAgent = GetComponent<NavMeshAgent>();
             _healthSystem = GetComponent<HealthSystem>();
+            _originalScale = transform.localScale;
 
             if (spriteRenderer == null)
             {
                 spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            }
+
+            if (spriteRenderer != null)
+            {
+                _originalSpriteColor = spriteRenderer.color;
             }
 
             if (animator == null)
@@ -89,6 +126,9 @@ namespace FindTheLover.Enemies
             _navAgent.angularSpeed = enemyData.angularSpeed;
             _navAgent.acceleration = enemyData.acceleration;
             _navAgent.stoppingDistance = enemyData.stoppingDistance;
+            _currentMoveSpeed = enemyData.moveSpeed;
+            _currentAttackDamage = enemyData.attackDamage;
+            _currentDetectRadius = enemyData.detectRadius;
 
             // In 2.5D billboard setup, lock 3D rotation to prevent sprite distortion
             _navAgent.updateRotation = false;
@@ -122,6 +162,11 @@ namespace FindTheLover.Enemies
         private void Start()
         {
             LocatePlayerTarget();
+
+            if (DayNightCycleManager.Instance != null && DayNightCycleManager.Instance.IsNight)
+            {
+                ApplyNightFrenzy();
+            }
         }
 
         private void Update()
@@ -148,17 +193,23 @@ namespace FindTheLover.Enemies
             Vector3 flatPlayerPos = new Vector3(_targetPlayer.position.x, 0f, _targetPlayer.position.z);
             float distanceToTarget = Vector3.Distance(flatEnemyPos, flatPlayerPos);
 
+            // Kiểm tra xem Player có đang trốn an toàn trong vùng Lửa Trại không
+            bool isPlayerInSanctuary = CampfireSanctuary.Instance != null &&
+                                       CampfireSanctuary.Instance.IsPositionInSanctuary(_targetPlayer.position);
+
             switch (_currentState)
             {
                 case EnemyState.Idle:
-                    if (distanceToTarget <= enemyData.detectRadius)
+                    // Chỉ đuổi theo nếu Player trong tầm phát hiện VÀ KHÔNG trốn trong Lửa Trại
+                    if (distanceToTarget <= _currentDetectRadius && !isPlayerInSanctuary)
                     {
                         TransitionToState(EnemyState.Chase);
                     }
                     break;
 
                 case EnemyState.Chase:
-                    if (distanceToTarget > enemyData.detectRadius)
+                    // Nếu Player chạy quá xa HOẶC đã chạy vào Lửa Trại -> Quái phanh lại chuyển về Idle
+                    if (distanceToTarget > _currentDetectRadius || isPlayerInSanctuary)
                     {
                         TransitionToState(EnemyState.Idle);
                     }
@@ -176,7 +227,12 @@ namespace FindTheLover.Enemies
                     break;
 
                 case EnemyState.Attack:
-                    if (distanceToTarget > enemyData.attackRange)
+                    // Nếu Player kịp nhảy vào Lửa Trại -> Hủy đánh lập tức
+                    if (isPlayerInSanctuary)
+                    {
+                        TransitionToState(EnemyState.Idle);
+                    }
+                    else if (distanceToTarget > enemyData.attackRange)
                     {
                         TransitionToState(EnemyState.Chase);
                     }
@@ -246,7 +302,7 @@ namespace FindTheLover.Enemies
             {
                 Vector3 hitPoint = _targetPlayer.position;
                 Vector3 hitNormal = (transform.position - _targetPlayer.position).normalized;
-                targetDamageable.TakeDamage(enemyData.attackDamage, hitPoint, hitNormal);
+                targetDamageable.TakeDamage(_currentAttackDamage, hitPoint, hitNormal);
             }
         }
 
@@ -260,6 +316,13 @@ namespace FindTheLover.Enemies
                 _healthSystem.OnDamaged += HandleDamaged;
                 _healthSystem.OnDeath += HandleDeath;
             }
+
+            //Register Day/Night event
+            if (DayNightCycleManager.Instance != null)
+            {
+                DayNightCycleManager.Instance.OnNightStarted += ApplyNightFrenzy;
+                DayNightCycleManager.Instance.OnDayStarted += RemoveNightFrenzy;
+            }
         }
 
         private void OnDisable()
@@ -269,6 +332,66 @@ namespace FindTheLover.Enemies
                 _healthSystem.OnDamaged -= HandleDamaged;
                 _healthSystem.OnDeath -= HandleDeath;
             }
+
+            if (DayNightCycleManager.Instance != null)
+            {
+                DayNightCycleManager.Instance.OnNightStarted -= ApplyNightFrenzy;
+                DayNightCycleManager.Instance.OnDayStarted -= RemoveNightFrenzy;
+            }
+        }
+
+        /// <summary>
+        /// Applies the Night Frenzy empowerment buff and visual feedback when night falls.
+        /// </summary>
+        public void ApplyNightFrenzy(int dayNumber = 0)
+        {
+            if (_isNightFrenzied || enemyData == null || _currentState == EnemyState.Dead) return;
+            _isNightFrenzied = true;
+            // 1. Multiply stats
+            _currentMoveSpeed = enemyData.moveSpeed * nightSpeedMultiplier;
+            _currentAttackDamage = enemyData.attackDamage * nightDamageMultiplier;
+            _currentDetectRadius = enemyData.detectRadius * nightDetectionMultiplier;
+            if (_navAgent != null) _navAgent.speed = _currentMoveSpeed;
+            // 2. Visual: Red sprite + Red eyes + Scale up + Faster animation
+            if (spriteRenderer != null) spriteRenderer.color = frenziedColor;
+
+            if (TryGetComponent<DamageFlash>(out var flashNight))
+            {
+                flashNight.SetOriginalColor(frenziedColor);
+            }
+
+            if (eyeGlowObject != null) eyeGlowObject.SetActive(true);
+
+            transform.localScale = _originalScale * enrageScaleMultiplier;
+
+            if (animator != null) animator.speed = nightSpeedMultiplier;
+        }
+        /// <summary>
+        /// Reverts monster to daytime baseline parameters when the sun rises.
+        /// </summary>
+        public void RemoveNightFrenzy(int dayNumber = 0)
+        {
+            if (!_isNightFrenzied || enemyData == null || _currentState == EnemyState.Dead) return;
+            _isNightFrenzied = false;
+            // 1. Reset stats
+            _currentMoveSpeed = enemyData.moveSpeed;
+            _currentAttackDamage = enemyData.attackDamage;
+            _currentDetectRadius = enemyData.detectRadius;
+
+            if (_navAgent != null) _navAgent.speed = _currentMoveSpeed;
+            // 2. Visual: Original color + Turn off eyes + Original scale
+
+            if (spriteRenderer != null) spriteRenderer.color = _originalSpriteColor;
+
+            if (TryGetComponent<DamageFlash>(out var flashDay))
+            {
+                flashDay.SetOriginalColor(_originalSpriteColor);
+            }
+
+            if (eyeGlowObject != null) eyeGlowObject.SetActive(false);
+            transform.localScale = _originalScale;
+
+            if (animator != null) animator.speed = 1.0f;
         }
 
         private void HandleDamaged(Vector3 hitNormal)
@@ -346,7 +469,7 @@ namespace FindTheLover.Enemies
                 col.enabled = false;
             }
 
-            Destroy(gameObject, 1.5f);
+            StartCoroutine(ReturnToPoolRoutine(1.5f));
         }
 
         /// <summary>
@@ -410,6 +533,64 @@ namespace FindTheLover.Enemies
             }
 
             _knockbackCoroutine = null;
+        }
+
+        /// <summary>
+        /// Resets and deploys the pooled enemy onto the island NavMesh at a specified position.
+        /// </summary>
+        public void SpawnAt(Vector3 spawnPosition)
+        {
+            gameObject.SetActive(true);
+
+            // Bật lại Collider bị tắt lúc chết
+            var colliders = GetComponentsInChildren<Collider>();
+            foreach (var col in colliders)
+            {
+                col.enabled = true;
+            }
+
+            // Bật lại NavMeshAgent và dịch chuyển an toàn
+            if (_navAgent != null)
+            {
+                _navAgent.enabled = true;
+                _navAgent.Warp(spawnPosition);
+                _navAgent.isStopped = false;
+                _navAgent.velocity = Vector3.zero;
+            }
+
+            // Hồi đầy 100% máu và xóa cờ chết
+            if (_healthSystem != null && enemyData != null)
+            {
+                _healthSystem.SetMaxHealth(enemyData.maxHealth, resetCurrentHealth: true);
+            }
+
+            // Tắt hoạt ảnh chết
+            if (animator != null)
+            {
+                animator.SetBool(IsDeadHash, false);
+            }
+
+            _currentState = EnemyState.Idle;
+            LocatePlayerTarget();
+
+            // Thêm vào cuối hàm SpawnAt():
+            if (DayNightCycleManager.Instance != null && DayNightCycleManager.Instance.IsNight)
+            {
+                ApplyNightFrenzy();
+            }
+            else
+            {
+                RemoveNightFrenzy();
+            }
+        }
+
+        /// <summary>
+        /// Delays disabling and returns this enemy to the Object Pool after death animation.
+        /// </summary>
+        private System.Collections.IEnumerator ReturnToPoolRoutine(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            EnemyPoolManager.Instance.ReturnEnemy(this);
         }
 
         private void OnDrawGizmosSelected()

@@ -60,7 +60,7 @@ namespace FindTheLover.Combat
             if (_flashCoroutine != null) StopCoroutine(_flashCoroutine);
             _flashCoroutine = StartCoroutine(FlashRoutine());
         }
-        
+
         private IEnumerator FlashRoutine()
         {
             float elapsed = 0f;
@@ -76,6 +76,14 @@ namespace FindTheLover.Combat
             }
 
             _spriteRenderer.color = _originalColor;
+        }
+
+         /// <summary>
+        /// Updates the baseline rest color so external state buffs (like Night Frenzy) persist after hit flashes.
+        /// </summary>
+        public void SetOriginalColor(Color newColor)
+        {
+            _originalColor = newColor;
         }
     }
 }

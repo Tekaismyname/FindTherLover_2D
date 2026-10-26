@@ -94,51 +94,85 @@
 - [x] **Task 11.4:** Nâng cấp `PlayerCombat.cs` kích hoạt chuỗi phản ứng Combat Juice (Damage + Knockback + VFX + Shake + HitStop).
 - [x] **Task 11.5:** Tạo Prefab hạt tia lửa `HitSpark_VFX.prefab` (URP Particle Burst, Auto Destroy) & liên kết vào Player.
 
-### [ ] Ngày 12: Seamless Day/Night Cycle & Atmosphere Transition
-- [ ] Script xoay mặt trời $360^\circ$ theo thời gian thực (1 ngày = 10 phút chơi).
-- [ ] Chuyển đổi màu ánh sáng bầu trời mượt mà (Bình minh, Trưa, Hoàng hôn, Đêm tối).
-- [ ] Kích hoạt sương mù đêm ma quái (`Fog of Night`).
+### [x] Ngày 12: Seamless Day/Night Cycle & Atmosphere Transition (HOÀN THÀNH)
+- [x] **Task 12.1:** Viết Blueprint dữ liệu `DayNightDataSO.cs` (Data Layer: chu kỳ 24h, ngưỡng ngày/đêm, gradient mặt trời & sương mù).
+- [x] **Task 12.2:** Tạo asset cấu hình `DayNight_Config.asset`, pha dải màu hoàng hôn, nắng trưa và đồ thị cường độ/sương mù.
+- [x] **Task 12.3:** Viết `DayNightCycleManager.cs` (Logic Layer: xoay đèn mặt trời $360^\circ$, cập nhật RenderSettings toàn cục, phát sự kiện `OnDayStarted`/`OnNightStarted`).
+- [x] **Task 12.4:** Setup GameObject `DayNight_Manager` trên Scene, gán Directional Light và test Play Mode thành công mượt mà.
+- [x] **Task 12.5 (QA):** Xây dựng bộ ma trận Test Case cho chu kỳ ngày/đêm và thiết lập module kiểm thử tự động `EnvironmentTests.asmdef`.
 
-### [ ] Ngày 13: Pooled Wave Manager & Horde Spawner
-- [ ] Viết hệ thống `ObjectPooler.cs` tối ưu hiệu năng cho 30-50 quái vật cùng lúc.
-- [ ] Quản lý các đợt quái (Wave System): Đêm 1 quái yếu, các đêm sau tăng số lượng & độ khó.
+### [x] Ngày 13: Night Monster Spawner & Zero-Allocation Object Pooling (HOÀN THÀNH)
+- [x] **Task 13.1:** Viết Blueprint dữ liệu `NightSpawnConfigSO.cs` (Data Layer: nhịp sinh quái, giới hạn sức chứa, bán kính Donut $15\text{m} \rightarrow 25\text{m}$).
+- [x] **Task 13.2:** Viết hệ thống hồ chứa tái chế `EnemyPoolManager.cs` (Logic Layer: Prewarm pool 15 quái, Queue FIFO, Get/Return Enemy không tốn RAM).
+- [x] **Task 13.3:** Nâng cấp `EnemyAI.cs`: Thêm hàm tái sinh `SpawnAt(Vector3)` (bật collider, warp NavMesh, hồi máu 100%) và tự thu hồi về Pool sau 1.5s khi chết.
+- [x] **Task 13.4:** Viết cỗ máy `NightHordeSpawner.cs` (Event-Driven: tự động bắt đầu sinh quái khi đêm xuống `OnNightStarted`, dừng lại khi trời sáng `OnDayStarted`, quét `NavMesh.SamplePosition`).
+- [x] **Task 13.5:** Setup GameObject `Night_Spawner` trên Scene, tạo asset `NightSpawn_Config.asset`, test Play Mode thành công mượt mà không giật lag.
 
-### [ ] Ngày 14: Base Camp Defense System & Game Over Flow
-- [ ] Tạo nhà chính / Trại sinh tồn (Base Camp $500\text{HP}$).
-- [ ] AI chia tỷ lệ: 50% đuổi theo Player, 50% tấn công đập phá Nhà chính.
-- [ ] Vòng lặp Thắng / Thua (Victory / Game Over Loop).
+### [x] Ngày 14: Night Frenzy Monster Buff & Zone 1 Campfire Sanctuary (HOÀN THÀNH)
+- [x] **Task 14.1:** Cập nhật `EnemyAI.cs`: Hệ thống **Night Frenzy Buff (Logic Chỉ Số Quái Đêm)**:
+  - Ban đêm tự động nhân hệ số: $+50\%$ Máu tối đa ($1.5\times$), $+30\%$ Tốc độ chạy ($1.3\times$), $+50\%$ Sát thương ($1.5\times$), tầm phát hiện mở rộng $10\text{m} \rightarrow 16\text{m}$.
+- [x] **Task 14.2:** Thiết lập **Night Frenzy Visual Feedback & Enrage VFX (Dấu Hiệu Nhận Biết Quái Cuồng Nộ)**:
+  - 👁️ **Mắt Đỏ Phát Sáng (Red Eye Glow / Point Light):** Hai đốm sáng đỏ rực xuyên màn đêm trên mặt quái vật.
+  - 💨 **Hào Quang Bốc Khói Đỏ (Enrage Aura Particle):** Khói lửa đỏ/đen bốc lên dưới chân quái vật khi cuồng nộ.
+  - 📈 **Phình To Cơ Bắp ($1.2\times$ Scale):** Kích thước quái to hơn bình thường $20\%$ (`transform.localScale`), nhịp chạy Animator tăng tốc $1.3\times$ (`animator.speed`).
+  - 💢 **Biểu Tượng Nộ (Enrage Icon):** Biểu tượng tia sét/đầu lâu đỏ nổi cạnh thanh máu World Space.
+- [x] **Task 14.3:** Tạo Lửa Trại An Toàn (Campfire Sanctuary / Safe Zone):
+  - Ánh lửa bán kính $5\text{m}$ xua đuổi quái vật (quái vật không thể bước vào vùng ánh sáng).
+  - Quene đứng trong vùng lửa trại được hồi phục $4\text{ HP/s}$ và an toàn tuyệt đối qua đêm.
+- [x] **Task 14.4:** Vòng lặp Game Over & Hồi sinh (Respawn Loop): Khi cạn máu sẽ mờ màn hình (Fade out) và thức dậy an toàn cạnh Lửa Trại để tiếp tục hành trình.
 
 ---
 
-## 📙 TUẦN 3 — Chest Augments (Lõi Nâng Cấp TFT) & Rich Content
+## 📙 TUẦN 3 — Zone-Based Progression, Monster Combat & Puzzle Gates (Hành Trình Vượt Ải & Giải Cứu)
 
-### [ ] Ngày 15: Chest Augment System (Mở Rương Chọn Lõi)
-- [ ] Tạo 3 loại rương: Rương Đồng (25G), Rương Bạc (50G), Rương Vàng (100G).
-- [ ] Giao diện UI mở rương: Hiện 3 Thẻ bài Lõi nâng cấp ngẫu nhiên để chọn 1 (chuẩn TFT).
+### [x] Ngày 15: Core Mechanics First — Equipment System, Hazard Traps & Puzzle Triggers (HOÀN THÀNH)
+- [x] **Task 15.1 (Hệ Thống Cầm Nắm Trang Bị - Generic Player Equipment):**
+  - Lập trình `PlayerEquipment.cs` gắn vào Quene quản lý ổ cắm `Belt_Socket` (gài đèn/đuốc thắt lưng) & phân tách vũ khí chiến đấu.
+  - Tách bỏ hoàn toàn biến đuốc bị viết lẫn trong `PlayerLocomotion.cs` sang hệ thống mới chuẩn SOLID.
+  - Trang bị Đuốc/Đèn Dắt Thắt Lưng (`Belt_Socket`) soi sáng ban đêm; triệt tiêu 100% lỗi lật vung tay của hoạt ảnh 2D.
+- [x] **Task 15.2 (Cơ Chế Bẫy Môi Trường - Spike Trap Hazard):**
+  - Lập trình Bẫy Chông Đất (`SpikeTrap.cs`): Chu kỳ $3$ pha (Ẩn $\rightarrow$ Cảnh báo rung $\rightarrow$ Phóng chông), trừ máu qua `IDamageable` cho cả Quene và Goblin.
+  - Xây dựng Prefab 3D `Spike_Trap.prefab` (Base Plate đá + cụm chông nhọn 4 góc) tại `Assets/04_Prefabs/Environment/Spike_Trap.prefab` và tích hợp vào Scene.
+- [x] **Task 15.3 (Cơ Chế Nền Tảng Cho Câu Đố - Puzzle Triggers & Interactables):**
+  - Lập trình Bệ Dẫm Áp Lực (`PressurePlate.cs`): Bộ đếm thực thể `occupantCount`, nhún lò xo mượt mà, phát sự kiện `OnPressed / OnReleased` mở cửa/tắt bẫy.
+  - Lập trình Cần Gạt Cơ Quan (`PuzzleLever.cs`): Tương tác phím `E` đổi trạng thái cần gạt, truyền tín hiệu kích hoạt cơ quan.
+  - Tạo bộ Prefab 3D `Pressure_Plate.prefab` và `Puzzle_Lever.prefab` tại `Assets/04_Prefabs/Environment/` và đưa vào Scene.
+- [x] **Task 15.4 (Đánh Bóng Cử Động & Cảm Giác Điều Khiển - Locomotion Juice):**
+  - Tinh chỉnh tốc độ Chạy Nhanh Sprint, lực phanh chống trượt (`deceleration = 80`), gia tốc xuất phát nhạy bén (`acceleration = 25`).
+  - Tạo hiệu ứng hạt bụi đất nảy dưới chân khi chạy nước rút (`FootstepDust`) gắn trực tiếp vào Quene_Player.
 
-### [ ] Ngày 16: ScriptableObject Augment Data Pool (60 Lõi Nâng Cấp)
-- [ ] Tạo 20 Lõi Bậc Đồng: Tăng 10% tốc chạy, cộng 20 HP, tăng 15% tốc độ chặt cây...
-- [ ] Tạo 20 Lõi Bậc Bạc: Chém ra tia sét, đòn đánh hút máu, chạy nhanh sau khi né...
-- [ ] Tạo 20 Lõi Bậc Vàng: Bất tử 3s khi sắp chết, nhân đôi vàng rơi, triệu hồi đệ tử...
+### [ ] Ngày 16: Khu Vực 2 ── ⚔️ Quái Hang Độc & 🧩 Puzzle 2: Dẫn Lửa Đuốc & Lửa Xanh (Phá Rào Gai Phong Ấn)
+- [ ] **Task 16.1 (Zone 2 Combat):** Thiết lập bãi quái Khu Vực 2: Skeleton Goblin ném xương (sau khi chết tự ráp lại xương sau 4s nếu không bồi thêm đòn kết liễu), Magma Scarab bò nhanh tự phát nổ $45$ DMG, Spore Shroom phun axit sương độc rút máu. Ban đêm lũ quái tăng tốc và trâu máu gấp bội.
+- [x] **Task 16.2 (Zone 2 Environment Hazard - Khí Gas Độc):** Lập trình `PoisonGasZone.cs` (rút máu $5\text{ HP/s}$ nếu không có lửa bảo vệ) & Tạo vùng khí độc `Poison_Gas_Zone` trong Scene với hiệu ứng sương độc bán trong suốt.
+- [x] **Task 16.3 (Zone 2 Puzzle Gate - Chuỗi Đài Lửa & Lửa Xanh):**
+  - Lập trình `PlayerTorchController.cs` (quản lý đuốc cháy $40\text{s}$, Lửa Thường & Lửa Xanh Soul Flame).
+  - Lập trình `AncientBrazier.cs` & Dựng model 3D ProBuilder cho Đài Đuốc Cổ (`Ancient_Brazier.prefab`) và Đài Lửa Xanh (`Soul_Flame_Altar.prefab`).
+  - Lập trình `ThornBarrierGate.cs` & Dựng model 3D ProBuilder cho Rào Gai Phong Ấn (`Thorn_Barrier_Gate.prefab`) cản đường và tự thiêu rụi khi dùng Soul Flame.
 
-### [ ] Ngày 17: Random Sunset Events System (Sự Kiện Ngẫu Nhiên)
-- [ ] Hệ thống sự kiện hoàng hôn: Blood Moon (Trăng máu), Thick Fog (Sương mù mù mịt), Meteor Shower (Mưa thiên thạch), Merchant Caravan (Đoàn buôn bí ẩn).
+### [ ] Ngày 17: Khu Vực 3 ── ⚔️ Quái Đền Cổ & 🧩 Puzzle 3: Tán Sắc Lăng Kính & Hội Tụ Ánh Sáng Tím Magenta
+- [ ] **Task 17.1 (Zone 3 Combat):** Thiết lập bãi quái Khu Vực 3: Shadow Wraith (U linh bay xuyên vật thể, cast chiêu làm chậm và đóng băng bước chạy Quene). Ban đêm Shadow Wraith cuồng nộ mở rộng bán kính truy đuổi.
+- [ ] **Task 17.2 (Zone 3 Optics Setup):** Giếng trời rọi chùm sáng trắng trung tâm, Cổng Đền phong ấn bởi Mắt Ngọc Thần đòi hỏi chùm sáng Tím (Magenta).
+- [ ] **Task 17.3 (Zone 3 Puzzle Gate):** Lập trình Khối Lăng Kính Pha Lê (`PrismBlock.cs`) tán sắc ánh sáng thành Đỏ - Lam - Lục và 2 Trụ Gương Phản Xạ xoay $360^\circ$ (`MirrorPillar.cs`): Hội tụ tia Đỏ + Lam tạo thành tia Tím Magenta bắn vào Mắt Ngọc Thần mở cánh cổng đá cổ vào Mật Thất Khu Vực 4!
 
-### [ ] Ngày 18: Epic Boss Fight (Boss Khổng Lồ 3 Giai Đoạn)
-- [ ] Thiết kế AI Boss Golem đá hoặc Quái thú rừng sâu.
-- [ ] 3 Giai đoạn (Phases): Giậm đất AOE, triệu hồi đệ tử, cuồng nộ (Enrage).
-- [ ] Thanh máu Boss khổng lồ trên đỉnh màn hình.
+### [ ] Ngày 18: Khu Vực 4 ── ⚔️ Thủ Hộ Mật Thất & 🧩 Puzzle 4: Giao Hưởng Chuông Đá Kỷ Niệm 1 Năm
+- [ ] **Task 18.1 (Zone 4 Combat):** Tiêu diệt nhóm Thủ Hộ Mật Thất tinh nhuệ bảo vệ thánh địa trước khi tiếp cận dàn Chuông Đá Cổ.
+- [ ] **Task 18.2 (Zone 4 Puzzle Gate):** Lập trình 4 Quả Chuông Đá Cổ (`MelodicBellsPuzzle.cs`) phát ra 4 âm sắc Đồ - Mi - Sol - Đố khi chém kiếm vào. Gõ đúng chuỗi giai điệu điệp khúc bài hát kỷ niệm 1 năm của 2 bạn.
+- [ ] **Task 18.3 (Anniversary Reward):** Rương Hoa Hồng mở ra: Chiếc Nhẫn Kỷ Niệm 1 Năm (Lá chắn tình yêu vĩnh viễn giảm $50\%$ sát thương từ Boss), cánh cổng dẫn vào Đấu Trường Final Boss mở toang!
 
-### [ ] Ngày 19: Combo System & Gold Multiplier
-- [ ] Bộ đếm chuỗi hạ gục (Kill Streak): x2, x3 Vàng và tài nguyên khi đánh liên tục không bị ngắt.
+### [ ] Ngày 19: Khu Vực 5 ── 👑 Đấu Trường Dung Nham: Đại Chiến Final Boss (Magma Warden Golem)
+- [ ] **Task 19.1 (Boss Combat & Environmental Puzzle Mechanics):** AI Boss Magma Warden Golem 3 giai đoạn kết hợp giải đố môi trường:
+  - *Phase 1:* Boss đấm tay càn quét $\rightarrow$ Dụ Boss vào giữa 2 bệ dẫm từ trường kẹp chặt cánh tay $\rightarrow$ Chém vỡ khớp vai!
+  - *Phase 2:* Boss phun vòng lửa dung nham $\rightarrow$ Dùng Đuốc thắp sáng 2 Van Cắt Nước ngầm xối nước lạnh làm sốc nhiệt nứt tung giáp đá ngực lộ Trái Tim Pha Lê!
+  - *Phase 3:* Boss Cuồng Nộ dậm đất AOE $360^\circ$ $\rightarrow$ Quene nhảy né sóng xung kích, tung đòn quyết định chém vỡ Trái Tim Pha Lê!
+- [ ] **Task 19.2 (Boss Victory):** Boss sụp đổ thành tro tàn, làm rơi chiếc **Chìa Khóa Vàng Cổ Đại** để giải cứu người yêu!
 
-### [ ] Ngày 20: Merchant NPC & In-Game Shop
-- [ ] NPC Thương nhân xuất hiện 60s mỗi hoàng hôn.
-- [ ] Giao diện Shop đổi Gỗ/Đá/Vàng lấy Vũ khí hiếm.
+### [ ] Ngày 20: 💖 The Grand Finale: Đập Xích Lồng Sắt, Giải Cứu Chàng Trai & Màn Đoàn Tụ Kỷ Niệm
+- [ ] **Task 20.1 (Rescue Interaction):** Quene cầm Chìa Khóa Vàng tiến tới chiếc lồng sắt cổ treo giữa đấu trường, tương tác phím `E` chặt đứt xiềng xích giải cứu chàng trai.
+- [ ] **Task 20.2 (Romantic Ending Cutscene):** Chàng trai bước ra, hai nhân vật ôm chầm lấy nhau trong hoạt cảnh Pixel Art ấm áp, Camera Orbit quay $360^\circ$ điện ảnh lung linh.
+- [ ] **Task 20.3 (Anniversary Surprise):** Hiện bức thư tình kỷ niệm 1 năm lãng mạn, phát bản nhạc tình yêu trọn vẹn và mở nút xem Album Ảnh Kỷ Niệm Ngoài Đời Thật!
 
-### [ ] Ngày 21: Crafting System & Base Building
-- [ ] Hệ thống chế tạo: Chế tạo Rìu đá, Kiếm sắt, Đuốc lửa, Tường rào gỗ.
-- [ ] Mô hình ảo xem trước vị trí đặt công trình (`Ghost Preview`).
+### [ ] Ngày 21: Crafting Expansion & Player Power Progression
+- [ ] Hoàn thiện hệ thống chế tạo công cụ & vũ khí (Rìu, Kiếm Sắt Bén, Đuốc Sinh Tồn Bền Bỉ, Giáp Da Hộ Mệnh) giúp Quene tự tin càn quét các khu vực.
 
 ---
 
