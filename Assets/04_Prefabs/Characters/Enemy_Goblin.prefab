@@ -137,8 +137,8 @@ GameObject:
   - component: {fileID: 2332034909490314653}
   - component: {fileID: 8274595708709587537}
   - component: {fileID: 2118182398454352783}
-  - component: {fileID: 7886184705202539785}
   - component: {fileID: 2166969355611995301}
+  - component: {fileID: 8292730563047917032}
   m_Layer: 0
   m_Name: Enemy_Goblin
   m_TagString: Enemy
@@ -224,27 +224,6 @@ MonoBehaviour:
   IFrameDuration: 0.15
   hurtSound: {fileID: 0}
   deathSound: {fileID: 0}
---- !u!114 &7886184705202539785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869697970964495486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e825ee8717844e4fa1eb97c6fce1986, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Enemies.EnemyAI
-  enemyData: {fileID: 11400000, guid: 1800b14f5f69d674f8cd395bdfd36652, type: 2}
-  spriteRenderer: {fileID: 1396675332616895844}
-  animator: {fileID: 1015557458808146517}
-  nightSpeedMultiplier: 1.3
-  nightDamageMultiplier: 1.5
-  nightDetectionMultiplier: 1.6
-  frenziedColor: {r: 1, g: 0.45, b: 1, a: 1}
-  enrageScaleMultiplier: 1.2
-  eyeGlowObject: {fileID: 0}
 --- !u!114 &2166969355611995301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +241,27 @@ MonoBehaviour:
   smoothRotationSpeed: 15
   activeDistance: 50
   lockYAxis: 1
+--- !u!114 &8292730563047917032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869697970964495486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9b6d0b4d023e940aaa38657b0ed700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Enemies.GoblinEnemyAI
+  enemyData: {fileID: 11400000, guid: 1800b14f5f69d674f8cd395bdfd36652, type: 2}
+  spriteRenderer: {fileID: 1396675332616895844}
+  animator: {fileID: 1015557458808146517}
+  nightSpeedMultiplier: 1.3
+  nightDamageMultiplier: 1.5
+  nightDetectionMultiplier: 1.6
+  frenziedColor: {r: 1, g: 0.45, b: 1, a: 1}
+  enrageScaleMultiplier: 1.2
+  eyeGlowObject: {fileID: 1229406724000428021}
 --- !u!1 &6176822022473012460
 GameObject:
   m_ObjectHideFlags: 0

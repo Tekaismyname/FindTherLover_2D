@@ -141,8 +141,12 @@
   - Tinh chỉnh tốc độ Chạy Nhanh Sprint, lực phanh chống trượt (`deceleration = 80`), gia tốc xuất phát nhạy bén (`acceleration = 25`).
   - Tạo hiệu ứng hạt bụi đất nảy dưới chân khi chạy nước rút (`FootstepDust`) gắn trực tiếp vào Quene_Player.
 
-### [ ] Ngày 16: Khu Vực 2 ── ⚔️ Quái Hang Độc & 🧩 Puzzle 2: Dẫn Lửa Đuốc & Lửa Xanh (Phá Rào Gai Phong Ấn)
-- [ ] **Task 16.1 (Zone 2 Combat):** Thiết lập bãi quái Khu Vực 2: Skeleton Goblin ném xương (sau khi chết tự ráp lại xương sau 4s nếu không bồi thêm đòn kết liễu), Magma Scarab bò nhanh tự phát nổ $45$ DMG, Spore Shroom phun axit sương độc rút máu. Ban đêm lũ quái tăng tốc và trâu máu gấp bội.
+- [x] **Ngày 16: Khu Vực 2 ── ⚔️ Quái Hang Độc & 🧩 Puzzle 2: Dẫn Lửa Đuốc & Lửa Xanh (Phá Rào Gai Phong Ấn) (HOÀN THÀNH)**
+  - [x] **Task 16.1 (Zone 2 Combat):** Thiết lập trọn vẹn bãi quái Khu Vực 2:
+    - [x] **Skeleton Goblin AI & Prefabs:** Đã viết `BoneProjectile.cs`, `SkeletonEnemyAI.cs`, tạo `Skeleton_Enemy_Data.asset`, `Bone_Projectile.prefab` và `Enemy_Skeleton.prefab` (Cơ chế ném xương + vỡ đống xương 1 HP tự hồi sinh sau 4s).
+    - [x] **Magma Scarab AI, VFX & Prefabs:** Đã chuẩn hóa 31 sheet, viết `MagmaScarabEnemyAI.cs`, tạo `MagmaScarab_Enemy_Data.asset`, `Magma_Explosion_VFX.prefab` và `Enemy_MagmaScarab.prefab` (Cơ chế đội đất chui lên `Spawn`, nạp nhiệt phình to tự bộc 45 AoE DMG).
+    - [x] **Spore Shroom AI & Prefabs:** Đã chuẩn hóa 16 sheet, tạo 22 clips `.anim`, `SporeShroomController.controller`, `SporeBulletController.controller`, viết `PoisonStatusEffect.cs`, `SporeProjectile.cs`, `SporeShroomEnemyAI.cs`, tạo `SporeShroom_Enemy_Data.asset`, `Spore_Projectile.prefab` và `Enemy_SporeShroom.prefab` (Ụ súng nấm phun bào tử độc 8m gây DoT rút máu 2 HP/s trong 5s).
+    - [x] **Tài liệu Báo cáo Kiến trúc Quái vật:** Đã xuất bản MONSTER_SYSTEM_ARCHITECTURE.md tổng hợp sơ đồ lớp UML Mermaid, phân tích 4 Archetype quái vật (Goblin, Skeleton, Scarab, Spore Shroom), máy trạng thái FSM, cơ chế 2.5D Frontal Priority, bảng cân bằng thông số và ma trận test case QA.
 - [x] **Task 16.2 (Zone 2 Environment Hazard - Khí Gas Độc):** Lập trình `PoisonGasZone.cs` (rút máu $5\text{ HP/s}$ nếu không có lửa bảo vệ) & Tạo vùng khí độc `Poison_Gas_Zone` trong Scene với hiệu ứng sương độc bán trong suốt.
 - [x] **Task 16.3 (Zone 2 Puzzle Gate - Chuỗi Đài Lửa & Lửa Xanh):**
   - Lập trình `PlayerTorchController.cs` (quản lý đuốc cháy $40\text{s}$, Lửa Thường & Lửa Xanh Soul Flame).

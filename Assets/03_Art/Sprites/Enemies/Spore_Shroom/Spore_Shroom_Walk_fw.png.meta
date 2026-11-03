@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 729d3e2eab0748c43bfdd6fa4e302a99
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6204360261650864903
+    second: Spore_Shroom_Walk_fw_0
+  - first:
+      213: 5835170523889885944
+    second: Spore_Shroom_Walk_fw_1
+  - first:
+      213: 1228601857306876268
+    second: Spore_Shroom_Walk_fw_2
+  - first:
+      213: 7255541314119505373
+    second: Spore_Shroom_Walk_fw_3
+  - first:
+      213: 5895514961357950552
+    second: Spore_Shroom_Walk_fw_4
+  - first:
+      213: -6846146779334733364
+    second: Spore_Shroom_Walk_fw_5
+  - first:
+      213: 1417685073541346136
+    second: Spore_Shroom_Walk_fw_6
+  - first:
+      213: -6830189120183508076
+    second: Spore_Shroom_Walk_fw_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 4096
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.45, y: 0.478}
+  spritePixelsToUnits: 135
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spore_Shroom_Walk_fw_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 378
+        height: 420
+      alignment: 9
+      pivot: {x: 0.45, y: 0.478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d9277a1703c36008233ce584adb1d99
+      internalID: 6204360261650864903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spore_Shroom_Walk_fw_1
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 378
+        height: 420
+      alignment: 9
+      pivot: {x: 0.45, y: 0.478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02518757f685a723fd9ec423a5fecd3
+      internalID: 5835170523889885944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spore_Shroom_Walk_fw_2
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 0
+        width: 377
+        height: 420
+      alignment: 9
+      pivot: {x: 0.45, y: 0.478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3849b6c7c23c22d192ddbd407e6cc4bb
+      internalID: 1228601857306876268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spore_Shroom_Walk_fw_3
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 0
+        width: 378
+        height: 420
+      alignment: 9
+      pivot: {x: 0.45, y: 0.478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 565158070f96ee4f285a13b24287d1c2
+      internalID: 7255541314119505373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spore_Shroom_Walk_fw_4
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 0
+        width: 378
+        height: 420
+      alignment: 9
+      pivot: {x: 0.45, y: 0.478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5191149a5e288af8e9c946e9bb638ea6
+      internalID: 5895514961357950552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spore_Shroom_Walk_fw_5
+      rect:
+        serializedVersion: 2
+        x: 1889
+        y: 0
+        width: 377
+        height: 420
+      alignment: 9
+      pivot: {x: 0.45, y: 0.478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f296669a0d11e04ef9ab4f1d5979fdc2
+      internalID: -6846146779334733364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spore_Shroom_Walk_fw_6
+      rect:
+        serializedVersion: 2
+        x: 2266
+        y: 0
+        width: 378
+        height: 420
+      alignment: 9
+      pivot: {x: 0.45, y: 0.478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862adcc251880e1c1e47edb3dc076e23
+      internalID: 1417685073541346136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spore_Shroom_Walk_fw_7
+      rect:
+        serializedVersion: 2
+        x: 2644
+        y: 0
+        width: 378
+        height: 420
+      alignment: 9
+      pivot: {x: 0.45, y: 0.478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f92538c02e675cbce99512fce3a76e79
+      internalID: -6830189120183508076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c0e7e969fd00ceb4fac430f5c74e42fa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Spore_Shroom_Walk_fw_0: 6204360261650864903
+      Spore_Shroom_Walk_fw_1: 5835170523889885944
+      Spore_Shroom_Walk_fw_2: 1228601857306876268
+      Spore_Shroom_Walk_fw_3: 7255541314119505373
+      Spore_Shroom_Walk_fw_4: 5895514961357950552
+      Spore_Shroom_Walk_fw_5: -6846146779334733364
+      Spore_Shroom_Walk_fw_6: 1417685073541346136
+      Spore_Shroom_Walk_fw_7: -6830189120183508076
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,341 @@
+fileFormatVersion: 2
+guid: 6acf11cfa0749aa4abb59764f9b55b3f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5483357670762259020
+    second: Scarab_Run_fw_0
+  - first:
+      213: -8653876835772153747
+    second: Scarab_Run_fw_1
+  - first:
+      213: -2095075354619709020
+    second: Scarab_Run_fw_2
+  - first:
+      213: 196631944295745375
+    second: Scarab_Run_fw_3
+  - first:
+      213: -7883023109719360589
+    second: Scarab_Run_fw_4
+  - first:
+      213: 2774347829833345722
+    second: Scarab_Run_fw_5
+  - first:
+      213: 4552912337378171280
+    second: Scarab_Run_fw_6
+  - first:
+      213: -2450152307180885411
+    second: Scarab_Run_fw_7
+  - first:
+      213: 4779074059054954353
+    second: Scarab_Run_fw_8
+  - first:
+      213: -2895221295186353040
+    second: Scarab_Run_fw_9
+  - first:
+      213: 6746968944250162746
+    second: Scarab_Run_fw_10
+  - first:
+      213: 2009880098541057078
+    second: Scarab_Run_fw_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 4096
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scarab_Run_fw_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 6
+        width: 205
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c42a23edfbcc81c40800000000000000
+      internalID: 5483357670762259020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Run_fw_1
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 6
+        width: 196
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60c1d93ed047e780800000000000000
+      internalID: -8653876835772153747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Run_fw_2
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 6
+        width: 196
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9773ea01ccce2e0800000000000000
+      internalID: -2095075354619709020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Run_fw_3
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 7
+        width: 204
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f570e3726b39ab200800000000000000
+      internalID: 196631944295745375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Run_fw_4
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 5
+        width: 217
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb7bfc6f30e99290800000000000000
+      internalID: -7883023109719360589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Run_fw_5
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 5
+        width: 217
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abaa790f6a6708620800000000000000
+      internalID: 2774347829833345722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Run_fw_6
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 5
+        width: 217
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0995be206a13f2f30800000000000000
+      internalID: 4552912337378171280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Run_fw_7
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 3
+        width: 217
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a21e4457f4ffdd0800000000000000
+      internalID: -2450152307180885411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 99ba1ab3793968e4ea8c22a8da4222ce
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Scarab_Run_fw_0: 5483357670762259020
+      Scarab_Run_fw_1: -8653876835772153747
+      Scarab_Run_fw_10: 6746968944250162746
+      Scarab_Run_fw_11: 2009880098541057078
+      Scarab_Run_fw_2: -2095075354619709020
+      Scarab_Run_fw_3: 196631944295745375
+      Scarab_Run_fw_4: -7883023109719360589
+      Scarab_Run_fw_5: 2774347829833345722
+      Scarab_Run_fw_6: 4552912337378171280
+      Scarab_Run_fw_7: -2450152307180885411
+      Scarab_Run_fw_8: 4779074059054954353
+      Scarab_Run_fw_9: -2895221295186353040
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

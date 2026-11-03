@@ -1,0 +1,384 @@
+fileFormatVersion: 2
+guid: dc26c96a12d57f348854d82eb192537a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6259390259677437047
+    second: Skel_Reassemble_bw_0
+  - first:
+      213: -2108169953741190064
+    second: Skel_Reassemble_bw_1
+  - first:
+      213: -4285348031918375197
+    second: Skel_Reassemble_bw_2
+  - first:
+      213: 2414776521278911641
+    second: Skel_Reassemble_bw_3
+  - first:
+      213: 3864362916100734160
+    second: Skel_Reassemble_bw_4
+  - first:
+      213: 4993259104651836188
+    second: Skel_Reassemble_bw_5
+  - first:
+      213: 4060202694223778429
+    second: Skel_Reassemble_bw_6
+  - first:
+      213: -6439472233015975100
+    second: Skel_Reassemble_bw_7
+  - first:
+      213: -5273310196539133801
+    second: Skel_Reassemble_bw_8
+  - first:
+      213: 1766054676617836823
+    second: Skel_Reassemble_bw_9
+  - first:
+      213: 1489286572530393707
+    second: Skel_Reassemble_bw_10
+  - first:
+      213: -3938304905135973939
+    second: Skel_Reassemble_bw_11
+  - first:
+      213: -1332135812954687034
+    second: Skel_Reassemble_bw_12
+  - first:
+      213: -1829111530138065640
+    second: Skel_Reassemble_bw_13
+  - first:
+      213: 4776129191691824625
+    second: Skel_Reassemble_bw_14
+  - first:
+      213: -3634008271124237498
+    second: Skel_Reassemble_bw_15
+  - first:
+      213: 8448393132924282416
+    second: Skel_Reassemble_bw_16
+  - first:
+      213: -6982411115269429558
+    second: Skel_Reassemble_bw_17
+  - first:
+      213: -7954517007622033916
+    second: Skel_Reassemble_bw_18
+  - first:
+      213: -2132860831648029531
+    second: Skel_Reassemble_bw_19
+  - first:
+      213: 8006000196259353780
+    second: Skel_Reassemble_bw_20
+  - first:
+      213: 2241641180027871170
+    second: Skel_Reassemble_bw_21
+  - first:
+      213: -5367112047530508617
+    second: Skel_Reassemble_bw_22
+  - first:
+      213: 5841837862210163744
+    second: Skel_Reassemble_bw_23
+  - first:
+      213: 1993711024880385696
+    second: Skel_Reassemble_bw_24
+  - first:
+      213: 704810189240194264
+    second: Skel_Reassemble_bw_25
+  - first:
+      213: 6490240237246779760
+    second: Skel_Reassemble_bw_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 78
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skel_Reassemble_bw_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 483
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77c1d9a0742ddd650800000000000000
+      internalID: 6259390259677437047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_Reassemble_bw_1
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 0
+        width: 483
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05cca1db8964eb2e0800000000000000
+      internalID: -2108169953741190064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_Reassemble_bw_2
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 0
+        width: 483
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eef5927ba26784c0800000000000000
+      internalID: -4285348031918375197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_Reassemble_bw_3
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 0
+        width: 483
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99478cab372038120800000000000000
+      internalID: 2414776521278911641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_Reassemble_bw_4
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 0
+        width: 483
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dc70611999f0a530800000000000000
+      internalID: 3864362916100734160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_Reassemble_bw_5
+      rect:
+        serializedVersion: 2
+        x: 2415
+        y: 0
+        width: 483
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1bf14443be9b4540800000000000000
+      internalID: 4993259104651836188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_Reassemble_bw_6
+      rect:
+        serializedVersion: 2
+        x: 2898
+        y: 0
+        width: 483
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d72da49a6dcb85830800000000000000
+      internalID: 4060202694223778429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_Reassemble_bw_7
+      rect:
+        serializedVersion: 2
+        x: 3381
+        y: 0
+        width: 483
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44367123f1662a6a0800000000000000
+      internalID: -6439472233015975100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ed34759337ecb204f959ecbaab5f9aea
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":483.0,"y":640.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Skel_Reassemble_bw_0: 6259390259677437047
+      Skel_Reassemble_bw_1: -2108169953741190064
+      Skel_Reassemble_bw_2: -4285348031918375197
+      Skel_Reassemble_bw_3: 2414776521278911641
+      Skel_Reassemble_bw_4: 3864362916100734160
+      Skel_Reassemble_bw_5: 4993259104651836188
+      Skel_Reassemble_bw_6: 4060202694223778429
+      Skel_Reassemble_bw_7: -6439472233015975100
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

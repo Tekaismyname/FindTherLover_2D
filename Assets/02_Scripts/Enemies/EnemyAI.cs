@@ -25,21 +25,21 @@ namespace FindTheLover.Enemies
     /// </summary>
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(HealthSystem))]
-    public class EnemyAI : MonoBehaviour, Iknockbackable
+    public abstract class EnemyAI : MonoBehaviour, Iknockbackable
     {
         // =========================================================================================
         // KHỐI 1: KHAI BÁO BIẾN CẤU HÌNH & THÀNH PHẦN
         // =========================================================================================
         [Header("Configuration")]
         [Tooltip("Enemy static blueprint data reference.")]
-        [SerializeField] private EnemyDataSO enemyData;
+        [SerializeField] protected EnemyDataSO enemyData;
 
         [Header("Presentation")]
         [Tooltip("SpriteRenderer reference for horizontal directional flipping.")]
-        [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] protected SpriteRenderer spriteRenderer;
 
         [Tooltip("Animator reference for controlling sprite animation states.")]
-        [SerializeField] private Animator animator;
+        [SerializeField] protected Animator animator;
 
         [Header("Night Frenzy Settings")]
         [Tooltip("speed multiplier applied during nighttime")]
@@ -61,29 +61,26 @@ namespace FindTheLover.Enemies
         [Tooltip("Red eye glow light or visual object shining through the night fog.")]
         [SerializeField] private GameObject eyeGlowObject;
 
-        private EnemyState _currentState = EnemyState.Idle;
-        private NavMeshAgent _navAgent;
-        private HealthSystem _healthSystem;
-        private Transform _targetPlayer;
-        private float _lastAttackTime;
-
-        //Dynamic runtime metrics
-        private float _currentMoveSpeed;
-        private float _currentAttackDamage;
-        private float _currentDetectRadius;
-        private bool _isNightFrenzied;
-        private Color _originalSpriteColor = Color.white;
-        private Vector3 _originalScale = Vector3.one;
-
-
-        private Coroutine _knockbackCoroutine;
+        protected EnemyState _currentState = EnemyState.Idle;
+        protected NavMeshAgent _navAgent;
+        protected HealthSystem _healthSystem;
+        protected Transform _targetPlayer;
+        protected float _lastAttackTime;
+        // Dynamic runtime metrics
+        protected float _currentMoveSpeed;
+        protected float _currentAttackDamage;
+        protected float _currentDetectRadius;
+        protected bool _isNightFrenzied;
+        protected Color _originalSpriteColor = Color.white;
+        protected Vector3 _originalScale = Vector3.one;
+        protected Coroutine _knockbackCoroutine;
         // Animator parameter hash IDs for performance
-        private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
-        private static readonly int AttackHash = Animator.StringToHash("Attack");
-        private static readonly int HurtHash = Animator.StringToHash("Hurt");
-        private static readonly int IsDeadHash = Animator.StringToHash("IsDead");
-        private static readonly int MoveXHash = Animator.StringToHash("MoveX");
-        private static readonly int MoveYHash = Animator.StringToHash("MoveY");
+        protected static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
+        protected static readonly int AttackHash = Animator.StringToHash("Attack");
+        protected static readonly int HurtHash = Animator.StringToHash("Hurt");
+        protected static readonly int IsDeadHash = Animator.StringToHash("IsDead");
+        protected static readonly int MoveXHash = Animator.StringToHash("MoveX");
+        protected static readonly int MoveYHash = Animator.StringToHash("MoveY");
 
         public EnemyState CurrentState => _currentState;
 
@@ -159,7 +156,7 @@ namespace FindTheLover.Enemies
         // =========================================================================================
         // KHỐI 3: VÒNG LẶP SUY NGHĨ (UPDATE & FSM EVALUATION)
         // =========================================================================================
-        private void Start()
+        protected virtual void Start()
         {
             LocatePlayerTarget();
 
@@ -184,7 +181,7 @@ namespace FindTheLover.Enemies
             UpdateSpriteFacing();
         }
 
-        private void EvaluateStateMachine()
+        protected virtual void EvaluateStateMachine()
         {
             if (enemyData == null || _targetPlayer == null) return;
 
@@ -247,7 +244,7 @@ namespace FindTheLover.Enemies
         // =========================================================================================
         // KHỐI 4: ĐIỀU KHIỂN CHUYỂN ĐỔI BÁNH XE DI CHUYỂN
         // =========================================================================================
-        private void TransitionToState(EnemyState newState)
+        protected virtual void TransitionToState(EnemyState newState)
         {
             _currentState = newState;
 
@@ -283,7 +280,7 @@ namespace FindTheLover.Enemies
         // =========================================================================================
         // KHỐI 5: BỘ ĐẾM HỒI CHIÊU & GÂY SÁT THƯƠNG
         // =========================================================================================
-        private void ExecuteAttackBehavior()
+        protected virtual void ExecuteAttackBehavior()
         {
             // Cooldown math check
             if (Time.time < _lastAttackTime + enemyData.attackCooldown) return;
@@ -407,7 +404,7 @@ namespace FindTheLover.Enemies
         /// <summary>
         /// Calculates directional velocity and injects MoveX/MoveY into the 2D Blend Tree.
         /// </summary>
-        private void UpdateAnimationDirection()
+        protected virtual void UpdateAnimationDirection()
         {
             if (animator == null || _targetPlayer == null) return;
 
@@ -429,7 +426,7 @@ namespace FindTheLover.Enemies
             animator.SetFloat(MoveYHash, direction.z);
         }
 
-        private void UpdateSpriteFacing()
+        protected virtual void UpdateSpriteFacing()
         {
             if (spriteRenderer == null || _targetPlayer == null) return;
 
@@ -459,7 +456,7 @@ namespace FindTheLover.Enemies
             }
         }
 
-        private void HandleDeath()
+        protected virtual void HandleDeath()
         {
             TransitionToState(EnemyState.Dead);
 
@@ -538,7 +535,7 @@ namespace FindTheLover.Enemies
         /// <summary>
         /// Resets and deploys the pooled enemy onto the island NavMesh at a specified position.
         /// </summary>
-        public void SpawnAt(Vector3 spawnPosition)
+        public virtual void SpawnAt(Vector3 spawnPosition)
         {
             gameObject.SetActive(true);
 
@@ -590,7 +587,14 @@ namespace FindTheLover.Enemies
         private System.Collections.IEnumerator ReturnToPoolRoutine(float delay)
         {
             yield return new WaitForSeconds(delay);
-            EnemyPoolManager.Instance.ReturnEnemy(this);
+            if (EnemyPoolManager.Instance != null)
+            {
+                EnemyPoolManager.Instance.ReturnEnemy(this);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         private void OnDrawGizmosSelected()

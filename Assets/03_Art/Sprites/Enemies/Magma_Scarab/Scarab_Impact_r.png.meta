@@ -1,0 +1,332 @@
+fileFormatVersion: 2
+guid: a4df7dd4a149a4d4080e4caeafabfedc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7215068628479407890
+    second: Scarab_Impact_r_0
+  - first:
+      213: 2901601626781277905
+    second: Scarab_Impact_r_1
+  - first:
+      213: -4379741243803534519
+    second: Scarab_Impact_r_2
+  - first:
+      213: 722882835018495102
+    second: Scarab_Impact_r_3
+  - first:
+      213: -1191571206644869636
+    second: Scarab_Impact_r_4
+  - first:
+      213: -432860235338390919
+    second: Scarab_Impact_r_5
+  - first:
+      213: -3407843905163691273
+    second: Scarab_Impact_r_6
+  - first:
+      213: 5277678470057444309
+    second: Scarab_Impact_r_7
+  - first:
+      213: -5690602241451936504
+    second: Scarab_Impact_r_8
+  - first:
+      213: -1880025867601591129
+    second: Scarab_Impact_r_9
+  - first:
+      213: -4566470707126407766
+    second: Scarab_Impact_r_10
+  - first:
+      213: -1811495933184033653
+    second: Scarab_Impact_r_11
+  - first:
+      213: -6735132183390416183
+    second: Scarab_Impact_r_12
+  - first:
+      213: 2976968066374428515
+    second: Scarab_Impact_r_13
+  - first:
+      213: -8547866939466226003
+    second: Scarab_Impact_r_14
+  - first:
+      213: -6831953148918740608
+    second: Scarab_Impact_r_15
+  - first:
+      213: 4124556631033136415
+    second: Scarab_Impact_r_16
+  - first:
+      213: -5297658824276706497
+    second: Scarab_Impact_r_17
+  - first:
+      213: 3250878241479365305
+    second: Scarab_Impact_r_18
+  - first:
+      213: 3888452387488183435
+    second: Scarab_Impact_r_19
+  - first:
+      213: 6650520026621509371
+    second: Scarab_Impact_r_20
+  - first:
+      213: -4362334317138908204
+    second: Scarab_Impact_r_21
+  - first:
+      213: 4347726247107298703
+    second: Scarab_Impact_r_22
+  - first:
+      213: -7423571552103933158
+    second: Scarab_Impact_r_23
+  - first:
+      213: -606131232579549163
+    second: Scarab_Impact_r_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 4096
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scarab_Impact_r_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 151
+        width: 404
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2177496c0b2112460800000000000000
+      internalID: 7215068628479407890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Impact_r_1
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 150
+        width: 383
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de5ef36e4f844820800000000000000
+      internalID: 2901601626781277905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Impact_r_2
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 151
+        width: 383
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94b76fa2b880833c0800000000000000
+      internalID: -4379741243803534519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Impact_r_3
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 151
+        width: 322
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e636e48e1ab5d54468420d36b87a0e70
+      internalID: 722882835018495102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Impact_r_4
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 151
+        width: 322
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 013b830d9c4086849b0658f948113766
+      internalID: -1191571206644869636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scarab_Impact_r_5
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 151
+        width: 347
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351fe590354538640835e33d62c3180c
+      internalID: -432860235338390919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 61b346d45ea0a914eb02af6818dc3a0f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":362.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Scarab_Impact_r_0: 7215068628479407890
+      Scarab_Impact_r_1: 2901601626781277905
+      Scarab_Impact_r_2: -4379741243803534519
+      Scarab_Impact_r_3: 722882835018495102
+      Scarab_Impact_r_4: -1191571206644869636
+      Scarab_Impact_r_5: -432860235338390919
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

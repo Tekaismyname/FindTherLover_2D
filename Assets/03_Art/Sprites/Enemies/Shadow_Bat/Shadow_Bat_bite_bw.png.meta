@@ -1,0 +1,288 @@
+fileFormatVersion: 2
+guid: c1eff3204188a754faefd5e4254c5748
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3871613470242080632
+    second: Shadow_Bat_bite_bw_0
+  - first:
+      213: 5881590774650433194
+    second: Shadow_Bat_bite_bw_1
+  - first:
+      213: 6202094311579940022
+    second: Shadow_Bat_bite_bw_2
+  - first:
+      213: -8319008031803841087
+    second: Shadow_Bat_bite_bw_3
+  - first:
+      213: 247096374945972302
+    second: Shadow_Bat_bite_bw_4
+  - first:
+      213: -1789270696836108491
+    second: Shadow_Bat_bite_bw_5
+  - first:
+      213: -648164497029270726
+    second: Shadow_Bat_bite_bw_6
+  - first:
+      213: -6018797281274650080
+    second: Shadow_Bat_bite_bw_7
+  - first:
+      213: 3529372567200503618
+    second: Shadow_Bat_bite_bw_8
+  - first:
+      213: -1410463669533819716
+    second: Shadow_Bat_bite_bw_9
+  - first:
+      213: 587167155699555853
+    second: Shadow_Bat_bite_bw_10
+  - first:
+      213: 7253445425995346096
+    second: Shadow_Bat_bite_bw_11
+  - first:
+      213: -1374457743098868708
+    second: Shadow_Bat_bite_bw_12
+  - first:
+      213: 4360999992298539533
+    second: Shadow_Bat_bite_bw_13
+  - first:
+      213: -6600155591747491322
+    second: Shadow_Bat_bite_bw_14
+  - first:
+      213: 1197485517628752137
+    second: Shadow_Bat_bite_bw_15
+  - first:
+      213: -9207606742337901408
+    second: Shadow_Bat_bite_bw_16
+  - first:
+      213: 5071067766688359072
+    second: Shadow_Bat_bite_bw_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shadow_Bat_bite_bw_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 183
+        width: 418
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8887a9ebf04454ac0800000000000000
+      internalID: -3871613470242080632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow_Bat_bite_bw_1
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 185
+        width: 434
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaee045c5ab9f9150800000000000000
+      internalID: 5881590774650433194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow_Bat_bite_bw_2
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 185
+        width: 382
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b471319ae3421650800000000000000
+      internalID: 6202094311579940022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow_Bat_bite_bw_3
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 185
+        width: 413
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5e5b46542fc8c80800000000000000
+      internalID: -8319008031803841087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow_Bat_bite_bw_4
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 185
+        width: 477
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4001f508dcdd6300800000000000000
+      internalID: 247096374945972302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a8e696002bb21974dbab42d1afc470ac
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":434.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Shadow_Bat_bite_bw_0: -3871613470242080632
+      Shadow_Bat_bite_bw_1: 5881590774650433194
+      Shadow_Bat_bite_bw_2: 6202094311579940022
+      Shadow_Bat_bite_bw_3: -8319008031803841087
+      Shadow_Bat_bite_bw_4: 247096374945972302
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

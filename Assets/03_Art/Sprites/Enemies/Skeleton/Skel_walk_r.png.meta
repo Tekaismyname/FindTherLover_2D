@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 557fa99855b9f844da19e2bdb59d8ab0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3842362420218582530
+    second: Skel_walk_r_0
+  - first:
+      213: -5430299043201511701
+    second: Skel_walk_r_1
+  - first:
+      213: 8345758777361754781
+    second: Skel_walk_r_2
+  - first:
+      213: 2807497639936920650
+    second: Skel_walk_r_3
+  - first:
+      213: -3298022573624250829
+    second: Skel_walk_r_4
+  - first:
+      213: 6812382129638494651
+    second: Skel_walk_r_5
+  - first:
+      213: 2519477342937139401
+    second: Skel_walk_r_6
+  - first:
+      213: 804273548784024991
+    second: Skel_walk_r_7
+  - first:
+      213: -54463341137348537
+    second: Skel_walk_r_8
+  - first:
+      213: -8857928602045834144
+    second: Skel_walk_r_9
+  - first:
+      213: -6821810410349049394
+    second: Skel_walk_r_10
+  - first:
+      213: 8217891616449234083
+    second: Skel_walk_r_11
+  - first:
+      213: 743179922386962356
+    second: Skel_walk_r_12
+  - first:
+      213: 3028648141718457912
+    second: Skel_walk_r_13
+  - first:
+      213: -335124124358820773
+    second: Skel_walk_r_14
+  - first:
+      213: 757987247370114760
+    second: Skel_walk_r_15
+  - first:
+      213: -6955118041686980919
+    second: Skel_walk_r_16
+  - first:
+      213: 6626391433200567895
+    second: Skel_walk_r_17
+  - first:
+      213: -2016310840347214721
+    second: Skel_walk_r_18
+  - first:
+      213: -2935582082877836671
+    second: Skel_walk_r_19
+  - first:
+      213: 6741858533520210160
+    second: Skel_walk_r_20
+  - first:
+      213: -6648943017003040787
+    second: Skel_walk_r_21
+  - first:
+      213: 5671203305196543784
+    second: Skel_walk_r_22
+  - first:
+      213: 8372126478445479061
+    second: Skel_walk_r_23
+  - first:
+      213: -7184854067846661566
+    second: Skel_walk_r_24
+  - first:
+      213: -1118407606056267876
+    second: Skel_walk_r_25
+  - first:
+      213: -9089874808007544877
+    second: Skel_walk_r_26
+  - first:
+      213: -4733784394605432756
+    second: Skel_walk_r_27
+  - first:
+      213: 1159970232169941678
+    second: Skel_walk_r_28
+  - first:
+      213: 5136444628944050448
+    second: Skel_walk_r_29
+  - first:
+      213: -2387951950372318162
+    second: Skel_walk_r_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 113
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skel_walk_r_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 239
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9af8c8cbf2daac0800000000000000
+      internalID: -3842362420218582530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_walk_r_1
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 239
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee84d98ac3b3a4b0800000000000000
+      internalID: -5430299043201511701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_walk_r_2
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 0
+        width: 239
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9aeeb9e36712d370800000000000000
+      internalID: 8345758777361754781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_walk_r_3
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 0
+        width: 239
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c00309a3c36f620800000000000000
+      internalID: 2807497639936920650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_walk_r_4
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 0
+        width: 239
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e28e561f11b32d0800000000000000
+      internalID: -3298022573624250829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_walk_r_5
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 239
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1525f04717a8e50800000000000000
+      internalID: 6812382129638494651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_walk_r_6
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 0
+        width: 239
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8c96d6b4bf6f220800000000000000
+      internalID: 2519477342937139401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skel_walk_r_7
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 0
+        width: 239
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9db389088a592b00800000000000000
+      internalID: 804273548784024991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e947cd7f1d0b35f4e8ce69af5f8212e8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":239.0,"y":821.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Skel_walk_r_0: -3842362420218582530
+      Skel_walk_r_1: -5430299043201511701
+      Skel_walk_r_2: 8345758777361754781
+      Skel_walk_r_3: 2807497639936920650
+      Skel_walk_r_4: -3298022573624250829
+      Skel_walk_r_5: 6812382129638494651
+      Skel_walk_r_6: 2519477342937139401
+      Skel_walk_r_7: 804273548784024991
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

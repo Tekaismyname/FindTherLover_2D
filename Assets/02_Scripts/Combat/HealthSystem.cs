@@ -7,7 +7,7 @@ namespace FindTheLover.Combat
     /// Core health and damage controller for players, enemies, and destructible entities.
     /// Implements IDamageable, enforces I-Frames, and notifies listeners via Action events.
     /// </summary>
-    public class HealthSystem :  MonoBehaviour, IDamageable
+    public class HealthSystem : MonoBehaviour, IDamageable
     {
         [Header("Health Settings")]
         [Tooltip("Maximun  health pool")]
@@ -113,9 +113,25 @@ namespace FindTheLover.Combat
             OnHealthChanged?.Invoke(_currentHealth, maxHealth);
 
             Debug.Log($"<color=green>[HealthSystem]</color> {gameObject.name} healed +{amount}! Current: {_currentHealth}/{maxHealth}");
-        } 
-        
-        
+        }
+
+        /// <summary>
+        /// Revives a dead entity with a specified health amount and custom invincibility window.
+        /// Used for multi-phase enemies such as Skeleton bone piles and self-reassembly.
+        /// </summary>
+        /// <param name="restoredHealth">Health amount to restore upon revival.</param>
+        /// <param name="customIFrameDuration">Grace period in seconds before taking damage again.</param>
+        public void Revive(float restoredHealth, float customIFrameDuration = 0.4f)
+        {
+            _isDead = false;
+            _currentHealth = Mathf.Clamp(restoredHealth, 1f, maxHealth);
+
+            // Offset _lastDamageTime so the entity is immune for customIFrameDuration seconds
+            _lastDamageTime = Time.time + customIFrameDuration - IFrameDuration;
+
+            OnHealthChanged?.Invoke(_currentHealth, maxHealth);
+        }
+
         public void Die()
         {
             _isDead = true;
