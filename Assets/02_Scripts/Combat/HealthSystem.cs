@@ -26,6 +26,8 @@ namespace FindTheLover.Combat
         private float _currentHealth;
         private float _lastDamageTime = -999f;
         private bool _isDead = false;
+        private float _damageReductionPercent = 0f;
+        private float _shieldPoints = 0f;
 
         // c# event for decoupled presentation (UI & VFX)
         public event Action<float, float> OnHealthChanged;
@@ -35,6 +37,24 @@ namespace FindTheLover.Combat
         public float CurrentHealth => _currentHealth;
         public float MaxHealth => maxHealth;
         public bool IsDead => _isDead;
+        public float DamageReductionPercent => _damageReductionPercent;
+        public float ShieldPoints => _shieldPoints;
+
+        /// <summary>
+        /// Configures percentage damage reduction granted by augments or armor (clamped to 0..75%).
+        /// </summary>
+        public void SetDamageReduction(float reductionPercent)
+        {
+            _damageReductionPercent = Mathf.Clamp(reductionPercent, 0f, 0.75f);
+        }
+
+        /// <summary>
+        /// Sets the active regenerating barrier shield that absorbs incoming damage before health.
+        /// </summary>
+        public void SetShieldPoints(float shieldAmount)
+        {
+            _shieldPoints = Mathf.Max(0f, shieldAmount);
+        }
 
         private void Awake()
         {
@@ -79,8 +99,17 @@ namespace FindTheLover.Combat
 
             _lastDamageTime = Time.time;
 
-            // 2.  Deduct health with Mathf.Clamp
-            _currentHealth = Mathf.Clamp(_currentHealth - damage, 0f, maxHealth);
+            // 2. Apply percentage damage reduction and absorb with barrier shield if active
+            float mitigatedDamage = damage * (1f - _damageReductionPercent);
+            if (_shieldPoints > 0f)
+            {
+                float absorbed = Mathf.Min(_shieldPoints, mitigatedDamage);
+                _shieldPoints -= absorbed;
+                mitigatedDamage -= absorbed;
+            }
+
+            // 3. Deduct remaining health with Mathf.Clamp
+            _currentHealth = Mathf.Clamp(_currentHealth - mitigatedDamage, 0f, maxHealth);
 
             // 3. Play hurt audio
             if (hurtSound != null)

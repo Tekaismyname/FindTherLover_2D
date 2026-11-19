@@ -45,6 +45,12 @@ namespace FindTheLover.Player
         {
             yield return new WaitForSeconds(delay);
 
+            // Abort campfire respawn if an augment (e.g., Immortal Lover Bond) already revived the player
+            if (healthSystem != null && !healthSystem.IsDead)
+            {
+                yield break;
+            }
+
             // Temporarily disable CharacterController to allow position displacement
             if (_characterController != null) _characterController.enabled = false;
 

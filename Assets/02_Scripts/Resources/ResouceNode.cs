@@ -108,13 +108,21 @@ namespace FindTheLover.Environment
         }
 
         /// <summary>
-        /// Spawns physical loot items and bursts them outward.
+        /// Spawns physical loot items and bursts them outward, scaled by any active Harvest Yield Augments.
         /// </summary>
         private void SpawnLoot()
         {
             if (resourceData == null || resourceData.dropPrefab == null) return;
 
-            int count = Random.Range(resourceData.minDropCount, resourceData.maxDropCount + 1);
+            int baseCount = Random.Range(resourceData.minDropCount, resourceData.maxDropCount + 1);
+            float yieldMultiplier = 1f;
+            var augmentStats = Object.FindAnyObjectByType<FindTheLover.Augments.PlayerAugmentStats>();
+            if (augmentStats != null)
+            {
+                yieldMultiplier = augmentStats.HarvestMultiplier;
+            }
+
+            int count = Mathf.Max(1, Mathf.RoundToInt(baseCount * yieldMultiplier));
             Vector3 spawnOrigin = transform.position + Vector3.up * 2f;
 
             for (int i = 0; i < count; i++)

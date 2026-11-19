@@ -168,15 +168,15 @@
     - [x] Bố trí Lộ trình Dẫn Lửa 3 Trạm & Kiến trúc Cổ đại ProBuilder: Cổng Vòm Đá Cổ (`Zone2_Entrance_RuinArchway`), `Brazier_Checkpoint_01` ($X=342, Z=0$), Quần thể 6 Cột Đá Cổ Mật Thất & `Soul_Flame_Altar` ($X=435, Z=-68$), `Brazier_Checkpoint_02` ($X=485, Z=14$), và Hẻm núi `Thorn_Barrier_Gate` ($X=535, Z=0$).
     - [x] Phủ sương độc 3 tầng Particle VFX (`Poison_Gas_Zone`), bố trí 4 loài quái (`SporeShroom`, `Skeleton`, `MagmaScarab`, `ShadowBat`) và Re-bake `NavMeshSurface` xuyên suốt liên đảo.
 
-### [ ] Ngày 17: Muck-Like Night Raid Spawner & Đạo Diễn Độ Khó Theo Ngày (Night Raid Director)
-- [ ] **Task 17.1 (Night Raid Director):** Lập trình `NightRaidDirector.cs` quản lý ngân sách sinh quái ban đêm (`SpawnBudget = Base + Day * Multiplier`), chuông báo động hoàng hôn và sương mù tím đêm.
-- [ ] **Task 17.2 (Wave Spawning Engine):** Lập trình thuật toán sinh quái theo vòng ngoài camera ($25\text{--}35\text{m}$ quanh bãi trại) với các đàn Goblin, Skeleton, Scarab, Spore Shroom và Shadow Bat.
-- [ ] **Task 17.3 (Survival HUD):** Hiển thị `DAY X` trên HUD, đồng hồ cát đếm ngược ban ngày / cảnh báo quái đêm đỏ rực.
+### [x] Ngày 17: Muck-Like Night Raid Spawner & Đạo Diễn Độ Khó Theo Ngày (Night Raid Director)
+- [x] **Task 17.1 (Night Raid Director):** Lập trình `NightRaidConfigSO.cs` & `NightRaidDirector.cs` quản lý ngân sách sinh quái ban đêm (`SpawnBudget = Base + (Day - 1) * Multiplier`), nhân hệ số Đêm Đại Họa (Ngày 5, 10, 15, 20), tăng tiến HP/DMG theo ngày, âm thanh báo động hoàng hôn và co-located unit tests `NightRaidDirectorTests.cs`.
+- [x] **Task 17.2 (Wave Spawning Engine):** Lập trình thuật toán sinh quái đa chủng loại theo vành đai vòng tròn ngoài camera ($25\text{--}35\text{m}$ quanh người chơi/bãi trại) kết hợp Multi-Archetype Object Pooling cho 5 loài quái (`Goblin`, `Skeleton`, `MagmaScarab`, `SporeShroom`, `ShadowBat`) và kiểm tra `NavMesh.SamplePosition`.
+- [x] **Task 17.3 (Survival HUD):** Lập trình `SurvivalHUDView.cs` hiển thị `DAY X / 20`, đồng hồ đếm ngược tới Hoàng Hôn/Bình Minh, thanh tiến trình pha, bộ đếm Lõi đang sở hữu và banner đỏ nhấp nháy cảnh báo Night Raid / Calamity Night.
 
-### [ ] Ngày 18: Hệ Thống Lõi Nâng Cấp 3 Bậc TFT (Đồng / Bạc / Vàng) & Rơi Quả Cầu Boss
-- [ ] **Task 18.1 (Data-Driven Augments):** Tạo `AugmentData.cs` (`ScriptableObject`) với `AugmentTier` (Bronze, Silver, Gold), 18 Lõi Công Nghệ mở rộng chỉ số, hiệu ứng đòn đánh (giật sét lan, vệt lửa) và siêu nội tại.
-- [ ] **Task 18.2 (Augment Modal UI):** Lập trình `AugmentCardUI.cs` mở cửa sổ modal chọn 1 trong 3 thẻ bài với hiệu ứng viền phát sáng Đồng/Bạc/Vàng chuẩn TFT.
-- [ ] **Task 18.3 (Augment Manager & Drop Logic):** Quái tinh anh và Boss rơi Quả Cầu Nâng Cấp (`AugmentOrb.prefab`), người chơi chạm vào để mở giao diện nâng cấp.
+### [x] Ngày 18: Hệ Thống Lõi Nâng Cấp 3 Bậc TFT (Đồng / Bạc / Vàng) & Rơi Quả Cầu Boss
+- [x] **Task 18.1 (Data-Driven Augments):** Tạo `AugmentTier.cs`, `AugmentDataSO.cs`, `IAugmentReceiver.cs`, `PlayerAugmentStats.cs` và Editor Builder `SurvivalAndAugmentSetupBuilder.cs` khởi tạo trọn bộ 18 Lõi Công Nghệ (6 Đồng, 6 Bạc, 6 Vàng) tích hợp vào di chuyển, máu/khiên, hút máu, giật sét lan, vệt lửa, hồi sinh bất tử, sấm sét thiên thạch và nhân sản lượng khai thác.
+- [x] **Task 18.2 (Augment Modal UI):** Lập trình `AugmentCardUI.cs` & `AugmentSelectionModalUI.cs` mở cửa sổ modal chọn 1 trong 3 thẻ bài viền sáng Đồng/Bạc/Vàng chuẩn TFT (hỗ trợ click chuột, phím tắt `1/2/3`, phím `K` test nhanh).
+- [x] **Task 18.3 (Augment Manager & Drop Logic):** Lập trình `AugmentManager.cs`, `AugmentOrb.cs`, `AugmentDropController.cs` (lắng nghe `EnemyAI.OnAnyEnemyDefeated` rơi Quả Cầu Nâng Cấp hút nam châm) và co-located unit tests `AugmentManagerTests.cs`. *(Lưu ý: chạy menu `Tools > Find The Lover > Setup Survival Night Raid & TFT Augments` trong Unity Editor để sinh 18 file `.asset`, `AugmentOrb.prefab` & gắn UI vào Scene nếu MCP bridge chưa bật).*
 
 ### [ ] Ngày 19: Khu Vực 3 (Đảo 3) ── ⚔️ Quái Bay U Linh & 🧩 Puzzle 3: Tán Sắc Lăng Kính Tím Magenta
 - [ ] **Task 19.1 (Zone 3 Archipelago):** Tạo Đảo Thạch Anh Đền Cổ (`Terrain_Zone3_CrystalTemple`) kết nối qua Cầu Cổ số 2.

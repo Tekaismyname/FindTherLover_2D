@@ -54,13 +54,23 @@ namespace FindTheLover.PlayerLocomotion
         private Vector3 currentVelocity;
         private float verticalVelocity;
         private bool isSprinting;
+        private float _speedMultiplier = 1f;
 
         private Vector2 lastFacingDirection = new Vector2(0f, -1f);
         private Vector3 lastWorldFacingDirection = Vector3.back;
 
-
         public Vector2 LastFacingDirection => lastFacingDirection;
         public Vector3 LastWorldFacingDirection => lastWorldFacingDirection;
+        public bool IsSprinting => isSprinting && moveInput.sqrMagnitude > 0.05f;
+        public float SpeedMultiplier => _speedMultiplier;
+
+        /// <summary>
+        /// Sets the movement speed multiplier applied by augments or buffs (e.g., 1.2 for +20% speed).
+        /// </summary>
+        public void SetSpeedMultiplier(float multiplier)
+        {
+            _speedMultiplier = Mathf.Clamp(multiplier, 0.2f, 3.0f);
+        }
         // Pre-computed Animator parameter hashes for optimal performance
         private static readonly int PosXHash = Animator.StringToHash("PosX");
         private static readonly int PosYHash = Animator.StringToHash("PosY");
@@ -168,8 +178,8 @@ namespace FindTheLover.PlayerLocomotion
                         // 2. Check if the player is actively pressing movement keys
             bool hasMoveInput = moveInput.sqrMagnitude > 0.01f;
 
-            // Calculate target horizontal speed (Run speed, Walk speed, or 0 when stopping)
-            float targetSpeed = hasMoveInput ? (isSprinting ? runSpeed : walkSpeed) : 0f;
+            // Calculate target horizontal speed (Run speed, Walk speed, or 0 when stopping) scaled by augment multiplier
+            float targetSpeed = hasMoveInput ? (isSprinting ? runSpeed : walkSpeed) * _speedMultiplier : 0f;
             Vector3 targetHorizontalVelocity = targetDirection * targetSpeed;
 
             // Select acceleration when moving, or high-friction deceleration when stopping to prevent foot sliding

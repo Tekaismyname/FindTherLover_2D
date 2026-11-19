@@ -47,12 +47,35 @@ namespace FindTheLover.Combat
         private float lastAttackTime = 0f;
         private bool isAttacking = false;
         private AttackDataSO lastExecutedAttack = null;
+        private float _damageMultiplier = 1f;
+
+        /// <summary>
+        /// Invoked whenever a melee strike damages a target (target, finalDamage, hitPoint).
+        /// Consumed by augment receivers for Lifesteal, Chain Lightning, and on-hit passives.
+        /// </summary>
+        public event System.Action<IDamageable, float, Vector3> OnEnemyStruck;
+
+        /// <summary>
+        /// Sets the melee damage multiplier applied by augments and companion buffs.
+        /// </summary>
+        public void SetDamageMultiplier(float multiplier)
+        {
+            _damageMultiplier = Mathf.Clamp(multiplier, 0.1f, 5.0f);
+        }
 
         private void Awake()
         {
             if (animator == null)
             {
                 animator = GetComponent<Animator>();
+            }
+            if (_locomotion == null)
+            {
+                _locomotion = GetComponent<PlayerLocomotion.PlayerLocomotion>();
+            }
+            if (spriteRenderer == null)
+            {
+                spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             }
         }
 
@@ -166,7 +189,9 @@ namespace FindTheLover.Combat
                 if (damageable != null && !damageable.IsDead)
                 {
                     Vector3 hitPoint = col.ClosestPoint(hitboxCenter);
-                    damageable.TakeDamage(attackData.damage, hitPoint, -worldFacing);
+                    float finalDamage = attackData.damage * _damageMultiplier;
+                    damageable.TakeDamage(finalDamage, hitPoint, -worldFacing);
+                    OnEnemyStruck?.Invoke(damageable, finalDamage, hitPoint);
 
                     // B. Apply Knockback via IKnockbackable
                     var knockbackable = col.GetComponentInParent<Iknockbackable>() ?? col.GetComponentInChildren<Iknockbackable>();

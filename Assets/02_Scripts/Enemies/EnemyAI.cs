@@ -1,11 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using FindTheLover.Combat;
 using FindTheLover.Enemies.Data;
 using System.Collections;
-using Unity.AppUI.Core;
 using FindTheLover.Environment;
-using UnityEditor.EditorTools;
 
 namespace FindTheLover.Enemies
 {
@@ -82,7 +81,17 @@ namespace FindTheLover.Enemies
         protected static readonly int MoveXHash = Animator.StringToHash("MoveX");
         protected static readonly int MoveYHash = Animator.StringToHash("MoveY");
 
+        // Broadcast event invoked whenever any enemy dies (used by AugmentDropController & RaidDirector)
+        public static event Action<EnemyAI, Vector3> OnAnyEnemyDefeated;
+
+        /// <summary>
+        /// Optional pool-return callback injected by multi-archetype spawners (Dependency Inversion).
+        /// </summary>
+        public Action<EnemyAI> OnReturnToPoolCallback;
+
         public EnemyState CurrentState => _currentState;
+        public bool IsElite { get; private set; }
+        public EnemyDataSO EnemyData => enemyData;
 
         // =========================================================================================
         // KHỐI 2: KHỞI TẠO & ĐỒNG BỘ NAVMESH AGENT
@@ -487,6 +496,7 @@ namespace FindTheLover.Enemies
                 col.enabled = false;
             }
 
+            OnAnyEnemyDefeated?.Invoke(this, transform.position);
             StartCoroutine(ReturnToPoolRoutine(1.5f));
         }
 
@@ -603,12 +613,48 @@ namespace FindTheLover.Enemies
         }
 
         /// <summary>
-        /// Delays disabling and returns this enemy to the Object Pool after death animation.
+        /// Applies escalating daily health/damage scaling and optional Elite status for Muck-like night raids.
+        /// </summary>
+        /// <param name="healthMultiplier">Multiplier applied on top of base EnemyDataSO max health.</param>
+        /// <param name="damageMultiplier">Multiplier applied on top of current attack damage.</param>
+        /// <param name="isElite">Marks this enemy as an Elite raider with golden aura and guaranteed orb drop.</param>
+        public void ApplyNightRaidScaling(float healthMultiplier, float damageMultiplier, bool isElite = false)
+        {
+            IsElite = isElite;
+            float eliteHealthBoost = isElite ? 1.8f : 1.0f;
+            float eliteDamageBoost = isElite ? 1.35f : 1.0f;
+
+            if (_healthSystem != null && enemyData != null)
+            {
+                float scaledHealth = enemyData.maxHealth * Mathf.Max(1f, healthMultiplier) * eliteHealthBoost;
+                _healthSystem.SetMaxHealth(scaledHealth, resetCurrentHealth: true);
+            }
+
+            _currentAttackDamage *= Mathf.Max(1f, damageMultiplier) * eliteDamageBoost;
+
+            if (isElite)
+            {
+                transform.localScale = _originalScale * (enrageScaleMultiplier * 1.15f);
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.color = new Color(1f, 0.85f, 0.35f, 1f);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Delays disabling and returns this enemy to its owning Object Pool after death animation.
         /// </summary>
         private System.Collections.IEnumerator ReturnToPoolRoutine(float delay)
         {
             yield return new WaitForSeconds(delay);
-            if (EnemyPoolManager.Instance != null)
+            IsElite = false;
+
+            if (OnReturnToPoolCallback != null)
+            {
+                OnReturnToPoolCallback.Invoke(this);
+            }
+            else if (EnemyPoolManager.Instance != null)
             {
                 EnemyPoolManager.Instance.ReturnEnemy(this);
             }

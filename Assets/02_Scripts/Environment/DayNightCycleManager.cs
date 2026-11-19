@@ -34,6 +34,33 @@ namespace FindTheLover.Environment
         public int CurrentDay => _currentDay;
         public float NormalizedTime => _normalizedTime;
         public bool IsNight => _isNight;
+        public float DayDurationInSeconds => _config != null ? _config.dayDurationInSeconds : 120f;
+        public float DayStartNormalized => _config != null ? _config.dayStartNormalized : 0.2f;
+        public float NightStartNormalized => _config != null ? _config.nightStartNormalized : 0.7f;
+
+        /// <summary>
+        /// Calculates the remaining real-time seconds until the next phase transition (Dusk or Dawn).
+        /// </summary>
+        public float GetSecondsUntilNextPhase()
+        {
+            if (_config == null || _config.dayDurationInSeconds <= 0f) return 0f;
+
+            float deltaNormalized;
+            if (_isNight)
+            {
+                // Time remaining until daytime begins (wrapping around midnight 1.0 -> 0.0)
+                deltaNormalized = _normalizedTime >= _config.nightStartNormalized
+                    ? (1f - _normalizedTime) + _config.dayStartNormalized
+                    : _config.dayStartNormalized - _normalizedTime;
+            }
+            else
+            {
+                // Time remaining until nighttime begins
+                deltaNormalized = Mathf.Max(0f, _config.nightStartNormalized - _normalizedTime);
+            }
+
+            return Mathf.Max(0f, deltaNormalized * _config.dayDurationInSeconds);
+        }
 
         private void Awake()
         {

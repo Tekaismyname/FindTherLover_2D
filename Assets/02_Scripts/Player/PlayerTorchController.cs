@@ -42,8 +42,29 @@ namespace FindTheLover.Player
         // Runtime state
         private TorchFlameType _currentFlameType = TorchFlameType.Unlit;
         private float _remainingBurnTime = 0f;
+        private float _baseMaxBurnDuration = 40.0f;
         private Light _torchLight;
         private SpriteRenderer _torchSpriteRenderer;
+
+        private void Awake()
+        {
+            _baseMaxBurnDuration = maxBurnDuration;
+        }
+
+        /// <summary>
+        /// Scales the torch maximum burn duration based on survival augments (e.g., Eternal Wick x2).
+        /// </summary>
+        public void SetBurnDurationMultiplier(float multiplier)
+        {
+            float clamped = Mathf.Clamp(multiplier, 0.5f, 4.0f);
+            float ratio = NormalizedFuel;
+            maxBurnDuration = _baseMaxBurnDuration * clamped;
+            if (IsFlameActive)
+            {
+                _remainingBurnTime = maxBurnDuration * ratio;
+                OnTorchFuelChanged?.Invoke(_remainingBurnTime, maxBurnDuration);
+            }
+        }
 
         // Events for UI HUD & Puzzle feedback
         public event Action<float, float> OnTorchFuelChanged;
