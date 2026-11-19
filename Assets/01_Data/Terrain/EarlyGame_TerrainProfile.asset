@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da012962585252e4bb45c24207f6fc63, type: 3}
+  m_Name: EarlyGame_TerrainProfile
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Environment.Data.SeededTerrainProfileSO
+  zoneName: "Zone 1 \u2014 Early-Game Coastal Sanctuary"
+  archetype: 0
+  islandCenterXZ: {x: 0, y: 0}
+  baseGroundHeight: 8
+  seaLevelHeight: 5.5
+  islandBaseRadius: 205
+  coastWobbleAmplitude: 24
+  perimeterRimHeight: 26
+  rimStartNormalizedRadius: 0.68
+  noiseFrequency: 0.014
+  interiorReliefAmplitude: 2.8
+  noiseOctaves: 3
+  ridgeSharpness: 1.2
+  sandMaxHeight: 6.9
+  rockMinSlope: 19
+  rockStartHeight: 13.8
+  flatGroundRockRatio: 0.06
+  pathwayHalfWidth: 4.2
+  protectedAnchors:
+  - label: Campfire Sanctuary
+    worldCenterXZ: {x: 0, y: 0}
+    flatRadius: 26
+    blendWidth: 18
+    targetWorldHeight: 8
+  - label: Intro South Beach
+    worldCenterXZ: {x: 0, y: -90}
+    flatRadius: 22
+    blendWidth: 20
+    targetWorldHeight: 6.3
+  - label: Emerald Lake Basin
+    worldCenterXZ: {x: 0, y: 74}
+    flatRadius: 17
+    blendWidth: 14
+    targetWorldHeight: 4.6
+  - label: Eastern Bridgehead
+    worldCenterXZ: {x: 215, y: 0}
+    flatRadius: 18
+    blendWidth: 14
+    targetWorldHeight: 8
+  protectedCorridors:
+  - label: South Beach to Campfire
+    startXZ: {x: 0, y: -88}
+    endXZ: {x: 0, y: 0}
+    halfWidth: 6
+    blendWidth: 12
+    targetWorldHeight: 8
+    curveAmplitude: 6.5
+  - label: Campfire to Emerald Lake
+    startXZ: {x: 0, y: 0}
+    endXZ: {x: 0, y: 58}
+    halfWidth: 5
+    blendWidth: 10
+    targetWorldHeight: 8
+    curveAmplitude: 5
+  - label: Campfire to Eastern Bridge
+    startXZ: {x: 0, y: 0}
+    endXZ: {x: 222, y: 0}
+    halfWidth: 10
+    blendWidth: 18
+    targetWorldHeight: 8
+    curveAmplitude: 8.5

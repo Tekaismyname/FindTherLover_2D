@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da012962585252e4bb45c24207f6fc63, type: 3}
+  m_Name: EndGame_TerrainProfile
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Environment.Data.SeededTerrainProfileSO
+  zoneName: "Zone 2+ \u2014 End-Game Toxic Ridge & Boss Caldera"
+  archetype: 1
+  islandCenterXZ: {x: 455, y: 0}
+  baseGroundHeight: 8
+  seaLevelHeight: 5.5
+  islandBaseRadius: 178
+  coastWobbleAmplitude: 20
+  perimeterRimHeight: 46
+  rimStartNormalizedRadius: 0.72
+  noiseFrequency: 0.02
+  interiorReliefAmplitude: 6.5
+  noiseOctaves: 4
+  ridgeSharpness: 2.3
+  sandMaxHeight: 6.7
+  rockMinSlope: 14
+  rockStartHeight: 11.2
+  flatGroundRockRatio: 0.34
+  pathwayHalfWidth: 4
+  protectedAnchors:
+  - label: West Bridge Landing & Archway
+    worldCenterXZ: {x: 315, y: 0}
+    flatRadius: 30
+    blendWidth: 16
+    targetWorldHeight: 8
+  - label: Brazier Checkpoint 01
+    worldCenterXZ: {x: 342, y: 0}
+    flatRadius: 14
+    blendWidth: 10
+    targetWorldHeight: 8
+  - label: Toxic Swamp Lake
+    worldCenterXZ: {x: 415, y: 18}
+    flatRadius: 14
+    blendWidth: 12
+    targetWorldHeight: 4.7
+  - label: Soul Flame Sanctuary
+    worldCenterXZ: {x: 435, y: -68}
+    flatRadius: 22
+    blendWidth: 14
+    targetWorldHeight: 8
+  - label: Brazier Checkpoint 02
+    worldCenterXZ: {x: 485, y: 14}
+    flatRadius: 16
+    blendWidth: 12
+    targetWorldHeight: 8
+  - label: Thorn Barrier Gorge
+    worldCenterXZ: {x: 535, y: 0}
+    flatRadius: 14
+    blendWidth: 10
+    targetWorldHeight: 8
+  - label: EndGame Boss Caldera Arena
+    worldCenterXZ: {x: 582, y: 0}
+    flatRadius: 32
+    blendWidth: 14
+    targetWorldHeight: 8.5
+  protectedCorridors:
+  - label: Bridgehead to Brazier 01
+    startXZ: {x: 280, y: 0}
+    endXZ: {x: 345, y: 0}
+    halfWidth: 8
+    blendWidth: 14
+    targetWorldHeight: 8
+    curveAmplitude: 0
+  - label: Northern Marsh Loop
+    startXZ: {x: 342, y: 0}
+    endXZ: {x: 485, y: 14}
+    halfWidth: 7
+    blendWidth: 12
+    targetWorldHeight: 8
+    curveAmplitude: 18
+  - label: Southern Sanctuary Trail
+    startXZ: {x: 342, y: 0}
+    endXZ: {x: 435, y: -68}
+    halfWidth: 7
+    blendWidth: 12
+    targetWorldHeight: 8
+    curveAmplitude: -10
+  - label: Sanctuary to Brazier 02
+    startXZ: {x: 435, y: -68}
+    endXZ: {x: 485, y: 14}
+    halfWidth: 7
+    blendWidth: 12
+    targetWorldHeight: 8
+    curveAmplitude: 8
+  - label: Brazier 02 to Thorn Gate & Boss Caldera
+    startXZ: {x: 485, y: 14}
+    endXZ: {x: 582, y: 0}
+    halfWidth: 8
+    blendWidth: 14
+    targetWorldHeight: 8.2
+    curveAmplitude: 0
