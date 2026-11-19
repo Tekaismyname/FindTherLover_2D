@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9c780594874ae4299ae5c361e19850, type: 3}
+  m_Name: Aug_Silver_05_PartnerRadiance
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Augments.Data.AugmentDataSO
+  augmentId: aug_silver_partner
+  displayName: Partner's Radiance
+  description: Empowers melee strikes by +25% attack damage through lover synergy.
+  icon: {fileID: 0}
+  tier: 1
+  category: 2
+  effectType: 14
+  primaryValue: 0.25
+  secondaryValue: 4
+  allowStacking: 1
+  maxStacks: 2

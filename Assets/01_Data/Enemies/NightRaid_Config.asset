@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea80a0b447268874f8063895cc92a659, type: 3}
+  m_Name: NightRaid_Config
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Enemies.Data.NightRaidConfigSO
+  targetSurvivalDays: 20
+  calamityBossDays: 050000000a0000000f00000014000000
+  baseNightBudget: 10
+  budgetPerDayMultiplier: 6
+  calamityBudgetMultiplier: 1.6
+  dailyHealthScalePercent: 0.12
+  dailyDamageScalePercent: 0.08
+  eliteSpawnChance: 0.22
+  spawnIntervalSeconds: 4
+  maxSimultaneousRaiders: 14
+  minSpawnRadius: 25
+  maxSpawnRadius: 35
+  navMeshSnapDistance: 8
+  enemyRoster:
+  - label: Forest Goblin
+    prefab: {fileID: 8292730563047917032, guid: f0ccd508443f88047a9b3c68041bff77, type: 3}
+    budgetCost: 2
+    minDayToAppear: 1
+    spawnWeight: 5
+  - label: Shadow Bat
+    prefab: {fileID: 5741205751048182011, guid: d4415ad421c34e0daec341757867e0e9, type: 3}
+    budgetCost: 3
+    minDayToAppear: 1
+    spawnWeight: 3.5
+  - label: Skeleton Goblin
+    prefab: {fileID: 4745489506096717290, guid: 3c2eecb694532124f8057fa8ee18f36a, type: 3}
+    budgetCost: 4
+    minDayToAppear: 2
+    spawnWeight: 3.2
+  - label: Spore Shroom
+    prefab: {fileID: 5741205751048182011, guid: eb8c1cd2f6183144288f818ba26466ab, type: 3}
+    budgetCost: 5
+    minDayToAppear: 3
+    spawnWeight: 2.5
+  - label: Magma Scarab
+    prefab: {fileID: 6908322644937993521, guid: f75173c3fb8950d44bbee49a2feedb9f, type: 3}
+    budgetCost: 5
+    minDayToAppear: 4
+    spawnWeight: 2.2
+  duskAlarmClip: {fileID: 0}
+  calamityWarningClip: {fileID: 0}
+  dawnReliefClip: {fileID: 0}

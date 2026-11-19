@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9c780594874ae4299ae5c361e19850, type: 3}
+  m_Name: Aug_Silver_03_GuardianSoul
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Augments.Data.AugmentDataSO
+  augmentId: aug_silver_shield
+  displayName: Guardian Soul Shell
+  description: Generates a 30 HP protective barrier that refreshes every 20 seconds.
+  icon: {fileID: 0}
+  tier: 1
+  category: 0
+  effectType: 12
+  primaryValue: 30
+  secondaryValue: 20
+  allowStacking: 1
+  maxStacks: 2

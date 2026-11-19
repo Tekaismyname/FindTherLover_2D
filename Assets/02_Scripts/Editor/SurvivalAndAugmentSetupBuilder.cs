@@ -376,18 +376,19 @@ namespace FindTheLover.EditorTools
             StretchFull(modalBackdrop.GetComponent<RectTransform>());
             modalBackdrop.AddComponent<Image>().color = new Color(0.03f, 0.04f, 0.08f, 0.82f);
 
-            TextMeshProUGUI headerText = CreateTMP("ModalHeader", modalBackdrop.transform, "CHOOSE AN AUGMENT", 34, FontStyles.Bold, new Color(1f, 0.88f, 0.35f, 1f));
+            TextMeshProUGUI headerText = CreateTMP("ModalHeader", modalBackdrop.transform, "CHOOSE AN AUGMENT", 36, FontStyles.Bold, new Color(1f, 0.88f, 0.35f, 1f));
             RectTransform headerRect = headerText.GetComponent<RectTransform>();
-            headerRect.anchorMin = new Vector2(0.5f, 0.82f);
-            headerRect.anchorMax = new Vector2(0.5f, 0.94f);
-            headerRect.sizeDelta = new Vector2(640f, 60f);
+            headerRect.anchorMin = new Vector2(0.5f, 0.73f);
+            headerRect.anchorMax = new Vector2(0.5f, 0.73f);
+            headerRect.pivot = new Vector2(0.5f, 0.5f);
+            headerRect.sizeDelta = new Vector2(680f, 56f);
             headerText.alignment = TextAlignmentOptions.Center;
 
             GameObject cardsRow = CreateUIObject("CardsContainer", modalBackdrop.transform);
             RectTransform rowRect = cardsRow.GetComponent<RectTransform>();
-            rowRect.anchorMin = new Vector2(0.5f, 0.46f);
-            rowRect.anchorMax = new Vector2(0.5f, 0.46f);
-            rowRect.sizeDelta = new Vector2(900f, 390f);
+            rowRect.anchorMin = new Vector2(0.5f, 0.44f);
+            rowRect.anchorMax = new Vector2(0.5f, 0.44f);
+            rowRect.sizeDelta = new Vector2(920f, 390f);
 
             HorizontalLayoutGroup hlg = cardsRow.AddComponent<HorizontalLayoutGroup>();
             hlg.spacing = 26f;
@@ -450,19 +451,20 @@ namespace FindTheLover.EditorTools
             StretchFull(tierText.GetComponent<RectTransform>());
             tierText.alignment = TextAlignmentOptions.Center;
 
-            // Emblem Icon Box
+            // Emblem Icon Box (fixed point anchor so square proportions never stretch vertically)
             GameObject iconObj = CreateUIObject("IconBadge", innerBody.transform);
             RectTransform iconRect = iconObj.GetComponent<RectTransform>();
-            iconRect.anchorMin = new Vector2(0.5f, 0.56f);
-            iconRect.anchorMax = new Vector2(0.5f, 0.80f);
-            iconRect.sizeDelta = new Vector2(82f, 82f);
+            iconRect.anchorMin = new Vector2(0.5f, 0.69f);
+            iconRect.anchorMax = new Vector2(0.5f, 0.69f);
+            iconRect.pivot = new Vector2(0.5f, 0.5f);
+            iconRect.sizeDelta = new Vector2(74f, 74f);
             Image iconImg = iconObj.AddComponent<Image>();
             iconImg.color = Color.white;
 
             // Title
             TextMeshProUGUI titleText = CreateTMP("TitleText", innerBody.transform, "Augment Title", 22, FontStyles.Bold, Color.white);
             RectTransform titleRect = titleText.GetComponent<RectTransform>();
-            titleRect.anchorMin = new Vector2(0.06f, 0.40f);
+            titleRect.anchorMin = new Vector2(0.06f, 0.42f);
             titleRect.anchorMax = new Vector2(0.94f, 0.55f);
             titleRect.offsetMin = Vector2.zero;
             titleRect.offsetMax = Vector2.zero;
