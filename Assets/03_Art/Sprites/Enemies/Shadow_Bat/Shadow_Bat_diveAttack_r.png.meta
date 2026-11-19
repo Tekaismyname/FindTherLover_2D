@@ -3,71 +3,29 @@ guid: 7e3f94185376e154fa919f575761a246
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4136542414857499763
+      213: -7635480298679468132
     second: Shadow_Bat_diveAttack_r_0
   - first:
-      213: -8084503910799592546
+      213: 3903310373819674337
     second: Shadow_Bat_diveAttack_r_1
   - first:
-      213: 253886155072295694
+      213: -8066421886218686590
     second: Shadow_Bat_diveAttack_r_2
   - first:
-      213: 2191499343066251575
+      213: 8375390322217671289
     second: Shadow_Bat_diveAttack_r_3
   - first:
-      213: 3833523497910549028
+      213: 6954536592981129730
     second: Shadow_Bat_diveAttack_r_4
   - first:
-      213: -7171194483195978065
+      213: -7483338347277854119
     second: Shadow_Bat_diveAttack_r_5
   - first:
-      213: 5350947658497097921
+      213: -299297480243603593
     second: Shadow_Bat_diveAttack_r_6
   - first:
-      213: 8536334214120180125
+      213: 2038802244132653591
     second: Shadow_Bat_diveAttack_r_7
-  - first:
-      213: 5812325357646363601
-    second: Shadow_Bat_diveAttack_r_8
-  - first:
-      213: 8851062887902096050
-    second: Shadow_Bat_diveAttack_r_9
-  - first:
-      213: -7491850991735649847
-    second: Shadow_Bat_diveAttack_r_10
-  - first:
-      213: 1607583306257797944
-    second: Shadow_Bat_diveAttack_r_11
-  - first:
-      213: -6314421744316432333
-    second: Shadow_Bat_diveAttack_r_12
-  - first:
-      213: 7578746274712903049
-    second: Shadow_Bat_diveAttack_r_13
-  - first:
-      213: -4967005747019754640
-    second: Shadow_Bat_diveAttack_r_14
-  - first:
-      213: 3014790415823995463
-    second: Shadow_Bat_diveAttack_r_15
-  - first:
-      213: -9183280077559098802
-    second: Shadow_Bat_diveAttack_r_16
-  - first:
-      213: -1137497467079913070
-    second: Shadow_Bat_diveAttack_r_17
-  - first:
-      213: 2974422525729482523
-    second: Shadow_Bat_diveAttack_r_18
-  - first:
-      213: -1768914401980306048
-    second: Shadow_Bat_diveAttack_r_19
-  - first:
-      213: -7597576878879856584
-    second: Shadow_Bat_diveAttack_r_20
-  - first:
-      213: 3493611639742460849
-    second: Shadow_Bat_diveAttack_r_21
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -114,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -138,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -166,20 +124,20 @@ TextureImporter:
       name: Shadow_Bat_diveAttack_r_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 142
-        width: 259
-        height: 548
+        x: 13
+        y: 202
+        width: 270
+        height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 374fae3f863f76930800000000000000
-      internalID: 4136542414857499763
+      spriteID: 9c7fb7731f530996b11cf0c9f06be2e2
+      internalID: -7635480298679468132
       vertices: []
       indices: 
       edges: []
@@ -188,20 +146,20 @@ TextureImporter:
       name: Shadow_Bat_diveAttack_r_1
       rect:
         serializedVersion: 2
-        x: 1211
-        y: 190
-        width: 417
-        height: 413
+        x: 280
+        y: 202
+        width: 270
+        height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e93b883d6821ecf80800000000000000
-      internalID: -8084503910799592546
+      spriteID: e16e9eb71a582b36027d5df6860ac5b6
+      internalID: 3903310373819674337
       vertices: []
       indices: 
       edges: []
@@ -210,20 +168,20 @@ TextureImporter:
       name: Shadow_Bat_diveAttack_r_2
       rect:
         serializedVersion: 2
-        x: 1518
-        y: 577
-        width: 10
-        height: 14
+        x: 549
+        y: 202
+        width: 270
+        height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e035976ec1cf58300800000000000000
-      internalID: 253886155072295694
+      spriteID: 82af7f3f08500e908e8b77479e36249a
+      internalID: -8066421886218686590
       vertices: []
       indices: 
       edges: []
@@ -232,20 +190,20 @@ TextureImporter:
       name: Shadow_Bat_diveAttack_r_3
       rect:
         serializedVersion: 2
-        x: 1526
-        y: 581
-        width: 8
-        height: 11
+        x: 818
+        y: 202
+        width: 270
+        height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73147fc9a05c96e10800000000000000
-      internalID: 2191499343066251575
+      spriteID: 795a07931f5d3b742fe2dd3551c03180
+      internalID: 8375390322217671289
       vertices: []
       indices: 
       edges: []
@@ -254,20 +212,20 @@ TextureImporter:
       name: Shadow_Bat_diveAttack_r_4
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 576
-        width: 56
-        height: 66
+        x: 1085
+        y: 202
+        width: 270
+        height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 42a321b7f49633530800000000000000
-      internalID: 3833523497910549028
+      spriteID: 027a18422f7a8360f274c301ed9df851
+      internalID: 6954536592981129730
       vertices: []
       indices: 
       edges: []
@@ -276,20 +234,20 @@ TextureImporter:
       name: Shadow_Bat_diveAttack_r_5
       rect:
         serializedVersion: 2
-        x: 304
-        y: 546
-        width: 19
-        height: 11
+        x: 1354
+        y: 202
+        width: 270
+        height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: faedcd5bc9cca7c90800000000000000
-      internalID: -7171194483195978065
+      spriteID: 59da71ec6bd7259874bdce4497574d29
+      internalID: -7483338347277854119
       vertices: []
       indices: 
       edges: []
@@ -298,20 +256,20 @@ TextureImporter:
       name: Shadow_Bat_diveAttack_r_6
       rect:
         serializedVersion: 2
-        x: 1517
-        y: 548
-        width: 11
-        height: 16
+        x: 1625
+        y: 202
+        width: 270
+        height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c08d6c7b82624a40800000000000000
-      internalID: 5350947658497097921
+      spriteID: 7717e90787aed8fbbfec9bac0290170e
+      internalID: -299297480243603593
       vertices: []
       indices: 
       edges: []
@@ -320,328 +278,20 @@ TextureImporter:
       name: Shadow_Bat_diveAttack_r_7
       rect:
         serializedVersion: 2
-        x: 1573
-        y: 95
-        width: 425
-        height: 482
+        x: 1893
+        y: 202
+        width: 270
+        height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9985a48db6277670800000000000000
-      internalID: 8536334214120180125
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_8
-      rect:
-        serializedVersion: 2
-        x: 287
-        y: 89
-        width: 259
-        height: 436
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1dbb1852e1789a050800000000000000
-      internalID: 5812325357646363601
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_9
-      rect:
-        serializedVersion: 2
-        x: 537
-        y: 31
-        width: 244
-        height: 478
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ba2c063dca45da70800000000000000
-      internalID: 8851062887902096050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_10
-      rect:
-        serializedVersion: 2
-        x: 780
-        y: 449
-        width: 98
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c9407f6739970890800000000000000
-      internalID: -7491850991735649847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_11
-      rect:
-        serializedVersion: 2
-        x: 1881
-        y: 131
-        width: 291
-        height: 379
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 833185cef784f4610800000000000000
-      internalID: 1607583306257797944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_12
-      rect:
-        serializedVersion: 2
-        x: 782
-        y: 49
-        width: 263
-        height: 338
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3304408f0eaae58a0800000000000000
-      internalID: -6314421744316432333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_13
-      rect:
-        serializedVersion: 2
-        x: 1114
-        y: 385
-        width: 45
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 98dd31b359d1d2960800000000000000
-      internalID: 7578746274712903049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_14
-      rect:
-        serializedVersion: 2
-        x: 1068
-        y: 343
-        width: 43
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0735093e696a11bb0800000000000000
-      internalID: -4967005747019754640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_15
-      rect:
-        serializedVersion: 2
-        x: 853
-        y: 95
-        width: 17
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 742017ff8efa6d920800000000000000
-      internalID: 3014790415823995463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_16
-      rect:
-        serializedVersion: 2
-        x: 989
-        y: 55
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e421b20bc6f6e8080800000000000000
-      internalID: -9183280077559098802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_17
-      rect:
-        serializedVersion: 2
-        x: 1062
-        y: 51
-        width: 339
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2919bc5941cc630f0800000000000000
-      internalID: -1137497467079913070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_18
-      rect:
-        serializedVersion: 2
-        x: 1343
-        y: 56
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b17a60a2785474920800000000000000
-      internalID: 2974422525729482523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_19
-      rect:
-        serializedVersion: 2
-        x: 1442
-        y: 83
-        width: 108
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 08d24e739bd8377e0800000000000000
-      internalID: -1768914401980306048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_20
-      rect:
-        serializedVersion: 2
-        x: 1549
-        y: 95
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 83825a4151cff8690800000000000000
-      internalID: -7597576878879856584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_diveAttack_r_21
-      rect:
-        serializedVersion: 2
-        x: 1633
-        y: 103
-        width: 7
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b3f402c64dcb7030800000000000000
-      internalID: 3493611639742460849
+      spriteID: 17cacbc8d6474b1c5ac71a1f5783a51b
+      internalID: 2038802244132653591
       vertices: []
       indices: 
       edges: []
@@ -650,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: da972f2d4b518b27cec5918a6df93139
     internalID: 0
     vertices: []
     indices: 
@@ -660,28 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Shadow_Bat_diveAttack_r_0: 4136542414857499763
-      Shadow_Bat_diveAttack_r_1: -8084503910799592546
-      Shadow_Bat_diveAttack_r_10: -7491850991735649847
-      Shadow_Bat_diveAttack_r_11: 1607583306257797944
-      Shadow_Bat_diveAttack_r_12: -6314421744316432333
-      Shadow_Bat_diveAttack_r_13: 7578746274712903049
-      Shadow_Bat_diveAttack_r_14: -4967005747019754640
-      Shadow_Bat_diveAttack_r_15: 3014790415823995463
-      Shadow_Bat_diveAttack_r_16: -9183280077559098802
-      Shadow_Bat_diveAttack_r_17: -1137497467079913070
-      Shadow_Bat_diveAttack_r_18: 2974422525729482523
-      Shadow_Bat_diveAttack_r_19: -1768914401980306048
-      Shadow_Bat_diveAttack_r_2: 253886155072295694
-      Shadow_Bat_diveAttack_r_20: -7597576878879856584
-      Shadow_Bat_diveAttack_r_21: 3493611639742460849
-      Shadow_Bat_diveAttack_r_3: 2191499343066251575
-      Shadow_Bat_diveAttack_r_4: 3833523497910549028
-      Shadow_Bat_diveAttack_r_5: -7171194483195978065
-      Shadow_Bat_diveAttack_r_6: 5350947658497097921
-      Shadow_Bat_diveAttack_r_7: 8536334214120180125
-      Shadow_Bat_diveAttack_r_8: 5812325357646363601
-      Shadow_Bat_diveAttack_r_9: 8851062887902096050
+      Shadow_Bat_diveAttack_r_0: -7635480298679468132
+      Shadow_Bat_diveAttack_r_1: 3903310373819674337
+      Shadow_Bat_diveAttack_r_2: -8066421886218686590
+      Shadow_Bat_diveAttack_r_3: 8375390322217671289
+      Shadow_Bat_diveAttack_r_4: 6954536592981129730
+      Shadow_Bat_diveAttack_r_5: -7483338347277854119
+      Shadow_Bat_diveAttack_r_6: -299297480243603593
+      Shadow_Bat_diveAttack_r_7: 2038802244132653591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

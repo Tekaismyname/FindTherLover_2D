@@ -3,38 +3,14 @@ guid: bfb10a8c36bb4934cad0efa82a506c12
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8043908006851123692
+      213: 7891216645850234431
     second: Shadow_Bat_hurt_r_0
   - first:
-      213: -7176991088599957355
+      213: 7098250171642410388
     second: Shadow_Bat_hurt_r_1
   - first:
-      213: 6216333804652959344
+      213: 8170130479926404597
     second: Shadow_Bat_hurt_r_2
-  - first:
-      213: 6917901369515856793
-    second: Shadow_Bat_hurt_r_3
-  - first:
-      213: 3727635591329428647
-    second: Shadow_Bat_hurt_r_4
-  - first:
-      213: -2276685655082647216
-    second: Shadow_Bat_hurt_r_5
-  - first:
-      213: 7984490339449980762
-    second: Shadow_Bat_hurt_r_6
-  - first:
-      213: -2919148846954524640
-    second: Shadow_Bat_hurt_r_7
-  - first:
-      213: 2180461753411681665
-    second: Shadow_Bat_hurt_r_8
-  - first:
-      213: 2882978046363870880
-    second: Shadow_Bat_hurt_r_9
-  - first:
-      213: 7300535009051067175
-    second: Shadow_Bat_hurt_r_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -67,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -81,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 160
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -133,20 +109,20 @@ TextureImporter:
       name: Shadow_Bat_hurt_r_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 23
-        width: 611
-        height: 670
+        x: 0
+        y: 0
+        width: 724
+        height: 724
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce9184ab6b3b1af60800000000000000
-      internalID: 8043908006851123692
+      spriteID: 3f7e8dddba3b836d0b2f5f4481f3445c
+      internalID: 7891216645850234431
       vertices: []
       indices: 
       edges: []
@@ -155,20 +131,20 @@ TextureImporter:
       name: Shadow_Bat_hurt_r_1
       rect:
         serializedVersion: 2
-        x: 826
-        y: 95
-        width: 559
-        height: 589
+        x: 724
+        y: 0
+        width: 724
+        height: 724
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5900bd751a4366c90800000000000000
-      internalID: -7176991088599957355
+      spriteID: 94f59947ec0c82626cf2f55c393742e6
+      internalID: 7098250171642410388
       vertices: []
       indices: 
       edges: []
@@ -177,196 +153,20 @@ TextureImporter:
       name: Shadow_Bat_hurt_r_2
       rect:
         serializedVersion: 2
-        x: 985
-        y: 616
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0769797e8aad44650800000000000000
-      internalID: 6216333804652959344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_hurt_r_3
-      rect:
-        serializedVersion: 2
-        x: 1501
-        y: 53
-        width: 626
-        height: 651
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9935e2994a2510060800000000000000
-      internalID: 6917901369515856793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_hurt_r_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 586
-        width: 16
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a43b4902d83bb330800000000000000
-      internalID: 3727635591329428647
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_hurt_r_5
-      rect:
-        serializedVersion: 2
         x: 1448
-        y: 439
-        width: 33
-        height: 48
+        y: 0
+        width: 724
+        height: 724
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 051429785769760e0800000000000000
-      internalID: -2276685655082647216
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_hurt_r_6
-      rect:
-        serializedVersion: 2
-        x: 845
-        y: 386
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a57447bf8ab9ece60800000000000000
-      internalID: 7984490339449980762
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_hurt_r_7
-      rect:
-        serializedVersion: 2
-        x: 631
-        y: 262
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 020d8ca07991d77d0800000000000000
-      internalID: -2919148846954524640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_hurt_r_8
-      rect:
-        serializedVersion: 2
-        x: 1174
-        y: 71
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 18dbd62896e824e10800000000000000
-      internalID: 2180461753411681665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_hurt_r_9
-      rect:
-        serializedVersion: 2
-        x: 1177
-        y: 65
-        width: 11
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0a6a4cc2245620820800000000000000
-      internalID: 2882978046363870880
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_hurt_r_10
-      rect:
-        serializedVersion: 2
-        x: 1183
-        y: 33
-        width: 43
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 723cacc29e5b05560800000000000000
-      internalID: 7300535009051067175
+      spriteID: f5e59a6062226271c1cac176fffea7c4
+      internalID: 8170130479926404597
       vertices: []
       indices: 
       edges: []
@@ -375,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ab1f0bf42961b4046de2e4b6c72364a9
     internalID: 0
     vertices: []
     indices: 
@@ -385,17 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Shadow_Bat_hurt_r_0: 8043908006851123692
-      Shadow_Bat_hurt_r_1: -7176991088599957355
-      Shadow_Bat_hurt_r_10: 7300535009051067175
-      Shadow_Bat_hurt_r_2: 6216333804652959344
-      Shadow_Bat_hurt_r_3: 6917901369515856793
-      Shadow_Bat_hurt_r_4: 3727635591329428647
-      Shadow_Bat_hurt_r_5: -2276685655082647216
-      Shadow_Bat_hurt_r_6: 7984490339449980762
-      Shadow_Bat_hurt_r_7: -2919148846954524640
-      Shadow_Bat_hurt_r_8: 2180461753411681665
-      Shadow_Bat_hurt_r_9: 2882978046363870880
+      Shadow_Bat_hurt_r_0: 7891216645850234431
+      Shadow_Bat_hurt_r_1: 7098250171642410388
+      Shadow_Bat_hurt_r_2: 8170130479926404597
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

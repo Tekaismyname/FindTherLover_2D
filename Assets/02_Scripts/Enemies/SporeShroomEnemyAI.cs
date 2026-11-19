@@ -197,35 +197,32 @@ namespace FindTheLover.Enemies
         {
             if (animator == null || _targetPlayer == null) return;
 
-            Vector3 direction;
+            // Always calculate facing direction directly towards the player target
+            // (Never use _navAgent.velocity, which drifts sideways during pathfinding/avoidance)
+            Vector3 direction = (_targetPlayer.position - transform.position).normalized;
 
-            if (_currentState == EnemyState.Chase && _navAgent.velocity.sqrMagnitude > 0.05f)
-            {
-                direction = _navAgent.velocity.normalized;
-            }
-            else
-            {
-                direction = (_targetPlayer.position - transform.position).normalized;
-            }
-
-            float moveX = direction.x;
-            float moveY = direction.z;
+            float moveX = 0f;
+            float moveY = 0f;
 
             // 2.5D Perspective Priority:
-            // When target is in front/downward hemisphere (direction.z < -0.2f) and not extreme lateral,
-            // strictly prioritize Forward view so character faces player directly instead of sideways!
-            if (direction.z < -0.2f && Mathf.Abs(direction.x) < 0.75f)
+            // With camera pitched down from the south, the player-facing forward presentation (fw)
+            // is visually dominant. We give Front View a wide priority arc (~140 degrees downward):
+            // Whenever player is southward or diagonal-forward (direction.z <= 0.25f and not extreme 90-degree lateral)
+            if (direction.z <= 0.25f && Mathf.Abs(direction.x) < 0.92f)
             {
+                // Front View (Facing camera / player directly)
                 moveY = -1.0f;
                 moveX = 0.0f;
             }
-            else if (direction.z > 0.4f && Mathf.Abs(direction.x) < 0.6f)
+            else if (direction.z > 0.5f && direction.z > Mathf.Abs(direction.x))
             {
+                // Back View (Strictly when player is distinctly behind the mushroom)
                 moveY = 1.0f;
                 moveX = 0.0f;
             }
             else
             {
+                // Lateral Side Views (Right or Left)
                 moveX = direction.x > 0f ? 1.0f : -1.0f;
                 moveY = 0.0f;
             }
@@ -236,25 +233,9 @@ namespace FindTheLover.Enemies
 
         protected override void UpdateSpriteFacing()
         {
-            if (spriteRenderer == null || _targetPlayer == null) return;
-
-            Vector3 direction;
-
-            if (_currentState == EnemyState.Chase && _navAgent.velocity.sqrMagnitude > 0.05f)
-            {
-                direction = _navAgent.velocity.normalized;
-            }
-            else
-            {
-                direction = (_targetPlayer.position - transform.position).normalized;
-            }
-
-            // Only flip horizontally when actively facing left/right to prevent jitter on forward/backward
-            if (Mathf.Abs(direction.x) > 0.35f && direction.z > -0.6f)
-            {
-                spriteRenderer.flipX = direction.x < 0f;
-            }
-            else
+            // SporeShroom has dedicated 4-directional clips (fw, bw, r, l) mapped to (-1,0) and (1,0)
+            // in all Blend Trees. SpriteRenderer.flipX must remain false to prevent inverted mirroring.
+            if (spriteRenderer != null && spriteRenderer.flipX)
             {
                 spriteRenderer.flipX = false;
             }

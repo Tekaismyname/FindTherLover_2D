@@ -3,59 +3,17 @@ guid: c1eff3204188a754faefd5e4254c5748
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3871613470242080632
+      213: 192668225111063777
     second: Shadow_Bat_bite_bw_0
   - first:
-      213: 5881590774650433194
+      213: -1852442295835052773
     second: Shadow_Bat_bite_bw_1
   - first:
-      213: 6202094311579940022
+      213: -2504796872229241745
     second: Shadow_Bat_bite_bw_2
   - first:
-      213: -8319008031803841087
+      213: 1285647367726545423
     second: Shadow_Bat_bite_bw_3
-  - first:
-      213: 247096374945972302
-    second: Shadow_Bat_bite_bw_4
-  - first:
-      213: -1789270696836108491
-    second: Shadow_Bat_bite_bw_5
-  - first:
-      213: -648164497029270726
-    second: Shadow_Bat_bite_bw_6
-  - first:
-      213: -6018797281274650080
-    second: Shadow_Bat_bite_bw_7
-  - first:
-      213: 3529372567200503618
-    second: Shadow_Bat_bite_bw_8
-  - first:
-      213: -1410463669533819716
-    second: Shadow_Bat_bite_bw_9
-  - first:
-      213: 587167155699555853
-    second: Shadow_Bat_bite_bw_10
-  - first:
-      213: 7253445425995346096
-    second: Shadow_Bat_bite_bw_11
-  - first:
-      213: -1374457743098868708
-    second: Shadow_Bat_bite_bw_12
-  - first:
-      213: 4360999992298539533
-    second: Shadow_Bat_bite_bw_13
-  - first:
-      213: -6600155591747491322
-    second: Shadow_Bat_bite_bw_14
-  - first:
-      213: 1197485517628752137
-    second: Shadow_Bat_bite_bw_15
-  - first:
-      213: -9207606742337901408
-    second: Shadow_Bat_bite_bw_16
-  - first:
-      213: 5071067766688359072
-    second: Shadow_Bat_bite_bw_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -88,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -102,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -154,10 +112,10 @@ TextureImporter:
       name: Shadow_Bat_bite_bw_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 183
-        width: 418
-        height: 352
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8887a9ebf04454ac0800000000000000
-      internalID: -3871613470242080632
+      spriteID: e1fc3fddba7eac02f6fadcc146354cf3
+      internalID: 192668225111063777
       vertices: []
       indices: 
       edges: []
@@ -176,10 +134,10 @@ TextureImporter:
       name: Shadow_Bat_bite_bw_1
       rect:
         serializedVersion: 2
-        x: 431
-        y: 185
-        width: 434
-        height: 352
+        x: 306
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,8 +146,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aaee045c5ab9f9150800000000000000
-      internalID: 5881590774650433194
+      spriteID: 1bb5d7ed8bcd4ae648969993bf40d1f7
+      internalID: -1852442295835052773
       vertices: []
       indices: 
       edges: []
@@ -198,10 +156,10 @@ TextureImporter:
       name: Shadow_Bat_bite_bw_2
       rect:
         serializedVersion: 2
-        x: 862
-        y: 185
-        width: 382
-        height: 352
+        x: 612
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,8 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b471319ae3421650800000000000000
-      internalID: 6202094311579940022
+      spriteID: 6f3c4404842c3ddd5f2210f14f4b1570
+      internalID: -2504796872229241745
       vertices: []
       indices: 
       edges: []
@@ -220,10 +178,10 @@ TextureImporter:
       name: Shadow_Bat_bite_bw_3
       rect:
         serializedVersion: 2
-        x: 1258
-        y: 185
-        width: 413
-        height: 352
+        x: 918
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,30 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c5e5b46542fc8c80800000000000000
-      internalID: -8319008031803841087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_bite_bw_4
-      rect:
-        serializedVersion: 2
-        x: 1684
-        y: 185
-        width: 477
-        height: 352
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e4001f508dcdd6300800000000000000
-      internalID: 247096374945972302
+      spriteID: 0fbac1237889d71137383de7700beba3
+      internalID: 1285647367726545423
       vertices: []
       indices: 
       edges: []
@@ -264,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a8e696002bb21974dbab42d1afc470ac
+    spriteID: 0b41303349124d6ccb64538f68a33ceb
     internalID: 0
     vertices: []
     indices: 
@@ -272,15 +208,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":434.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Shadow_Bat_bite_bw_0: -3871613470242080632
-      Shadow_Bat_bite_bw_1: 5881590774650433194
-      Shadow_Bat_bite_bw_2: 6202094311579940022
-      Shadow_Bat_bite_bw_3: -8319008031803841087
-      Shadow_Bat_bite_bw_4: 247096374945972302
+      Shadow_Bat_bite_bw_0: 192668225111063777
+      Shadow_Bat_bite_bw_1: -1852442295835052773
+      Shadow_Bat_bite_bw_2: -2504796872229241745
+      Shadow_Bat_bite_bw_3: 1285647367726545423
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

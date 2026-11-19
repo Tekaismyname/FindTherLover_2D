@@ -166,7 +166,7 @@ namespace FindTheLover.Enemies
             }
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             if (_currentState == EnemyState.Dead) return;
 
@@ -402,28 +402,49 @@ namespace FindTheLover.Enemies
         }
 
         /// <summary>
-        /// Calculates directional velocity and injects MoveX/MoveY into the 2D Blend Tree.
+        /// Calculates directional velocity relative to Camera viewport and injects MoveX/MoveY into the 2D Blend Tree.
+        /// Eliminates 3D World-Z axis inversion and supports free Camera Orbit rotation.
         /// </summary>
         protected virtual void UpdateAnimationDirection()
         {
             if (animator == null || _targetPlayer == null) return;
 
-            Vector3 direction;
+            Vector3 worldDirection;
 
-            // If actively chasing and moving: calculate from actual NavMesh velocity
+            // 1. Determine active World-Space direction
             if (_currentState == EnemyState.Chase && _navAgent.velocity.sqrMagnitude > 0.05f)
             {
-                direction = _navAgent.velocity.normalized;
+                worldDirection = _navAgent.velocity.normalized;
             }
-            // Otherwise (Idle, Attack): face directly towards target player
             else
             {
-                direction = (_targetPlayer.position - transform.position).normalized;
+                worldDirection = (_targetPlayer.position - transform.position).normalized;
             }
 
-            // In 2.5D: map world X to MoveX and world Z to MoveY (depth)
-            animator.SetFloat(MoveXHash, direction.x);
-            animator.SetFloat(MoveYHash, direction.z);
+            // 2. Transform World-Space direction into Camera View-Space
+            // This ensures MoveY is ALWAYS aligned with Screen Up/Down regardless of 3D World Z orientation!
+            Camera mainCam = Camera.main;
+            Vector3 viewDirection = worldDirection;
+
+            if (mainCam != null)
+            {
+                // Project direction onto Camera's local plane (ignoring vertical pitch tilt)
+                Vector3 camForward = mainCam.transform.forward;
+                Vector3 camRight = mainCam.transform.right;
+                camForward.y = 0f;
+                camRight.y = 0f;
+                camForward.Normalize();
+                camRight.Normalize();
+
+                // Dot product projects world vector onto screen horizontal (X) and screen depth (Y)
+                float screenX = Vector3.Dot(worldDirection, camRight);
+                float screenY = Vector3.Dot(worldDirection, camForward);
+                viewDirection = new Vector3(screenX, 0f, screenY);
+            }
+
+            // 3. Inject Camera-Relative coordinates into 2.5D Blend Tree
+            animator.SetFloat(MoveXHash, viewDirection.x);
+            animator.SetFloat(MoveYHash, viewDirection.z);
         }
 
         protected virtual void UpdateSpriteFacing()

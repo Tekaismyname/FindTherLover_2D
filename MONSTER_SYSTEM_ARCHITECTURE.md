@@ -277,6 +277,14 @@ classDiagram
 
 ---
 
+### 3.5. Shadow Bat (ShadowBatEnemyAI) — *Aerial Hit & Run Assassin*
+- **Tập tính sinh học & Cơ chế:**
+  - Kẻ săn mồi bóng đêm trên không (Night Only Aerial Predator). Bay lượn ở cao độ  \approx 2.2\text{m}$ trên không trung.
+  - Khi phát hiện người chơi, không đâm sầm trực tiếp mà bay lượn vòng quanh (*Stalking Orbit*) ở bán kính .0\text{m}$ với chuyển động dập dềnh cánh dơi (*Sinusoidal Hover Bobbing*).
+  - Khi đòn đánh sẵn sàng, thực hiện cú bổ nhào tốc độ cao (*Dive Swoop Attack*): lao xuống sát mặt đất ( = 0.5\text{m}$) với quỹ đạo parabol (1-t)$, cắn/chém gây 14 sát thương tại điểm cực cận (=0.5$), sau đó bay vút ngược lên cao độ an toàn.
+  - Đòn đánh phụ từ xa: Tiếng rít siêu âm (*Sonic Screech Wave*) phóng sóng âm gây 8 sát thương và làm choáng/đẩy lùi người chơi.
+  - Khi bị tiêu diệt: Rơi tự do trọng trường xuống mặt đất trước khi tan rã thành tro tàn bóng đêm.
+
 ## 4. Máy Trạng Thái Hữu Hạn FSM (Finite State Machine Flow)
 
 Tất cả quái vật đều vận hành trên cỗ máy trạng thái FSM kế thừa từ `EnemyAI`:

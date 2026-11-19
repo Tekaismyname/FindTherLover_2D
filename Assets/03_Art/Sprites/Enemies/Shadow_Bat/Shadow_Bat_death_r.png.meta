@@ -3,119 +3,23 @@ guid: ab6726f81b654e04e9143fbd214d0019
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -798510034731093814
+      213: -5029976980009782581
     second: Shadow_Bat_death_r_0
   - first:
-      213: 7729244792955140842
+      213: 434915897422339004
     second: Shadow_Bat_death_r_1
   - first:
-      213: -3790155582986216315
+      213: -8884878363248306374
     second: Shadow_Bat_death_r_2
   - first:
-      213: -8678091323618867433
+      213: -7542377592152989566
     second: Shadow_Bat_death_r_3
   - first:
-      213: -1911893947448315922
+      213: -7861067898197218163
     second: Shadow_Bat_death_r_4
   - first:
-      213: -9009497202373858944
+      213: -832667235167427856
     second: Shadow_Bat_death_r_5
-  - first:
-      213: 1513502571675670054
-    second: Shadow_Bat_death_r_6
-  - first:
-      213: 1861651322001570314
-    second: Shadow_Bat_death_r_7
-  - first:
-      213: 2519943846903733140
-    second: Shadow_Bat_death_r_8
-  - first:
-      213: -1583794853207468680
-    second: Shadow_Bat_death_r_9
-  - first:
-      213: 5291850736288519348
-    second: Shadow_Bat_death_r_10
-  - first:
-      213: 6421111463916097754
-    second: Shadow_Bat_death_r_11
-  - first:
-      213: 1957055923402031723
-    second: Shadow_Bat_death_r_12
-  - first:
-      213: -8966241582630722156
-    second: Shadow_Bat_death_r_13
-  - first:
-      213: -679192101275913419
-    second: Shadow_Bat_death_r_14
-  - first:
-      213: -1256767002051160019
-    second: Shadow_Bat_death_r_15
-  - first:
-      213: 7394158470672327019
-    second: Shadow_Bat_death_r_16
-  - first:
-      213: 3188817500090686481
-    second: Shadow_Bat_death_r_17
-  - first:
-      213: -1576181195934347780
-    second: Shadow_Bat_death_r_18
-  - first:
-      213: 8202078728886285830
-    second: Shadow_Bat_death_r_19
-  - first:
-      213: -718100046317161379
-    second: Shadow_Bat_death_r_20
-  - first:
-      213: -2050645444854474345
-    second: Shadow_Bat_death_r_21
-  - first:
-      213: 217417405635091313
-    second: Shadow_Bat_death_r_22
-  - first:
-      213: -616300933041421098
-    second: Shadow_Bat_death_r_23
-  - first:
-      213: -4248534867477383219
-    second: Shadow_Bat_death_r_24
-  - first:
-      213: 1878191334043387037
-    second: Shadow_Bat_death_r_25
-  - first:
-      213: 261863153599278645
-    second: Shadow_Bat_death_r_26
-  - first:
-      213: 2212653999036820106
-    second: Shadow_Bat_death_r_27
-  - first:
-      213: 6924924226917749950
-    second: Shadow_Bat_death_r_28
-  - first:
-      213: 6802248501828727483
-    second: Shadow_Bat_death_r_29
-  - first:
-      213: 4788968544819871681
-    second: Shadow_Bat_death_r_30
-  - first:
-      213: -3081758011520766627
-    second: Shadow_Bat_death_r_31
-  - first:
-      213: 8762994932066673577
-    second: Shadow_Bat_death_r_32
-  - first:
-      213: -9000486376193533429
-    second: Shadow_Bat_death_r_33
-  - first:
-      213: 5232345607033818668
-    second: Shadow_Bat_death_r_34
-  - first:
-      213: -6443455861678102921
-    second: Shadow_Bat_death_r_35
-  - first:
-      213: -1514702226921532301
-    second: Shadow_Bat_death_r_36
-  - first:
-      213: -7700296856603369304
-    second: Shadow_Bat_death_r_37
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -148,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -162,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -186,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -214,10 +118,10 @@ TextureImporter:
       name: Shadow_Bat_death_r_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 138
-        width: 322
-        height: 386
+        x: 0
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac0b446aa5f1be4f0800000000000000
-      internalID: -798510034731093814
+      spriteID: cbf21f2e96ee31ba0befa891c53f8e53
+      internalID: -5029976980009782581
       vertices: []
       indices: 
       edges: []
@@ -236,10 +140,10 @@ TextureImporter:
       name: Shadow_Bat_death_r_1
       rect:
         serializedVersion: 2
-        x: 340
-        y: 140
-        width: 348
-        height: 386
+        x: 362
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aeaf02a103bc34b60800000000000000
-      internalID: 7729244792955140842
+      spriteID: bc5b0755b421090667592b5143b3f0c2
+      internalID: 434915897422339004
       vertices: []
       indices: 
       edges: []
@@ -258,10 +162,10 @@ TextureImporter:
       name: Shadow_Bat_death_r_2
       rect:
         serializedVersion: 2
-        x: 684
-        y: 113
-        width: 406
-        height: 386
+        x: 724
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58c94a01499a66bc0800000000000000
-      internalID: -3790155582986216315
+      spriteID: 3ad707e63392b2843446e73de03feffb
+      internalID: -8884878363248306374
       vertices: []
       indices: 
       edges: []
@@ -280,10 +184,10 @@ TextureImporter:
       name: Shadow_Bat_death_r_3
       rect:
         serializedVersion: 2
-        x: 1084
-        y: 78
-        width: 406
-        height: 419
+        x: 1086
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,8 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7174c4f6be9319780800000000000000
-      internalID: -8678091323618867433
+      spriteID: 82e0da898a175497d496d777e29f15dc
+      internalID: -7542377592152989566
       vertices: []
       indices: 
       edges: []
@@ -302,10 +206,10 @@ TextureImporter:
       name: Shadow_Bat_death_r_4
       rect:
         serializedVersion: 2
-        x: 1488
-        y: 80
-        width: 406
-        height: 419
+        x: 1448
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,8 +218,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eefaf1e95969775e0800000000000000
-      internalID: -1911893947448315922
+      spriteID: 8d6cba7465e0e7924c343d11a41fff2c
+      internalID: -7861067898197218163
       vertices: []
       indices: 
       edges: []
@@ -324,10 +228,10 @@ TextureImporter:
       name: Shadow_Bat_death_r_5
       rect:
         serializedVersion: 2
-        x: 1861
-        y: 86
-        width: 311
-        height: 419
+        x: 1810
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,8 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08961af5706d7f280800000000000000
-      internalID: -9009497202373858944
+      spriteID: f022bdaf8fc571f4b3854b48ad6e01c1
+      internalID: -832667235167427856
       vertices: []
       indices: 
       edges: []
@@ -346,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d3b690874ce04374e91f2811b0be5b9e
+    spriteID: 760391adee6d8df12fc92a2962a583cc
     internalID: 0
     vertices: []
     indices: 
@@ -354,16 +258,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":362.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Shadow_Bat_death_r_0: -798510034731093814
-      Shadow_Bat_death_r_1: 7729244792955140842
-      Shadow_Bat_death_r_2: -3790155582986216315
-      Shadow_Bat_death_r_3: -8678091323618867433
-      Shadow_Bat_death_r_4: -1911893947448315922
-      Shadow_Bat_death_r_5: -9009497202373858944
+      Shadow_Bat_death_r_0: -5029976980009782581
+      Shadow_Bat_death_r_1: 434915897422339004
+      Shadow_Bat_death_r_2: -8884878363248306374
+      Shadow_Bat_death_r_3: -7542377592152989566
+      Shadow_Bat_death_r_4: -7861067898197218163
+      Shadow_Bat_death_r_5: -832667235167427856
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

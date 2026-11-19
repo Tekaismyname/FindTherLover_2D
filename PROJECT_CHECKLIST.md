@@ -58,6 +58,7 @@
 - [x] **Task 7.7:** Tạo Interface `IHarvestable.cs` (Phân định công cụ: Rìu, Cuốc, Tay không).
 - [x] **Task 7.8:** Viết `PlayerHarvestInteraction.cs` (Hệ thống quét tương tác nhặt đồ).
 - [x] **Task 7.9:** Viết `ItemDataSO.cs` (Data Layer - Quản lý tên khúc gỗ, icon, max stack).
+- [x] **Task 7.9b (Items & Relics Master Spec):** Xây dựng cẩm nang toàn diện [`ITEMS_MASTER_SPRITESHEET_SPEC.md`](file:///c:/Users/hokha/Downloads/CVs/Items/ITEMS_MASTER_SPRITESHEET_SPEC.md) (25 Vật Phẩm, Trang Bị, Đạo Cụ Giải Đố, Kỷ Vật Kỷ Niệm 1 Năm & Bộ Prompts AI Icon 32x32 + Animated World Drop $1 \times N$ nền trong suốt).
 - [x] **Task 7.10:** Viết `LootItem.cs` (Vật lý rơi nảy tưng tưng + lực hút nam châm Magnetic Pickup vào người chơi).
 - [x] **Task 7.11:** Tạo Prefab `Item_Wood.prefab` và gán vào ô `Drop Prefab` của `Tree_Oak_Data`.
 - [x] **Task 7.12:** Test toàn diện vòng lặp: Đấm 6 phát -> Cây đổ -> 3 Khúc gỗ nảy ra -> Tự hút vào người!
@@ -81,6 +82,7 @@
 
 ### [x] Ngày 10: Advanced Enemy AI & NavMesh Pathfinding (HOÀN THÀNH)
 - [x] **Task 10.0 (Design & Architecture):** Xây dựng tài liệu thiết kế quái vật (`MONSTER_DESIGN_BIBLE.md`) & Nâng cấp GDD ([`Find_The_Lover_GDD.md`](file:///c:/Users/hokha/Downloads/CVs/Find_The_Lover_GDD.md) v3.0) tích hợp trọn vẹn 7 chủng quái vật, ma trận xuất hiện, chỉ số toán học và cơ chế Boss.
+- [x] **Task 10.0b (Water Slime Expansion):** Bổ sung quái sơ cấp Water Slime (`slime_water` - Khu 1 Bãi Biển & Đồng Cỏ) vào [`MONSTER_DESIGN_BIBLE.md`](file:///c:/Users/hokha/Downloads/CVs/Monster/MONSTER_DESIGN_BIBLE.md) và tạo đặc tả mỹ thuật hoàn chỉnh [`WATER_SLIME_SPRITESHEET_SPEC.md`](file:///c:/Users/hokha/Downloads/CVs/Monster/WATER_SLIME_SPRITESHEET_SPEC.md) (6 Actions, 18 Prompts AI 3 góc nhìn `_fw`, `_r`, `_bw` + Spritesheet Đạn Nước `Water_Bullet_FX` độc lập).
 - [x] **Task 10.1:** Cài đặt package `com.unity.ai.navigation` & Bake NavMesh 3D trên địa hình đảo.
 - [x] **Task 10.2:** Viết Blueprint dữ liệu quái vật `EnemyDataSO.cs` tại `Assets/02_Scripts/Enemies/Data/`.
 - [x] **Task 10.3:** Viết cỗ máy AI `EnemyAI.cs` tại `Assets/02_Scripts/Enemies/` (FSM 4 trạng thái, tích hợp Animator 4 hướng và tự động bơm `maxHealth` vào `HealthSystem`).
@@ -146,75 +148,87 @@
     - [x] **Skeleton Goblin AI & Prefabs:** Đã viết `BoneProjectile.cs`, `SkeletonEnemyAI.cs`, tạo `Skeleton_Enemy_Data.asset`, `Bone_Projectile.prefab` và `Enemy_Skeleton.prefab` (Cơ chế ném xương + vỡ đống xương 1 HP tự hồi sinh sau 4s).
     - [x] **Magma Scarab AI, VFX & Prefabs:** Đã chuẩn hóa 31 sheet, viết `MagmaScarabEnemyAI.cs`, tạo `MagmaScarab_Enemy_Data.asset`, `Magma_Explosion_VFX.prefab` và `Enemy_MagmaScarab.prefab` (Cơ chế đội đất chui lên `Spawn`, nạp nhiệt phình to tự bộc 45 AoE DMG).
     - [x] **Spore Shroom AI & Prefabs:** Đã chuẩn hóa 16 sheet, tạo 22 clips `.anim`, `SporeShroomController.controller`, `SporeBulletController.controller`, viết `PoisonStatusEffect.cs`, `SporeProjectile.cs`, `SporeShroomEnemyAI.cs`, tạo `SporeShroom_Enemy_Data.asset`, `Spore_Projectile.prefab` và `Enemy_SporeShroom.prefab` (Ụ súng nấm phun bào tử độc 8m gây DoT rút máu 2 HP/s trong 5s).
+    - [x] **Skeleton Walking Animation Remaster & BlendTree Scaling:** Da can chinh PPU cua 3 spritesheet buoc di (Skel_walk_fw, w, 
+) tu 100 ve 42, dong bo kich thuoc the gioi hoan hao voi Idle (~4.6m), toi uu Walk_Tree va Idle_Tree sang che do SimpleDirectional2D (type 1) 4 huong chong crab-walking.
+    - [x] **Shadow Bat Slicing, Scaling, Animation & Prefabs:** Da cat chuan xac 26 spritesheet cua Shadow Bat (Fly, Bite, Stun, DiveAttack, Alert, Sonic Wave, Hurt, Death, Sonic Projectile/Impact), can chinh PPU theo ty le (80 cho 1x va 160 cho 2x/shockwave), tao 30 clips .anim, xay dung ShadowBatController.controller (7 BlendTrees), viet ShadowBat_Enemy_Data.asset, lap trinh ShadowBatEnemyAI.cs (bay luon tren khong, luon vong stalk player o ban kinh 4m, bo nhao Dive Swoop sat mat dat tan cong roi bay vut len, phong song am Sonic Wave, roi tu do khi chet), lap trinh SonicProjectile.cs, tao Sonic_Projectile.prefab va Enemy_ShadowBat.prefab.
+    - [x] **Bugfix AI & 2.5D Directional Presentation (Shadow Bat & Spore Shroom):**
+      - Khắc phục lỗi Shadow Bat không đuổi theo Player: Chuyển `EnemyAI.Update()` sang `protected virtual`, loại bỏ hàm ẩn trong `ShadowBatEnemyAI`, chuyển hiệu ứng bay dập dìu sang `LateUpdate()` và đồng bộ di chuyển NavMesh liên tục bám sát Player.
+      - Khắc phục lỗi Spore Shroom bị lệch hướng (toàn quay `r` và `bw`): Cập nhật Cung Ưu Tiên Chính Diện $140^\circ$ theo góc nhìn Player ($Z \le 0.25$), khóa cứng `spriteRenderer.flipX = false` nhằm triệt tiêu xung đột lật ảnh với Blend Tree 4 hướng.
     - [x] **Tài liệu Báo cáo Kiến trúc Quái vật:** Đã xuất bản MONSTER_SYSTEM_ARCHITECTURE.md tổng hợp sơ đồ lớp UML Mermaid, phân tích 4 Archetype quái vật (Goblin, Skeleton, Scarab, Spore Shroom), máy trạng thái FSM, cơ chế 2.5D Frontal Priority, bảng cân bằng thông số và ma trận test case QA.
-- [x] **Task 16.2 (Zone 2 Environment Hazard - Khí Gas Độc):** Lập trình `PoisonGasZone.cs` (rút máu $5\text{ HP/s}$ nếu không có lửa bảo vệ) & Tạo vùng khí độc `Poison_Gas_Zone` trong Scene với hiệu ứng sương độc bán trong suốt.
-- [x] **Task 16.3 (Zone 2 Puzzle Gate - Chuỗi Đài Lửa & Lửa Xanh):**
-  - Lập trình `PlayerTorchController.cs` (quản lý đuốc cháy $40\text{s}$, Lửa Thường & Lửa Xanh Soul Flame).
-  - Lập trình `AncientBrazier.cs` & Dựng model 3D ProBuilder cho Đài Đuốc Cổ (`Ancient_Brazier.prefab`) và Đài Lửa Xanh (`Soul_Flame_Altar.prefab`).
-  - Lập trình `ThornBarrierGate.cs` & Dựng model 3D ProBuilder cho Rào Gai Phong Ấn (`Thorn_Barrier_Gate.prefab`) cản đường và tự thiêu rụi khi dùng Soul Flame.
+  - [x] **Task 16.2 (Zone 2 Environment Hazard - Khí Gas Độc):** Lập trình `PoisonGasZone.cs` (rút máu $5\text{ HP/s}$ nếu không có lửa bảo vệ) & Tạo vùng khí độc `Poison_Gas_Zone` trong Scene với hiệu ứng sương độc bán trong suốt.
+  - [x] **Task 16.3 (Zone 2 Puzzle Gate - Chuỗi Đài Lửa & Lửa Xanh):**
+    - Lập trình `PlayerTorchController.cs` (quản lý đuốc cháy $40\text{s}$, Lửa Thường & Lửa Xanh Soul Flame).
+    - Lập trình `AncientBrazier.cs` & Dựng model 3D ProBuilder cho Đài Đuốc Cổ (`Ancient_Brazier.prefab`) và Đài Lửa Xanh (`Soul_Flame_Altar.prefab`).
+    - Lập trình `ThornBarrierGate.cs` & Dựng model 3D ProBuilder cho Rào Gai Phong Ấn (`Thorn_Barrier_Gate.prefab`) cản đường và tự thiêu rụi khi dùng Soul Flame.
+  - [x] **Task 16.4 (Zone 2 Level Construction & Multi-Island Archipelago Assembly — HOÀN THÀNH):**
+    - [x] Khởi tạo Đảo Độc Lập Khu Vực 2 (`Terrain_Zone2_ToxicIsland`, kích thước $400 \times 80 \times 400\text{m}$ tại $X \in [250, 650], Z \in [-200, 200]$) lưu tại `Assets/01_Data/Terrain/Zone2_ToxicIsland_TerrainData.asset`, điêu khắc bờ biển cát vàng, vành đai núi đá tự nhiên, hồ đầm lầy độc (`Zone2_ToxicSwamp_Water`) và hẻm núi Mật thất Lửa Xanh.
+    - [x] Xây dựng Cầu Cổ Liên Đảo (`Bridge_Zone1_To_Zone2` dài $60\text{m}$ từ $X=222 \to 282$) bằng ProBuilder (trụ đá rêu phong, ván gỗ sồi, lan can sắt rèn, đèn lồng cổ ngữ Cyan) bắc qua eo biển nối liền Đảo 1 và Đảo 2.
+    - [x] Sơn tự động 4 Biome (`Layer_Grass`, `Layer_Rock`, `Layer_DirtPath`, `Layer_Sand`) đúng chuẩn thứ tự kênh màu trên cả Đảo 1 (`Terrain`) và Đảo 2 (`Terrain_Zone2_ToxicIsland`), đồng thời vẽ lại hệ thống đường mòn uốn lượn tự nhiên dạng đường cong chữ S (S-Curve Winding Pathways + Perlin Noise Wobble) nối liền Bãi Biển Nam $\rightarrow$ Lửa Trại $\rightarrow$ Hồ Ngọc Lục Bảo $\rightarrow$ Cầu Cổ Liên Đảo $\rightarrow$ 2 Nhánh Đường Vòng Quanh Hồ Đầm Lầy Độc $\rightarrow$ Mật Thất Lửa Xanh & Cổng Gai Phong Ấn.
+    - [x] Thiết kế & Tách nền tự động bộ 6 Prefab 2.5D Billboard đặc trưng cho Khu Vực 2 (`Zone2_WeepingWillow_Quad` Liễu Rủ Đầm Lầy, `Zone2_DeadRuneTree_Quad` Cổ Thụ Khô Khắc Rune, `Zone2_GiantSporeShrooms_Quad` Cụm Nấm Bào Tử Phát Quang, `Zone2_RunicObsidianRock_Quad` Đá Hắc Diện Thạch Cổ Ngữ, `Rock_Crystal_Quad` Đá Tinh Thể Hổ Phách, `Rock_Ore_Quad` Đá Quặng Cổ) kết hợp thảm thực vật `CoverageMode` $1024 \times 1024$.
+    - [x] Bố trí Lộ trình Dẫn Lửa 3 Trạm & Kiến trúc Cổ đại ProBuilder: Cổng Vòm Đá Cổ (`Zone2_Entrance_RuinArchway`), `Brazier_Checkpoint_01` ($X=342, Z=0$), Quần thể 6 Cột Đá Cổ Mật Thất & `Soul_Flame_Altar` ($X=435, Z=-68$), `Brazier_Checkpoint_02` ($X=485, Z=14$), và Hẻm núi `Thorn_Barrier_Gate` ($X=535, Z=0$).
+    - [x] Phủ sương độc 3 tầng Particle VFX (`Poison_Gas_Zone`), bố trí 4 loài quái (`SporeShroom`, `Skeleton`, `MagmaScarab`, `ShadowBat`) và Re-bake `NavMeshSurface` xuyên suốt liên đảo.
 
-### [ ] Ngày 17: Khu Vực 3 ── ⚔️ Quái Đền Cổ & 🧩 Puzzle 3: Tán Sắc Lăng Kính & Hội Tụ Ánh Sáng Tím Magenta
-- [ ] **Task 17.1 (Zone 3 Combat):** Thiết lập bãi quái Khu Vực 3: Shadow Wraith (U linh bay xuyên vật thể, cast chiêu làm chậm và đóng băng bước chạy Quene). Ban đêm Shadow Wraith cuồng nộ mở rộng bán kính truy đuổi.
-- [ ] **Task 17.2 (Zone 3 Optics Setup):** Giếng trời rọi chùm sáng trắng trung tâm, Cổng Đền phong ấn bởi Mắt Ngọc Thần đòi hỏi chùm sáng Tím (Magenta).
-- [ ] **Task 17.3 (Zone 3 Puzzle Gate):** Lập trình Khối Lăng Kính Pha Lê (`PrismBlock.cs`) tán sắc ánh sáng thành Đỏ - Lam - Lục và 2 Trụ Gương Phản Xạ xoay $360^\circ$ (`MirrorPillar.cs`): Hội tụ tia Đỏ + Lam tạo thành tia Tím Magenta bắn vào Mắt Ngọc Thần mở cánh cổng đá cổ vào Mật Thất Khu Vực 4!
+### [ ] Ngày 17: Muck-Like Night Raid Spawner & Đạo Diễn Độ Khó Theo Ngày (Night Raid Director)
+- [ ] **Task 17.1 (Night Raid Director):** Lập trình `NightRaidDirector.cs` quản lý ngân sách sinh quái ban đêm (`SpawnBudget = Base + Day * Multiplier`), chuông báo động hoàng hôn và sương mù tím đêm.
+- [ ] **Task 17.2 (Wave Spawning Engine):** Lập trình thuật toán sinh quái theo vòng ngoài camera ($25\text{--}35\text{m}$ quanh bãi trại) với các đàn Goblin, Skeleton, Scarab, Spore Shroom và Shadow Bat.
+- [ ] **Task 17.3 (Survival HUD):** Hiển thị `DAY X` trên HUD, đồng hồ cát đếm ngược ban ngày / cảnh báo quái đêm đỏ rực.
 
-### [ ] Ngày 18: Khu Vực 4 ── ⚔️ Thủ Hộ Mật Thất & 🧩 Puzzle 4: Giao Hưởng Chuông Đá Kỷ Niệm 1 Năm
-- [ ] **Task 18.1 (Zone 4 Combat):** Tiêu diệt nhóm Thủ Hộ Mật Thất tinh nhuệ bảo vệ thánh địa trước khi tiếp cận dàn Chuông Đá Cổ.
-- [ ] **Task 18.2 (Zone 4 Puzzle Gate):** Lập trình 4 Quả Chuông Đá Cổ (`MelodicBellsPuzzle.cs`) phát ra 4 âm sắc Đồ - Mi - Sol - Đố khi chém kiếm vào. Gõ đúng chuỗi giai điệu điệp khúc bài hát kỷ niệm 1 năm của 2 bạn.
-- [ ] **Task 18.3 (Anniversary Reward):** Rương Hoa Hồng mở ra: Chiếc Nhẫn Kỷ Niệm 1 Năm (Lá chắn tình yêu vĩnh viễn giảm $50\%$ sát thương từ Boss), cánh cổng dẫn vào Đấu Trường Final Boss mở toang!
+### [ ] Ngày 18: Hệ Thống Lõi Nâng Cấp 3 Bậc TFT (Đồng / Bạc / Vàng) & Rơi Quả Cầu Boss
+- [ ] **Task 18.1 (Data-Driven Augments):** Tạo `AugmentData.cs` (`ScriptableObject`) với `AugmentTier` (Bronze, Silver, Gold), 18 Lõi Công Nghệ mở rộng chỉ số, hiệu ứng đòn đánh (giật sét lan, vệt lửa) và siêu nội tại.
+- [ ] **Task 18.2 (Augment Modal UI):** Lập trình `AugmentCardUI.cs` mở cửa sổ modal chọn 1 trong 3 thẻ bài với hiệu ứng viền phát sáng Đồng/Bạc/Vàng chuẩn TFT.
+- [ ] **Task 18.3 (Augment Manager & Drop Logic):** Quái tinh anh và Boss rơi Quả Cầu Nâng Cấp (`AugmentOrb.prefab`), người chơi chạm vào để mở giao diện nâng cấp.
 
-### [ ] Ngày 19: Khu Vực 5 ── 👑 Đấu Trường Dung Nham: Đại Chiến Final Boss (Magma Warden Golem)
-- [ ] **Task 19.1 (Boss Combat & Environmental Puzzle Mechanics):** AI Boss Magma Warden Golem 3 giai đoạn kết hợp giải đố môi trường:
-  - *Phase 1:* Boss đấm tay càn quét $\rightarrow$ Dụ Boss vào giữa 2 bệ dẫm từ trường kẹp chặt cánh tay $\rightarrow$ Chém vỡ khớp vai!
-  - *Phase 2:* Boss phun vòng lửa dung nham $\rightarrow$ Dùng Đuốc thắp sáng 2 Van Cắt Nước ngầm xối nước lạnh làm sốc nhiệt nứt tung giáp đá ngực lộ Trái Tim Pha Lê!
-  - *Phase 3:* Boss Cuồng Nộ dậm đất AOE $360^\circ$ $\rightarrow$ Quene nhảy né sóng xung kích, tung đòn quyết định chém vỡ Trái Tim Pha Lê!
-- [ ] **Task 19.2 (Boss Victory):** Boss sụp đổ thành tro tàn, làm rơi chiếc **Chìa Khóa Vàng Cổ Đại** để giải cứu người yêu!
+### [ ] Ngày 19: Khu Vực 3 (Đảo 3) ── ⚔️ Quái Bay U Linh & 🧩 Puzzle 3: Tán Sắc Lăng Kính Tím Magenta
+- [ ] **Task 19.1 (Zone 3 Archipelago):** Tạo Đảo Thạch Anh Đền Cổ (`Terrain_Zone3_CrystalTemple`) kết nối qua Cầu Cổ số 2.
+- [ ] **Task 19.2 (Shadow Wraith AI):** Quái u linh bay xuyên địa hình, thả bùa làm chậm và cuồng nộ vào ban đêm.
+- [ ] **Task 19.3 (Optics Puzzle):** Lập trình `PrismBlock.cs` và `MirrorPillar.cs` xoay trụ gương hội tụ tia Đỏ + Lam tạo tia Tím Magenta kích hoạt Đài Phong Ấn Số 3.
 
-### [ ] Ngày 20: 💖 The Grand Finale: Đập Xích Lồng Sắt, Giải Cứu Chàng Trai & Màn Đoàn Tụ Kỷ Niệm
-- [ ] **Task 20.1 (Rescue Interaction):** Quene cầm Chìa Khóa Vàng tiến tới chiếc lồng sắt cổ treo giữa đấu trường, tương tác phím `E` chặt đứt xiềng xích giải cứu chàng trai.
-- [ ] **Task 20.2 (Romantic Ending Cutscene):** Chàng trai bước ra, hai nhân vật ôm chầm lấy nhau trong hoạt cảnh Pixel Art ấm áp, Camera Orbit quay $360^\circ$ điện ảnh lung linh.
-- [ ] **Task 20.3 (Anniversary Surprise):** Hiện bức thư tình kỷ niệm 1 năm lãng mạn, phát bản nhạc tình yêu trọn vẹn và mở nút xem Album Ảnh Kỷ Niệm Ngoài Đời Thật!
+### [ ] Ngày 20: Khu Vực 4 (Đảo 4) ── ⚔️ Thủ Hộ Mật Thất & 🧩 Puzzle 4: Giao Hưởng Chuông Đá Co-op
+- [ ] **Task 20.1 (Zone 4 Archipelago):** Tạo Đảo Rừng Ngân Hạnh (`Terrain_Zone4_GinkgoShrine`) và Quần thể Chuông Đá.
+- [ ] **Task 20.2 (Melody Bells Puzzle):** Lập trình `MelodicBellsPuzzle.cs` 4 nốt Đồ - Mi - Sol - Đố, Quene và Lover phối hợp gõ đúng giai điệu điệp khúc bài hát kỷ niệm.
+- [ ] **Task 20.3 (Co-op Reward):** Kích hoạt Đài Phong Ấn Số 4 và nhận Bùa Vàng: Nhẫn Tình Yêu Cổ Đại (Giảm $40\%$ sát thương khi đi cùng nhau).
 
-### [ ] Ngày 21: Crafting Expansion & Player Power Progression
-- [ ] Hoàn thiện hệ thống chế tạo công cụ & vũ khí (Rìu, Kiếm Sắt Bén, Đuốc Sinh Tồn Bền Bỉ, Giáp Da Hộ Mệnh) giúp Quene tự tin càn quét các khu vực.
+### [ ] Ngày 21: Bàn Rèn Chế Tác Nâng Cao (Muck-Style Anvil & Power Forge)
+- [ ] **Task 21.1 (Crafting Forge):** Lập trình `CraftingForge.cs` chế tạo vũ khí & giáp cấp cao (Sắt, Obsidian, Adamantite).
+- [ ] **Task 21.2 (Tiered Tools & Weapons):** Hệ thống rìu, cuốc và kiếm chia cấp bậc, mở rộng sát thương và tốc độ khai khoáng.
+- [ ] **Task 21.3 (Anvil Audio & VFX):** Hiệu ứng tóe lửa và âm thanh đe búa leng keng khi hoàn thành rèn trang bị.
+
+### [ ] Ngày 22: Quái Tinh Anh & Boss Đêm Tấn Công (Night Boss Waves)
+- [ ] **Task 22.1 (Night Boss AI):** Boss Đêm 3 (`SporeTitan`) và Boss Đêm 6 (`NightPhantomGolem`) xuất hiện tấn công căn cứ.
+- [ ] **Task 22.2 (Gold Augment Chest):** Boss đêm bị tiêu diệt rơi Rương Lõi Vàng đảm bảo nhận Lõi Nâng Cấp Bậc Vàng tối thượng.
+
+### [ ] Ngày 23: Khu Vực 5 (Đảo Núi Lửa) ── 👑 Đại Chiến Final Boss & Động Cơ Tính Đa Kết Thúc
+- [ ] **Task 23.1 (Magma Warden Boss Fight):** AI Boss Dung Nham 3 giai đoạn kết hợp giải đố môi trường phá giáp.
+- [ ] **Task 23.2 (Branching Multi-Endings):** Lập trình `SurvivalEndingManager.cs` tính toán 4 Ending (Lost to the Abyss, Survivor's Oath, Beacon of Hope, Eternal True Lovers).
+- [ ] **Task 23.3 (Cutscene Engine):** Hoạt cảnh điện ảnh chuyển tiếp cho từng Ending tương ứng.
 
 ---
 
 ## 📕 TUẦN 4 — Audio Polish, Optimization, Build & Release
 
-### [ ] Ngày 22: Complete Audio Design & Sound Manager
-- [ ] AudioManager dạng Singleton: BGM Ngày, BGM Đêm, BGM Đánh Boss.
-- [ ] Tiếng bước chân thay đổi theo bề mặt (Cỏ, Cát, Nước, Đá).
-- [ ] SFX chiến đấu, tiếng chặt cây, tiếng mở rương.
+### [ ] Ngày 24: Thiết Kế Âm Thanh Toàn Diện (Day Chill Survival vs Night Horde Panic)
+- [ ] **Task 24.1:** BGM ngày Acoustic Guitar êm dịu vs BGM đêm Horde Battle dồn dập kịch tính.
+- [ ] **Task 24.2:** SFX chọn Lõi TFT "Ding!" rực rỡ, tiếng bước chân bề mặt và âm thanh chặt quặng giòn giã.
 
-### [ ] Ngày 23: Dynamic UI/UX Polish
-- [ ] Số sát thương nảy lên trên đầu quái (`Damage Numbers Floating`).
-- [ ] Hiệu ứng hoạt họa cho Panel UI (DoTween / LeanTween / Animator UI).
+### [ ] Ngày 25: Đánh Bóng Giao Diện (Floating Damage Numbers & TFT Card Modal)
+- [ ] **Task 25.1:** Số sát thương bay bốc lên đầu quái (`DamageNumberSpawner` - Trắng/Đỏ/Tím).
+- [ ] **Task 25.2:** Hoạt họa lật thẻ bài 3D mượt mà cho cửa sổ chọn Lõi TFT.
 
-### [ ] Ngày 24: Performance Optimization & Profiling (Tối Ưu Android)
-- [ ] Dùng Unity Profiler kiểm tra FPS, CPU, RAM.
-- [ ] Tối ưu bộ nhớ rác (GC Alloc = 0 trong vòng lặp chính).
-- [ ] Cấu hình Occlusion Culling và LOD cho cây cối.
+### [ ] Ngày 26: Tối Ưu Hóa Hiệu Năng & Object Pooling (Tối Ưu Android & PC)
+- [ ] **Task 26.1:** Triển khai `ObjectPoolManager.cs` cho Quái đêm, Đạn bào tử và VFX hạt ($0\text{ GC Alloc}$).
+- [ ] **Task 26.2:** Đo đạc Unity Profiler duy trì $60\text{ FPS}$ ổn định khi có hàng chục quái vật tràn vào ban đêm.
 
-### [ ] Ngày 25: Stress Test & Bug Fixing
-- [ ] Kiểm thử nhiều người chơi thực tế, xử lý lỗi mất đồng bộ vị trí.
-- [ ] Kiểm tra toàn bộ góc cạnh trên địa hình không bị kẹt nhân vật.
+### [ ] Ngày 27: Game Balance & Kiểm Thử Relay Co-op
+- [ ] **Task 27.1:** Cân bằng đường cong sức mạnh người chơi vs tỷ lệ máu/sát thương quái đêm.
+- [ ] **Task 27.2:** Kiểm thử kết nối Unity Relay chơi Co-op 2 người qua mạng.
 
-### [ ] Ngày 26: Game Balance & Tuning
-- [ ] Cân bằng chỉ số: Máu quái, Sát thương vũ khí, Giá mở rương.
-- [ ] Tinh chỉnh cảm giác đánh (Game Feel).
-
-### [ ] Ngày 27: Standalone Build Setup & Relay Testing
-- [ ] Đóng gói bản cài đặt Android (`.apk`) và Windows (`.exe`).
-- [ ] Kiểm thử kết nối Unity Relay chơi qua 2 mạng Wifi khác nhau.
-
-### [ ] Ngày 28: Release Game On itch.io
-- [ ] Đăng tải bản build lên nền tảng itch.io.
-- [ ] Chuẩn bị banner, mô tả game và GIF gameplay hấp dẫn.
+### [ ] Ngày 28: Đóng Gói Standalone & Xuất Bản Lên itch.io
+- [ ] **Task 28.1:** Đóng gói bản cài đặt Windows (`.exe`) và Android (`.apk`).
+- [ ] **Task 28.2:** Xuất bản game lên itch.io kèm poster, gif và mô tả gameplay sinh tồn lãng mạn.
 
 ### [ ] Ngày 29: Portfolio & GitHub Showcase
-- [ ] Viết file `README.md` kho lưu trữ GitHub chuyên nghiệp với sơ đồ kiến trúc SOLID.
-- [ ] Cập nhật dự án vào CV / Hồ sơ năng lực Game Developer.
+- [ ] **Task 29.1:** Viết `README.md` kho lưu trữ GitHub chuyên nghiệp với sơ đồ kiến trúc SOLID & Muck Loop.
+- [ ] **Task 29.2:** Cập nhật dự án vào CV / Portfolio thực tập Unity Game Tester / Developer.
 
 ### [ ] Ngày 30: Final Project Review & Architecture Refactoring
-- [ ] Tổng kết dự án 30 ngày, tối ưu hóa cấu trúc mã nguồn chuẩn doanh nghiệp.
+- [ ] **Task 30.1:** Rà soát toàn bộ mã nguồn, tối ưu hóa cấu trúc doanh nghiệp và đóng gói bản kỷ niệm tình yêu 1 năm trọn vẹn!

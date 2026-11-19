@@ -3,119 +3,29 @@ guid: 28022f4efcdd4c146af82779e55c5c5b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8439559944108070004
+      213: 8027287644479639449
     second: Shadow_Bat_fly_fw_0
   - first:
-      213: -8726550422450199744
+      213: -3232745316579927381
     second: Shadow_Bat_fly_fw_1
   - first:
-      213: -2964198590764260399
+      213: 5377681755700169869
     second: Shadow_Bat_fly_fw_2
   - first:
-      213: -8770160587649460585
+      213: 244330326513540663
     second: Shadow_Bat_fly_fw_3
   - first:
-      213: -4121902133098316216
+      213: -1116185586529656763
     second: Shadow_Bat_fly_fw_4
   - first:
-      213: -7293476445057948854
+      213: 671441341785440879
     second: Shadow_Bat_fly_fw_5
   - first:
-      213: -4381879761662204846
+      213: -8802796153888358142
     second: Shadow_Bat_fly_fw_6
   - first:
-      213: 35799874779525338
+      213: -2836039494138188081
     second: Shadow_Bat_fly_fw_7
-  - first:
-      213: 7928880300950633027
-    second: Shadow_Bat_fly_fw_8
-  - first:
-      213: 4105757747223585110
-    second: Shadow_Bat_fly_fw_9
-  - first:
-      213: 6679385553640765704
-    second: Shadow_Bat_fly_fw_10
-  - first:
-      213: 3204439252946380198
-    second: Shadow_Bat_fly_fw_11
-  - first:
-      213: 9100334482636752632
-    second: Shadow_Bat_fly_fw_12
-  - first:
-      213: -1079818553813289582
-    second: Shadow_Bat_fly_fw_13
-  - first:
-      213: 6986823598669516086
-    second: Shadow_Bat_fly_fw_14
-  - first:
-      213: 7547866570467904547
-    second: Shadow_Bat_fly_fw_15
-  - first:
-      213: -5789540775237527352
-    second: Shadow_Bat_fly_fw_16
-  - first:
-      213: -7286934919791552260
-    second: Shadow_Bat_fly_fw_17
-  - first:
-      213: -2681243720508894207
-    second: Shadow_Bat_fly_fw_18
-  - first:
-      213: -8941013316103596931
-    second: Shadow_Bat_fly_fw_19
-  - first:
-      213: 5133278525872360992
-    second: Shadow_Bat_fly_fw_20
-  - first:
-      213: 4187463057015989410
-    second: Shadow_Bat_fly_fw_21
-  - first:
-      213: 970577916321303785
-    second: Shadow_Bat_fly_fw_22
-  - first:
-      213: 551832012058879970
-    second: Shadow_Bat_fly_fw_23
-  - first:
-      213: 6077186881206677712
-    second: Shadow_Bat_fly_fw_24
-  - first:
-      213: -134892006034089270
-    second: Shadow_Bat_fly_fw_25
-  - first:
-      213: -5505792988454035988
-    second: Shadow_Bat_fly_fw_26
-  - first:
-      213: -3690962635249958267
-    second: Shadow_Bat_fly_fw_27
-  - first:
-      213: 3237900138819438943
-    second: Shadow_Bat_fly_fw_28
-  - first:
-      213: -2449662698176127444
-    second: Shadow_Bat_fly_fw_29
-  - first:
-      213: -8485604653494951379
-    second: Shadow_Bat_fly_fw_30
-  - first:
-      213: -2527278781238527075
-    second: Shadow_Bat_fly_fw_31
-  - first:
-      213: -1393192808466067043
-    second: Shadow_Bat_fly_fw_32
-  - first:
-      213: -6656520628238419180
-    second: Shadow_Bat_fly_fw_33
-  - first:
-      213: 1215476910257308695
-    second: Shadow_Bat_fly_fw_34
-  - first:
-      213: -2269594565981556559
-    second: Shadow_Bat_fly_fw_35
-  - first:
-      213: -5403596045597015856
-    second: Shadow_Bat_fly_fw_36
-  - first:
-      213: 4393242958922445275
-    second: Shadow_Bat_fly_fw_37
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -148,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -162,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -186,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -214,20 +124,20 @@ TextureImporter:
       name: Shadow_Bat_fly_fw_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 93
-        width: 728
-        height: 579
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8ba2de02f8a0ea80800000000000000
-      internalID: -8439559944108070004
+      spriteID: 994f170f95a7666fa04a52a35b706064
+      internalID: 8027287644479639449
       vertices: []
       indices: 
       edges: []
@@ -236,20 +146,20 @@ TextureImporter:
       name: Shadow_Bat_fly_fw_1
       rect:
         serializedVersion: 2
-        x: 442
-        y: 584
-        width: 10
-        height: 13
+        x: 306
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 043225340a015e680800000000000000
-      internalID: -8726550422450199744
+      spriteID: ab1af22b43fb22d3efd617717a8c69a9
+      internalID: -3232745316579927381
       vertices: []
       indices: 
       edges: []
@@ -258,20 +168,20 @@ TextureImporter:
       name: Shadow_Bat_fly_fw_2
       rect:
         serializedVersion: 2
-        x: 539
-        y: 594
-        width: 7
-        height: 11
+        x: 612
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d368c1361d0dd6d0800000000000000
-      internalID: -2964198590764260399
+      spriteID: 8d8c9b8b105da14aa3646bfb7f8a616c
+      internalID: 5377681755700169869
       vertices: []
       indices: 
       edges: []
@@ -280,20 +190,20 @@ TextureImporter:
       name: Shadow_Bat_fly_fw_3
       rect:
         serializedVersion: 2
-        x: 545
-        y: 596
-        width: 7
-        height: 9
+        x: 918
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 796d50e69612a4680800000000000000
-      internalID: -8770160587649460585
+      spriteID: 37deb12f23096403c210ce4d25bfede0
+      internalID: 244330326513540663
       vertices: []
       indices: 
       edges: []
@@ -302,20 +212,20 @@ TextureImporter:
       name: Shadow_Bat_fly_fw_4
       rect:
         serializedVersion: 2
-        x: 754
-        y: 79
-        width: 363
-        height: 508
+        x: 1224
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 84effb549df0cc6c0800000000000000
-      internalID: -4121902133098316216
+      spriteID: 45207d731f8382f0b3118a0130af0ff3
+      internalID: -1116185586529656763
       vertices: []
       indices: 
       edges: []
@@ -324,20 +234,20 @@ TextureImporter:
       name: Shadow_Bat_fly_fw_5
       rect:
         serializedVersion: 2
-        x: 1166
-        y: 492
-        width: 170
-        height: 106
+        x: 1530
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4364a2d0dd58ca90800000000000000
-      internalID: -7293476445057948854
+      spriteID: 6f02a2c857705109968322d478f0693f
+      internalID: 671441341785440879
       vertices: []
       indices: 
       edges: []
@@ -346,20 +256,20 @@ TextureImporter:
       name: Shadow_Bat_fly_fw_6
       rect:
         serializedVersion: 2
-        x: 1363
-        y: 95
-        width: 457
-        height: 522
+        x: 1836
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 254a6ada29f6033c0800000000000000
-      internalID: -4381879761662204846
+      spriteID: 02414f89892fd685c8801b1cb1406383
+      internalID: -8802796153888358142
       vertices: []
       indices: 
       edges: []
@@ -368,680 +278,20 @@ TextureImporter:
       name: Shadow_Bat_fly_fw_7
       rect:
         serializedVersion: 2
-        x: 1721
-        y: 603
-        width: 114
-        height: 51
+        x: 2142
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad0bc33ebcf2f7000800000000000000
-      internalID: 35799874779525338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_8
-      rect:
-        serializedVersion: 2
-        x: 1987
-        y: 582
-        width: 134
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34a31ccef9a090e60800000000000000
-      internalID: 7928880300950633027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_9
-      rect:
-        serializedVersion: 2
-        x: 1339
-        y: 510
-        width: 48
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 651e119fae49af830800000000000000
-      internalID: 4105757747223585110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_10
-      rect:
-        serializedVersion: 2
-        x: 1832
-        y: 79
-        width: 321
-        height: 458
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 80932aaa5c1f1bc50800000000000000
-      internalID: 6679385553640765704
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_11
-      rect:
-        serializedVersion: 2
-        x: 1108
-        y: 208
-        width: 330
-        height: 245
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6a5ef20d584787c20800000000000000
-      internalID: 3204439252946380198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_12
-      rect:
-        serializedVersion: 2
-        x: 1816
-        y: 192
-        width: 11
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f64dce0ff1ea4e70800000000000000
-      internalID: 9100334482636752632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_13
-      rect:
-        serializedVersion: 2
-        x: 1261
-        y: 174
-        width: 25
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 29535161fb6b301f0800000000000000
-      internalID: -1079818553813289582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_14
-      rect:
-        serializedVersion: 2
-        x: 1772
-        y: 166
-        width: 21
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 63d43039b0f26f060800000000000000
-      internalID: 6986823598669516086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_15
-      rect:
-        serializedVersion: 2
-        x: 412
-        y: 146
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32c09c0d7a86fb860800000000000000
-      internalID: 7547866570467904547
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_16
-      rect:
-        serializedVersion: 2
-        x: 1124
-        y: 99
-        width: 48
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c8d357d65b67afa0800000000000000
-      internalID: -5789540775237527352
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_17
-      rect:
-        serializedVersion: 2
-        x: 639
-        y: 136
-        width: 14
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf85f6c5c4b9fda90800000000000000
-      internalID: -7286934919791552260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_18
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 112
-        width: 21
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 10412d2ca0f4acad0800000000000000
-      internalID: -2681243720508894207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_19
-      rect:
-        serializedVersion: 2
-        x: 1520
-        y: 136
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d749b91b2c32be380800000000000000
-      internalID: -8941013316103596931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_20
-      rect:
-        serializedVersion: 2
-        x: 1176
-        y: 75
-        width: 48
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02e43cb3f911d3740800000000000000
-      internalID: 5133278525872360992
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_21
-      rect:
-        serializedVersion: 2
-        x: 1255
-        y: 95
-        width: 73
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a46287d67bdc1a30800000000000000
-      internalID: 4187463057015989410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_22
-      rect:
-        serializedVersion: 2
-        x: 1697
-        y: 122
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ec8b29f87f287d00800000000000000
-      internalID: 970577916321303785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_23
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 97
-        width: 19
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2e7657e8a4088a700800000000000000
-      internalID: 551832012058879970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_24
-      rect:
-        serializedVersion: 2
-        x: 697
-        y: 99
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0d0fcf72541865450800000000000000
-      internalID: 6077186881206677712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_25
-      rect:
-        serializedVersion: 2
-        x: 796
-        y: 101
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aca5c496f64c02ef0800000000000000
-      internalID: -134892006034089270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_26
-      rect:
-        serializedVersion: 2
-        x: 802
-        y: 94
-        width: 24
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ced5c5ca27e7793b0800000000000000
-      internalID: -5505792988454035988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_27
-      rect:
-        serializedVersion: 2
-        x: 855
-        y: 96
-        width: 23
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 582cfaee90117ccc0800000000000000
-      internalID: -3690962635249958267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_28
-      rect:
-        serializedVersion: 2
-        x: 877
-        y: 99
-        width: 9
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f59458865055fec20800000000000000
-      internalID: 3237900138819438943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_29
-      rect:
-        serializedVersion: 2
-        x: 883
-        y: 98
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c2edfaf31cc010ed0800000000000000
-      internalID: -2449662698176127444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_30
-      rect:
-        serializedVersion: 2
-        x: 891
-        y: 97
-        width: 9
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d22280cb6831d3a80800000000000000
-      internalID: -8485604653494951379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_31
-      rect:
-        serializedVersion: 2
-        x: 971
-        y: 97
-        width: 12
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9b35eba65d4decd0800000000000000
-      internalID: -2527278781238527075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_32
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 94
-        width: 23
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9150cba5826aace0800000000000000
-      internalID: -1393192808466067043
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_33
-      rect:
-        serializedVersion: 2
-        x: 1060
-        y: 83
-        width: 9
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 41bf9c1a1c94f93a0800000000000000
-      internalID: -6656520628238419180
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_34
-      rect:
-        serializedVersion: 2
-        x: 1092
-        y: 95
-        width: 9
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 714839c5fcd3ed010800000000000000
-      internalID: 1215476910257308695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_35
-      rect:
-        serializedVersion: 2
-        x: 1631
-        y: 102
-        width: 19
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b0338e54c7c080e0800000000000000
-      internalID: -2269594565981556559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_36
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 79
-        width: 40
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0d00c78a6029205b0800000000000000
-      internalID: -5403596045597015856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_Bat_fly_fw_37
-      rect:
-        serializedVersion: 2
-        x: 815
-        y: 95
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bd1fe8ad13fe7fc30800000000000000
-      internalID: 4393242958922445275
+      spriteID: cf2eea261b5da4d877e4121835455bfe
+      internalID: -2836039494138188081
       vertices: []
       indices: 
       edges: []
@@ -1050,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4855f26a36958b2a221c0624cf329d16
     internalID: 0
     vertices: []
     indices: 
@@ -1060,44 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Shadow_Bat_fly_fw_0: -8439559944108070004
-      Shadow_Bat_fly_fw_1: -8726550422450199744
-      Shadow_Bat_fly_fw_10: 6679385553640765704
-      Shadow_Bat_fly_fw_11: 3204439252946380198
-      Shadow_Bat_fly_fw_12: 9100334482636752632
-      Shadow_Bat_fly_fw_13: -1079818553813289582
-      Shadow_Bat_fly_fw_14: 6986823598669516086
-      Shadow_Bat_fly_fw_15: 7547866570467904547
-      Shadow_Bat_fly_fw_16: -5789540775237527352
-      Shadow_Bat_fly_fw_17: -7286934919791552260
-      Shadow_Bat_fly_fw_18: -2681243720508894207
-      Shadow_Bat_fly_fw_19: -8941013316103596931
-      Shadow_Bat_fly_fw_2: -2964198590764260399
-      Shadow_Bat_fly_fw_20: 5133278525872360992
-      Shadow_Bat_fly_fw_21: 4187463057015989410
-      Shadow_Bat_fly_fw_22: 970577916321303785
-      Shadow_Bat_fly_fw_23: 551832012058879970
-      Shadow_Bat_fly_fw_24: 6077186881206677712
-      Shadow_Bat_fly_fw_25: -134892006034089270
-      Shadow_Bat_fly_fw_26: -5505792988454035988
-      Shadow_Bat_fly_fw_27: -3690962635249958267
-      Shadow_Bat_fly_fw_28: 3237900138819438943
-      Shadow_Bat_fly_fw_29: -2449662698176127444
-      Shadow_Bat_fly_fw_3: -8770160587649460585
-      Shadow_Bat_fly_fw_30: -8485604653494951379
-      Shadow_Bat_fly_fw_31: -2527278781238527075
-      Shadow_Bat_fly_fw_32: -1393192808466067043
-      Shadow_Bat_fly_fw_33: -6656520628238419180
-      Shadow_Bat_fly_fw_34: 1215476910257308695
-      Shadow_Bat_fly_fw_35: -2269594565981556559
-      Shadow_Bat_fly_fw_36: -5403596045597015856
-      Shadow_Bat_fly_fw_37: 4393242958922445275
-      Shadow_Bat_fly_fw_4: -4121902133098316216
-      Shadow_Bat_fly_fw_5: -7293476445057948854
-      Shadow_Bat_fly_fw_6: -4381879761662204846
-      Shadow_Bat_fly_fw_7: 35799874779525338
-      Shadow_Bat_fly_fw_8: 7928880300950633027
-      Shadow_Bat_fly_fw_9: 4105757747223585110
+      Shadow_Bat_fly_fw_0: 8027287644479639449
+      Shadow_Bat_fly_fw_1: -3232745316579927381
+      Shadow_Bat_fly_fw_2: 5377681755700169869
+      Shadow_Bat_fly_fw_3: 244330326513540663
+      Shadow_Bat_fly_fw_4: -1116185586529656763
+      Shadow_Bat_fly_fw_5: 671441341785440879
+      Shadow_Bat_fly_fw_6: -8802796153888358142
+      Shadow_Bat_fly_fw_7: -2836039494138188081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

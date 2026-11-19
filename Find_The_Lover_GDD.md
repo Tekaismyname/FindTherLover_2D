@@ -1,253 +1,156 @@
 # 📖 GAME DESIGN DOCUMENT (GDD) — FIND THE LOVER
 ### *Chuẩn Framework: A GDD Template for the Indie Developer (Jason Bakker)*
-### *Phiên bản: 3.0 — The Living Survival Ecosystem & Combat Upgrade*
+### *Phiên bản: 4.0 — The 20-Day Muck-Like Co-op Survival, TFT Augments & Multi-Island Puzzle Evolution*
 
-> **Dự án:** Find the Lover  
+> **Dự án:** Find The Lover  
 > **Mục tiêu:** Quà tặng kỷ niệm 1 năm quen nhau (Anniversary Indie Game)  
-> **Tác giả:** Teka (Developer)  
-> **Engine:** Unity 6 (URP 3D World + 2D Pixel Art Billboard 2.5D)  
+> **Tác giả:** Teka (Developer) & Mentor  
+> **Engine:** Unity 6 (URP 3D Archipelago World + 2D Pixel Art Billboard 2.5D)  
 > **Nền tảng:** PC (Windows Standalone) & Hỗ trợ điều khiển Mobile (Android)  
+> **Chế độ chơi:** Singleplayer (Kèm Bạn Đồng Hành AI) & Co-op Multiplayer 2 Người (Quene & Boyfriend qua Unity Netcode / Relay)  
 > **Tình trạng tài liệu:** Sống (Living Document — Đồng bộ trực tiếp theo tiến độ phát triển)  
 
 ---
 
 ## PHẦN I: TỔNG QUAN TRÒ CHƠI (GAME OVERVIEW)
 
-### 1.1. Triết Lý Thiết Kế (Philosophy / Core Vision)
-* **Khẩu hiệu (Elevator Pitch):** *"Một tựa game 2.5D Survival — Puzzle lãng mạn nhưng thử thách sinh tồn và trí tuệ đỉnh cao. Cô gái bước vào hòn đảo hoang dã và hầm ngục cổ xưa, khai thác tài nguyên, chống lại bầy quái vật bóng đêm, phá giải các đại trận cơ quan liên hoàn và đánh bại Trùm Golem khổng lồ để giải cứu chàng trai của đời mình."*
+### 1.1. Triết Lý Thiết Kế Mới (The New Vision)
+* **Khẩu hiệu (Elevator Pitch):** *"Một tựa game sinh tồn Co-op 2.5D phong cách Muck-like kết hợp giải đố môi trường đa đảo và nâng cấp bùa chú chuẩn Đấu Trường Chân Lý (TFT). Đôi bạn trẻ Quene và Lover dạt vào quần đảo cổ ngữ bí ẩn, cùng nhau khai thác tài nguyên, rèn trang bị, kích hoạt 5 Đài Phong Ấn Nguyên Tố và tử thủ trước các đợt quái đêm hung tàn với mục tiêu tối thượng: **Sinh tồn trọn vẹn 20 Ngày** để mở khóa các kết thúc định mệnh!"*
 * **Trụ cột cảm xúc (Core Pillars):**
-  1. **Lãng mạn & Cá nhân hóa (Romantic & Personal):** Mọi chi tiết, mật mã chuông đá, giai điệu nền và bức tranh cổ đều gắn liền với câu chuyện tình yêu và kỷ niệm 1 năm của hai bạn.
-  2. **Thỏa mãn trí tuệ & Chuỗi phản ứng (Ingenious Multi-layered Puzzles):** Loại bỏ hoàn toàn các câu đố mò mẫm vô lý. Mọi câu đố đều dựa trên quy luật vật lý (tải trọng, quang học lăng kính, dẫn truyền nhiệt lửa) kết hợp tài nguyên sinh tồn.
-  3. **Cảm giác đòn đánh & Nhịp độ sảng khoái (Juicy Game Feel & Living World):** Chặt cây nảy nhịp đàn hồi, gỗ rớt văng nảy hút nam châm mượt mà, quái vật chớp đỏ khi trúng đòn, chu kỳ ngày/đêm biến ảo sắc màu.
+  1. **Tình Yêu Sát Cánh & Tương Trợ (True Co-op Synergy):** Quene và Lover là đôi bạn đồng hành gắn bó keo sơn. Cơ chế Gục Ngã & Hồi Sinh (`Downed & Revive`), Đuốc bảo vệ (`Torch Aura`) và Bùa Chú Tình Cảm (`Companion Bond`) đòi hỏi hai người chơi luôn che chắn, san sẻ tài nguyên và chiến đấu tựa lưng vào nhau.
+  2. **Vòng Lặp Sinh Tồn Muck-like Khắc Nghiệt (Escalating Day/Night Tension):** Ban ngày êm đềm khai khoáng, chặt gỗ, giải đố. Ban đêm lũ quái Vực Thẳm trỗi dậy theo cấp số nhân; các đêm mốc **Ngày 5, 10, 15, 20** là những đêm Đại Họa (`Calamity Boss Nights`) nghẹt thở!
+  3. **Cảm Giác Đập Hộp & Nâng Cấp Chuẩn TFT (Juicy 3-Tier Augments):** Mỗi khi diệt Quái Tinh Anh và Boss, người chơi nhận Quả Cầu Bùa Chú để chọn 1 trong 3 Lõi Công Nghệ (Đồng, Bạc, Vàng) mang đến những đột biến sức mạnh không ngờ (Giật sét lan, Vệt lửa lướt né, Hồi sinh bất tử).
+  4. **Giải Đố Môi Trường Đa Đảo (Multi-Island Environmental Puzzles):** 5 Hòn đảo độc lập kết nối bằng các Cây Cầu Cổ ProBuilder, mỗi đảo sở hữu một Đại Trận Cơ Quan dựa trên Vật Lý - Quang Học - m Nhạc gắn liền với kỷ niệm 1 năm.
 
-### 1.2. Thông Tin Trải Nghiệm (Game Spec)
-* **Thể loại:** 2.5D Action Survival — Environmental Puzzle — Boss Adventure.
-* **Thời lượng chơi:** 35 — 50 phút.
-* **Phong cách nghe nhìn (Art & Audio):**
-  * **Đồ họa:** HD-2D / 2.5D (Môi trường 3D PBR URP kết hợp Nhân vật & Quái vật Pixel Art 32-bit Billboard sắc nét `Point Filter`).
-  * **Âm thanh:** Nhạc nền chuyển biến theo thời gian (Bình yên ban ngày $\rightarrow$ Rùng rợn sương mù ban đêm $\rightarrow$ Hùng tráng rực lửa khi đánh Boss).
-
----
-
-## PHẦN II: CƠ CHẾ LỐI CHƠI CỐT LÕI (CORE GAMEPLAY & SYSTEMS)
-
-### 2.1. Vòng Lặp Trò Chơi Toàn Cảnh (Core Game Loop)
-```text
-  ┌─────────────────────────────────────────────────────────────┐
-  │  1. THU THẬP & KHAI THÁC SINH TỒN (HARVEST & SURVIVAL)      │
-  │  Đốn cây lấy gỗ, đập đá lấy quặng, tích trữ đuốc & công cụ  │
-  └──────────────────────────────┬──────────────────────────────┘
-                                 │
-                                 ▼
-  ┌─────────────────────────────────────────────────────────────┐
-  │  2. CHỐNG CHỌI HỆ SINH THÁI QUÁI VẬT (COMBAT & DAY/NIGHT)   │
-  │  Ban ngày dọn Goblin, ban đêm đối phó Dơi & U linh xuyên đá │
-  └──────────────────────────────┬──────────────────────────────┘
-                                 │
-                                 ▼
-  ┌─────────────────────────────────────────────────────────────┐
-  │  3. PHÁ GIẢI ĐẠI TRẬN CƠ QUAN (MULTI-STAGE PUZZLES)         │
-  │  Cân bằng tải trọng, dẫn lửa sương độc, tán sắc lăng kính   │
-  └──────────────────────────────┬──────────────────────────────┘
-                                 │
-                                 ▼
-  ┌─────────────────────────────────────────────────────────────┐
-  │  4. ĐẠI CHIẾN BOSS PUZZLE & GIẢI CỨU (CLIMAX & RESCUE)      │
-  │  Phá giáp Magma Warden Golem -> Mở lồng sắt đoàn tụ kỷ niệm │
-  └─────────────────────────────────────────────────────────────┘
-```
-
-### 2.2. Cơ Chế Điều Khiển (Control Scheme)
-* **Di chuyển:** `W`, `A`, `S`, `D` (Điều khiển nhân vật 8 hướng trong không gian 3D).
-* **Xoay Camera Orbit:** Di chuyển Chuột (hoặc vuốt cảm ứng trên Mobile) để xoay góc nhìn mượt mà quanh nhân vật.
-* **Tấn công / Khai thác:** `Chuột Trái` (Vung tay / Rìu / Kiếm chém trúng vật thể và quái vật).
-* **Tương tác / Nhặt đồ / Đẩy khối:** Giữ phím `E`.
-* **Mở túi đồ / Chế tạo:** Phím `Tab` hoặc `C`.
-
-### 2.3. Các Hệ Thống Đã Hoàn Thiện (Implemented Systems)
-1. **Hệ thống Khai thác Đàn hồi (Elastic Harvesting & Magnetic Drop):**
-   * Cây cối và quặng đá có thanh máu riêng (`ResourceDataSO`).
-   * Khi bị đánh trúng: Rung nảy biến dạng đàn hồi dạng hàm $\sin$ (`HitBounceRoutine`), phát âm thanh gỗ gãy/đá nứt.
-   * Khi cạn máu: Cây đổ, sinh ra các vật phẩm `Item_Wood` văng nảy vật lý trên mặt đất, tự động kích hoạt từ trường nam châm hút gọn vào người chơi khi tiến lại gần.
-2. **Hệ thống Túi đồ Ngăn nắp (Slot-based Inventory System):**
-   * Quản lý vật phẩm theo ô có giới hạn chồng (`MaxStack = 99`).
-   * Thuật toán gom nhặt thông minh (Greedy Fill): Ưu tiên dồn vào ô cùng loại chưa đầy, sau đó mới mở ô trống mới.
-   * Bắn sự kiện C# `OnInventoryChanged` cập nhật tức thì lên thanh HUD góc màn hình.
-3. **Hệ thống Máu & Kháng Đòn (Comprehensive Health & Combat Feel):**
-   * Kế thừa hợp đồng trừu tượng `IDamageable`.
-   * Thời gian bất tử chớp nhoáng (I-Frames = `0.2s`) ngăn chặn sát thương dồn tức tử vô lý.
-   * Thanh máu nổi World-Space Billboard trên đầu nhân vật/quái vật, co giãn chuẩn xác theo tỷ lệ phần trăm `CurrentHealth / MaxHealth`.
-   * Hiệu ứng chớp đỏ rực `DamageFlash` trên SpriteRenderer mỗi khi trúng đòn.
-4. **Hệ thống Chu Kỳ Ngày/Đêm & Môi Trường URP:**
-   * Ánh sáng mặt trời chuyển màu mượt mà từ vàng ấm ban ngày sang tím sẫm ban đêm.
-   * Ban đêm kích hoạt sương mù rùng rợn (`Fog of Night`), gia tăng tần suất xuất hiện của quái vật bóng tối.
+### 1.2. Mục Tiêu Tối Thượng Của Người Chơi (Win & Survival Conditions)
+1. **Mục tiêu Sinh tồn 20 Ngày (20-Day Survival Marathon):** Mỗi ngày trong game kéo dài $5\text{ phút}$ ($3\text{ phút}$ Ngày, $2\text{ phút}$ Đêm). Người chơi phải sống sót qua 20 chu kỳ ngày/đêm trước bầy quái vật ngày càng đông và hung hãn.
+2. **Mục tiêu Giải mã 5 Đài Phong Ấn (5 Island Shrines):** Hoàn thành các puzzle tại 5 khu vực để mở cánh cổng thời không trở về vương quốc.
+3. **Điều kiện Thua cuộc (Defeat Condition):** Cả hai nhân vật cùng bị gục ngã (`Downed`) trong lúc đêm tối mà không ai còn khả năng hồi sinh $\rightarrow$ Màn đêm nuốt chửng ngọn lửa trại!
 
 ---
 
-## PHẦN III: HỆ THỐNG GIẢI ĐỐ NÂNG CAO (ADVANCED PUZZLES)
-
----
-
-### 🧩 PUZZLE 1: ĐẠI TRẬN CÂN BẰNG CỔ XƯA (ANCIENT WEIGHT & DENSITY BALANCE)
-* **Vị trí:** Cổng Rừng Cấm qua khe vực nham thạch.
-* **Cơ quan:** Một chiếc cầu treo nối qua vực sâu, được điều khiển bởi một **Bệ Cân Thăng Bằng Cổ Đại** gồm 2 đĩa cân đá lớn:
-  * Đĩa A chứa một Tượng Thần Cổ Nặng `10 Đơn vị tải trọng`.
-  * Đĩa B đang trống và nối với ròng rọc hạ cầu.
-* **Quy luật vật liệu sinh tồn:**
-  * `1 Khối Đá Lớn (Pushable Boulder)` có sẵn trong map = `4 Đơn vị`.
-  * `1 Khúc Gỗ (Item_Wood)` chặt từ cây = `1 Đơn vị`.
-  * `1 Thỏi Quặng Sắt Đặc (Iron Ore)` đập từ vách đá = `2 Đơn vị`.
-* **Độ khó & Thử thách:**
-  * Nếu đặt **dưới 10 đơn vị**: Cầu chưa đủ nặng để hạ xuống.
-  * Nếu đặt **vượt quá 10 đơn vị**: Cầu gãy cáp phụ, kích hoạt bẫy phi tiêu từ hai bên vách đá!
-  * **Giải pháp của người chơi:** Đẩy đúng 1 Khối Đá Lớn (`4`), đốn 2 Khúc Gỗ (`2`) và khai thác 2 Thỏi Sắt (`4`) đặt lên đĩa B ($4 + 2 + 4 = 10$). Hai đĩa cân thăng bằng hoàn hảo $\rightarrow$ Cầu gỗ hạ xuống an toàn!
-
----
-
-### 🧩 PUZZLE 2: HÀNH LANG BÓNG TỐI & DẪN LỬA LIÊN HOÀN (TORCH DECAY & CHAIN FIRE)
-* **Vị trí:** Mê Cung Hang Động ngập tràn khí gas độc.
-* **Quy luật môi trường:**
-  * Không khí trong hang đặc quánh khí độc. Nếu không đứng trong bán kính 2 mét của ngọn lửa bảo vệ, nhân vật sẽ mất máu liên tục theo giây (`5 HP/s`).
-  * Đuốc gỗ sinh tồn của nhân vật có thời gian cháy tối đa **40 giây**.
-* **Độ khó & Thử thách:**
-  * Mê cung có 3 Đài Đuốc Cổ (Ancient Braziers) không bao giờ tắt một khi đã được châm lửa.
-  * Cửa ra khỏi hang bị dây gai cổ đại phong ấn, chỉ bị thiêu rụi bởi **Lửa Xanh Huyền Bí (Soul Flame)** ở tận cùng ngách cụt.
-  * Người chơi phải tính toán lộ trình:
-    1. Châm đuốc thường từ ngoài cửa hang $\rightarrow$ chạy thần tốc đến Đài đuốc số 1 trước khi đuốc tàn $\rightarrow$ thắp sáng trạm 1 an toàn.
-    2. Chế tạo thêm đuốc mới từ gỗ nhặt trong hang $\rightarrow$ mồi lửa từ Đài 1 chạy tiếp sang Đài 2 $\rightarrow$ thu thập ngọn Lửa Xanh Huyền Bí.
-    3. Mang ngọn Lửa Xanh quay trở lại thiêu rụi rào gai phong ấn để mở lối vào Hầm Ngục!
-
----
-
-### 🧩 PUZZLE 3: TÁN SẮC QUANG HỌC & PHA MÀU NGUYÊN TỐ (COLOR PRISM REFLECTION)
-* **Vị trí:** Cổng đền Hầm Ngục Trung Tâm.
-* **Cơ quan:**
-  * Một luồng **Ánh Sáng Trắng** cực mạnh chiếu thẳng từ giếng trời trên trần đền xuống giữa phòng.
-  * Cánh cổng đá phong ấn có một Mắt Ngọc Thần Ma Thuật đòi hỏi chùm tia sáng **MÀU TÍM (MAGENTA)** chiếu chuẩn xác vào tâm mắt.
-* **Đạo cụ trong phòng:**
-  * 1 Khối Lăng Kính Pha Lê (Prism Block) có thể đẩy được. Khi ánh sáng trắng đi qua, lăng kính tán sắc tách thành 3 tia: **ĐỎ (RED)**, **LAM (BLUE)**, và **LỤC (GREEN)** theo 3 góc 90 độ.
-  * 2 Trụ Gương Phản Xạ (Reflection Mirrors) có thể xoay 360 độ bằng phím `E`.
-* **Độ khó & Thử thách:**
-  * Nếu chiếu nhầm tia Lục vào Mắt Ngọc: Cơ quan báo động, triệu hồi 2 con Skeleton Goblin bảo vệ xuất hiện.
-  * Người chơi phải:
-    1. Đẩy Khối Lăng Kính vào chính giữa luồng sáng trắng từ trần nhà.
-    2. Xoay Trụ Gương A để đón lấy tia sáng **ĐỎ**.
-    3. Xoay Trụ Gương B để đón lấy tia sáng **LAM**.
-    4. Căn chỉnh góc phản xạ sao cho chùm tia Đỏ và tia Lam **cùng hội tụ giao thoa tại một điểm** ngay trên Mắt Ngọc $\rightarrow$ Đỏ kết hợp Lam tạo thành luồng sáng **TÍM MAGENTA** lộng lẫy $\rightarrow$ Cánh cổng hầm ngục rền vang mở ra!
-
----
-
-### 🧩 PUZZLE 4: GIAO HƯỞNG CHUÔNG ĐÁ KỶ NIỆM (THE MELODIC VAULT - EASTER EGG)
-* **Vị trí:** Mật Thất trước phòng Trùm Cuối.
-* **Cơ quan:** 4 Chiếc Chuông Đá Cổ (Musical Stone Bells) được đánh dấu ký tự $1, 2, 3, 4$, mỗi chiếc phát ra một cao độ thánh thót riêng biệt khi vung kiếm gõ vào:
-  * Chuông 1: Nốt Đồ ($C$)
-  * Chuông 2: Nốt Mi ($E$)
-  * Chuông 3: Nốt Sol ($G$)
-  * Chuông 4: Nốt Đố ($C_2$)
-* **Gợi ý trên tường:** Bức tranh cổ vẽ cảnh 2 người nắm tay dưới bầu trời sao kèm bản nhạc ngắn. Giai điệu này được phối theo **đoạn điệp khúc bài hát kỷ niệm của 2 bạn**.
-* **Độ khó:** Người chơi lắng nghe và suy luận nốt nhạc để gõ đúng chuỗi 6 nhịp (Ví dụ: `1 - 2 - 3 - 2 - 3 - 4`).
-* **Phần thưởng:** Một chiếc Rương Hoa Hồng mở ra: Chiếc Nhẫn Kỷ Niệm 1 Năm (tạo lá chắn vĩnh viễn giảm 50% sát thương từ Boss)!
-
----
-
-## PHẦN IV: HỆ SINH THÁI QUÁI VẬT & MA TRẬN TÁC CHIẾN (THE MONSTER ECOSYSTEM)
-
-Để tạo nên nhịp độ sinh tồn kịch tính, thế giới trong game được canh giữ bởi 7 chủng quái vật với các vai trò chiến thuật tương hỗ:
+## PHẦN II: VÒNG LẶP LỐI CHƠI CỐT LÕI (CORE GAME LOOP & SYSTEMS)
 
 ```text
-                               ┌── 1. Magma Golem     (Boss / Siêu Trâu / Đập Đất AOE)
-                               ├── 2. Forest Goblin   (Lính Cận Chiến / Tấn Công Bầy Đàn)
-                               ├── 3. Skeleton Goblin (Lính Tầm Xa / Ném Xương / Tự Hồi Sinh)
-HỆ SINH THÁI QUÁI VẬT ─────────┼── 4. Shadow Bat      (Sát Thủ Bay Đêm / Bổ Nhào Cắn Trộm)
-                               ├── 5. Magma Scarab    (Quả Bom Sống / Cảm Tử Tự Bộc)
-                               ├── 6. Spore Shroom    (Ụ Pháo Rừng / Phun Độc Rút Máu DOT)
-                               └── 7. Shadow Wraith   (U Linh Khống Chế / Khóa Chân / Xuyên Tường)
+        ┌─────────────────────────────────────────────────────────────────┐
+        │                        BAN NGÀY (DAYTIME - 3 PHÚT)               │
+        │  • Chặt cây lấy gỗ, đập quặng lấy sắt/obsidian bằng Rìu/Cuốc     │
+        │  • Chế tạo vũ khí & áo giáp tại Bàn Rèn (Crafting Forge)        │
+        │  • Giải các Puzzle môi trường mở đường sang các Đảo kế tiếp     │
+        │  • Mở Rương Cổ Tộc, thu gom thảo dược hồi phục & chuẩn bị đuốc │
+        └───────────────────────────────┬─────────────────────────────────┘
+                                        │ (Hoàng hôn - Chuông báo động vang lên)
+                                        ▼
+        ┌─────────────────────────────────────────────────────────────────┐
+        │                        BAN ĐÊM (NIGHTTIME - 2 PHÚT)              │
+        │  • Màn đêm buông xuống, sương mù che khuất tầm nhìn (Night Fog) │
+        │  • Quái vật đêm (Goblin, Skeleton, Bat, Shroom) đổ bộ từng đợt  │
+        │  • Càng về những ngày sau, ngân sách quái (SpawnBudget) tăng cao│
+        │  • ĐÊM ĐẶC BIỆT (NGÀY 5, 10, 15, 20): ĐẠI BOSS ĐÊM XUẤT HIỆN!  │
+        └───────────────────────────────┬─────────────────────────────────┘
+                                        │ (Tiêu diệt Boss & Quái Tinh Anh)
+                                        ▼
+        ┌─────────────────────────────────────────────────────────────────┐
+        │            PHẦN THƯỞNG: LÕI NÂNG CẤP BẬC ĐỒNG / BẠC / VÀNG     │
+        │                   (TFT-STYLE AUGMENTS & POWER-UPS)              │
+        │  • Rơi Quả Cầu Nâng Cấp (Augment Orb) $\rightarrow$ Modal 3 Thẻ Bài chọn 1 │
+        │    🥉 BẬC ĐỒNG: Tăng chỉ số căn bản (+Tốc chạy, +Máu, Hút máu)  │
+        │    🥈 BẬC BẠC: Biến đổi cơ chế (Giật sét lan, Vệt lửa, Giáp ảo)│
+        │    🥇 BẬC VÀNG: Siêu nội tại bá đạo (Hồi sinh, Sấm sét toàn map)│
+        └───────────────────────────────┬─────────────────────────────────┘
+                                        │ (Tăng tiến sức mạnh vượt bậc)
+                                        └───► [TIẾP TỤC ĐẾN NGÀY 20 ĐỂ ĐẠT KẾT THÚC]
 ```
 
-### 4.1. Bảng Chỉ Số Cân Bằng Chi Tiết (`EnemyDataSO`)
+### 2.1. Cơ Chế Co-op Sống Còn: Gục Ngã & Hồi Sinh (Downed & Revive System)
+* **Trạng thái Gục ngã (`Downed`):** Khi máu về $0$, nhân vật không chết tức thì mà quỳ gối hấp hối trong $15\text{ giây}$.
+* **Cứu sống (`Revive`):** Đồng đội chạy lại gần giữ phím `E` trong $3\text{ giây}$ để truyền sinh lực, hồi sinh nhân vật với $35\%$ máu.
+* **Xác suất Thua:** Nếu người còn lại cũng bị hạ gục trong khi đồng đội đang gục ngã $\rightarrow$ Game Over ngay lập tức!
 
-| STT | Tên Quái Vật | Vai Trò Gameplay | Máu (HP) | Tốc Chạy (m/s) | Sát Thương (DMG) | Tầm Đánh (m) | Đòn Đánh / Kỹ Năng Đặc Trưng |
-| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
-| **1** | **Magma Golem** | Boss / Siêu chống chịu | $300$ | $1.8$ | $35$ | $2.5$ | **Earth Smash:** Đập đất rung chuyển AOE bán kính $3.5\text{m}$, hất tung người chơi. |
-| **2** | **Forest Goblin** | Cận chiến / Bầy đàn | $40$ | $3.8$ | $8$ | $1.2$ | **Pounce Bite:** Nhảy xổ vồ cắn chớp nhoáng khi áp sát mục tiêu $< 2\text{m}$. |
-| **3** | **Skeleton Goblin** | Tầm xa / Quấy rối | $35$ | $2.5$ | $12$ | $6.0$ | **Reassembly:** Bị đánh chết vỡ thành đống xương, sau 4s tự ráp lại hồi $50\%$ máu nếu không bị đập nát! |
-| **4** | **Shadow Bat** | Sát thủ không trung | $25$ | $5.0$ | $10$ | $1.5$ | **Dive Hit & Run:** Lượn vòng trên không $\rightarrow$ Bổ nhào cắn bất ngờ $\rightarrow$ Bay vút lên cao thoát thân. |
-| **5** | **Magma Scarab** | Cảm tử / Quả bom sống | $20$ | $4.5$ | $45$ (Nổ) | $1.0$ | **Self-Destruct:** Phát sáng đỏ rực trong 1s rồi tự kích nổ thiêu rụi toàn bộ vùng $3\text{m}$. |
-| **6** | **Spore Shroom** | Ụ súng độc / Rút máu | $50$ | $1.5$ | $10 + \text{DOT}$ | $8.0$ | **Poison Spit:** Bắn đạn bào tử gây độc trừ tiếp $2\text{ HP/s}$ trong $5\text{s}$ liên tục. |
-| **7** | **Shadow Wraith** | Khống chế / Xuyên thấu | $60$ | $3.0$ | $15$ | $4.0$ | **Soul Freeze:** Bay xuyên cây/đá, cast phép đóng băng tốc độ chạy ($moveSpeed = 0$) trong $1.5\text{s}$. |
-
-### 4.2. Phân Bổ Quái Vật Theo Khu Vực & Thời Gian (Spawn Matrix)
-* **Khu 1: Bìa Rừng Khởi Đầu (Island Coast & Grasslands):**
-  * *Ban ngày:* Forest Goblin đi lẻ tẻ quấy rối khi người chơi đốn cây.
-  * *Ban đêm:* Shadow Bat rình rập trên tán cây, lao xuống tấn công bất ngờ.
-* **Khu 2: Vực Đá Nham Thạch & Hang Khí Độc:**
-  * *Vách đá:* Skeleton Goblin đứng trên cao ném xương cản trở giải đố Bệ Cân Thăng Bằng.
-  * *Lối vào hang:* Magma Scarab bò nhanh ra từ các khe nứt núi lửa, đe dọa nổ tan xác nếu người chơi mất cảnh giác.
-  * *Trong hang sương độc:* Spore Shroom ngụy trang thành cây nấm ven đường, phun axit độc tầm xa.
-* **Khu 3: Hầm Ngục Cổ Đại (Ancient Temple):**
-  * *Hành lang lăng kính:* Skeleton Goblin phục kích nếu người chơi chiếu sai tia sáng quang học.
-  * *Mật thất chuông đá:* Shadow Wraith bay lơ lửng xuyên qua các trụ đá, làm chậm và khóa chân người chơi.
-* **Khu 4: Buồng Ngục Trùm Cuối (The Warden's Sanctum):**
-  * Đại chiến Trùm Magma Warden Golem cùng các đợt đệ tử Scarab hỗ trợ.
-
-### 4.3. Tương Tác Khắc Chế & Chiến Thuật (Tactical Counterplay)
-* **Ánh lửa xua đuổi bóng tối:** Cầm Đuốc trên tay làm giảm $50\%$ tốc độ lao của Shadow Bat và ngăn Shadow Wraith áp sát gần.
-* **Cơ chế Triệt Tiêu Xương Cốt:** Khi đánh gục Skeleton Goblin, người chơi phải tung thêm 1 đòn đập nát đống xương rơi trên đất, nếu không nó sẽ tự động ráp lại sau 4 giây!
-* **Dụ Scarab nổ liên hoàn:** Người chơi khéo léo dụ Magma Scarab lao vào bầy Goblin đông đúc rồi né ra $\rightarrow$ Cú tự phát nổ của Scarab sẽ tiêu diệt luôn cả đám quái xung quanh!
+### 2.2. Hệ Thống Cấp Bậc Trang Bị & Bàn Rèn (Tiered Progression Forge)
+Tài nguyên được phân bổ từ Đảo 1 đến Đảo 5, khuyến khích người chơi tiến lên các đảo mới:
+1. **Bậc Gỗ (Wood):** Đốn Cây Sồi Đảo 1 $\rightarrow$ Rìu Gỗ, Kiếm Gỗ, Đuốc Sinh Tồn.
+2. **Bậc Đá (Stone):** Đập Đá Cuội Đảo 1 $\rightarrow$ Kiếm Đá, Rìu Đá.
+3. **Bậc Sắt (Iron):** Khai thác Mỏ Sắt Vách Núi Đảo 2 $\rightarrow$ Kiếm Sắt Bén, Giáp Sắt Kiên Cố.
+4. **Bậc Hắc Diện Thạch (Obsidian):** Khai thác Đá Hắc Diện Thạch Đảo 2 & Đảo 3 $\rightarrow$ Trang Bị Hắc Diện Thạch Kháng Độc & Bỏng.
+5. **Bậc Tinh Thể Thánh (Adamantite):** Khai thác Đá Thạch Anh Đền Cổ Đảo 4 & Đảo 5 $\rightarrow$ Vũ Khí Tinh Thể Tối Thượng sẵn sàng diệt Final Boss Ngày 20!
 
 ---
 
-## PHẦN V: CHIẾN ĐẤU GIẢI ĐỐ VỚI TRÙM (PUZZLE-BOSS COMBAT)
+## PHẦN III: HỆ THỐNG GIẢI ĐỐ 5 KHU VỰC ĐA ĐẢO (5-ISLAND PUZZLE SANCTUARY)
 
-Boss **Magma Warden Golem** canh giữ lồng sắt giam người yêu không thể bị tiêu diệt bằng cách đánh trực diện. Toàn bộ trận đánh là sự kết hợp nhuần nhuyễn giữa kỹ năng né tránh và cơ chế giải đố môi trường:
+### 🧩 ĐẢO 1: BỜ BIỂN & ĐẠI TRẬN CÂN BẰNG TẢI TRỌNG CỔ XƯA
+* **Vị trí:** Vực sâu dẫn ra Cầu Cổ Liên Đảo số 1.
+* **Cơ quan:** Bệ Cân Thăng Bằng Cổ Đại gồm Đĩa A (Tượng Thần nặng $10\text{ đơn vị}$) và Đĩa B (nối cáp hạ cầu).
+* **Quy luật:** `1 Tảng Đá Đẩy = 4`, `1 Thỏi Sắt = 2`, `1 Khúc Gỗ = 1`. Đặt đúng tổng trọng lượng bằng 10 để hạ cầu an toàn sang Đảo 2.
+
+### 🧩 ĐẢO 2: ĐẦM LẦY ĐỘC & MẠNG LƯỚI LỬA XANH (SOUL FLAME RUN)
+* **Vị trí:** Vùng trũng sương độc Đảo 2 (`Poison_Gas_Zone`).
+* **Cơ quan:** Rào Gai Cổ Đại (`Thorn_Barrier_Gate`) phong ấn hẻm núi, chỉ bị thiêu rụi bởi ngọn Lửa Xanh Huyền Bí (`Soul Flame`) tại Mật Thất 6 Cột Đá.
+* **Quy luật:** Đuốc gỗ cháy $40\text{s}$. Người chơi phải chia nhau châm sáng 2 Đài Đuốc Trung Gian (`Brazier_01` & `Brazier_02`), dẫn ngọn Lửa Xanh quay lại thiêu cháy rào gai mở lối sang Đảo 3.
+
+### 🧩 ĐẢO 3: ĐỀN CỔ THẠCH ANH & TÁN SẮC LĂNG KÍNH TÍM MAGENTA
+* **Vị trí:** Giếng trời trung tâm Đảo 3.
+* **Cơ quan:** Luồng Ánh Sáng Trắng chiếu từ trần đền, Mắt Ngọc Thần đòi hỏi chùm sáng **TÍM MAGENTA** để mở cánh cổng đền.
+* **Quy luật:** Đẩy Khối Lăng Kính Pha Lê (`PrismBlock`) tách ánh sáng trắng thành Đỏ, Lam, Lục. Xoay 2 Trụ Gương Phản Xạ $360^\circ$ (`MirrorPillar`) để hội tụ tia Đỏ + tia Lam tại Mắt Ngọc Thần kích hoạt Đài Phong Ấn Số 3.
+
+### 🧩 ĐẢO 4: THÁNH ĐỊA RỪNG NGÂN HẠNH & CHUÔNG ĐÁ GIAO HƯỞNG CO-OP
+* **Vị trí:** Rừng Ngân Hạnh thiêng liêng Đảo 4.
+* **Cơ quan:** Dàn 4 Chuông Đá Cổ phát ra 4 âm sắc Đồ - Mi - Sol - Đố ($C - E - G - C_2$).
+* **Quy luật:** Bức tranh cổ gợi ý đoạn điệp khúc bài hát kỷ niệm 1 năm. Quene và Lover phải phối hợp nhịp nhàng, chia nhau vị trí gõ chuẩn xác 6 nhịp điệu trong vòng $10\text{s}$ để kích hoạt Đài Phong Ấn Số 4 và nhận **Bùa Vàng: Nhẫn Tình Yêu Cổ Đại**!
+
+### 🧩 ĐẢO 5: MIỆNG NÚI LỬA DUNG NHAM & PHÁ GIÁP TRÙM CUỐI
+* **Vị trí:** Đấu Trường Vực Thẳm Đảo 5.
+* **Cơ quan:** Đại chiến Boss Ngày 20 kết hợp 2 Bệ Dẫm Từ Trường (Kẹp chặt cánh tay) và Van Xối Nước Ngầm (Sốc nhiệt nứt vỡ lõi giáp) mở đường kích hoạt Đài Phong Ấn Tối Thượng!
+
+---
+
+## PHẦN IV: HỆ THỐNG LÕI NÂNG CẤP CHUẨN TFT (3-TIER AUGMENT SYSTEM)
+
+Khi tiêu diệt Quái Tinh Anh và các Boss Đêm Ngày 5, 10, 15, 20, một **Quả Cầu Nâng Cấp (Augment Orb)** sẽ rơi ra. Khi mở sẽ kích hoạt giao diện **Chọn 1 trong 3 Thẻ Bài**:
 
 ```text
-  ┌─────────────────────────────────────────────────────────────┐
-  │  GIAI ĐOẠN 1: BẪY NAM CHÂM PHÁ GIÁP TAY                      │
-  │  Dụ Golem vào giữa 2 bệ dẫm -> Giật điện hút 2 cánh tay đá   │
-  │  -> Vòng ra sau lưng chém nát 2 khớp vai                    │
-  └──────────────────────────────┬──────────────────────────────┘
-                                 │
-                                 ▼
-  ┌─────────────────────────────────────────────────────────────┐
-  │  GIAI ĐOẠN 2: XỐI NƯỚC CO NGÓT LÀM NỨT LÕI DUNG NHAM        │
-  │  Golem phun vòng lửa hộ thể -> Dùng Đuốc thắp sáng Van Nước │
-  │  -> Nước đổ xuống sốc nhiệt làm vỡ nứt lớp giáp ngực đá     │
-  └──────────────────────────────┬──────────────────────────────┘
-                                 │
-                                 ▼
-  ┌─────────────────────────────────────────────────────────────┐
-  │  GIAI ĐOẠN 3: CUỒNG NỘ CHẤN ĐỘNG & ĐÒN KẾT LIỄU             │
-  │  Lõi Pha Lê lộ diện rực sáng -> Boss dậm đất AOE liên tục   │
-  │  -> Canh nhịp nhảy né chấn động -> Tung nhát chém quyết định│
-  └─────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│ 🥉 BẬC ĐỒNG (BRONZE AUGMENTS - TĂNG CHỈ SỐ CƠ BẢN)                               │
+│ 1. Giày Gió Lướt (Wind Sneakers): +20% Tốc độ di chuyển.                         │
+│ 2. Nồi Hầm Thịt Thao (Hearty Stew): +40 Máu tối đa (Max HP).                     │
+│ 3. Nanh Ma Cà Rồng (Vampiric Fang): Hồi phục 5% sát thương đòn đánh thành máu.   │
+│ 4. Bản Năng Khai Khoáng (Miner's Surge): Thu hoạch gỗ và quặng đá x2 sản lượng.  │
+│ 5. Đuốc Bền Bỉ (Eternal Wick): Đuốc gỗ cháy lâu hơn 100% thời gian (80s).        │
+│ 6. Khiên Gỗ Gia Cố (Reinforced Guard): Giảm 15% sát thương nhận vào từ sau lưng.  │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│ 🥈 BẬC BẠC (SILVER AUGMENTS - BIẾN ĐỔI CƠ CHẾ CHIẾN ĐẤU)                         │
+│ 1. Sét Lan Chuỗi (Chain Lightning): Đòn đánh chém trúng giật sét lan sang 3 quái.│
+│ 2. Lướt Lửa Thiêu Đốt (Blazing Dash): Khi chạy nước rút để lại vệt lửa 3s.       │
+│ 3. Giáp Hộ Mệnh Cổ (Guardian Shell): Nhận lớp giáp ảo 30 HP tự hồi mỗi 20s.      │
+│ 4. Hơi Thở Bào Tử (Toxic Rebound): Khi bị đánh, phát nổ vòng khí độc đẩy lùi quái.│
+│ 5. Đôi Bạn Sát Cánh (Partner Radiance): Đứng cạnh nhau trong 4m tăng 25% công.   │
+│ 6. Lưỡi Dao Chém Gió (Wind Slash Wave): Nhát kiếm thứ 3 phóng ra sóng khí 6m.    │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│ 🥇 BẬC VÀNG (GOLD AUGMENTS - SIÊU NỘI TẠI THẦN THOẠI)                            │
+│ 1. Khế Ước Bất Diệt (Immortal Lover Bond): Khi 1 người gục ngã, người kia nhận    │
+│    100% giáp và miễn nhiễm sát thương trong 10s để lật kèo hồi sinh bạn đời!    │
+│ 2. Nộ Lôi Tinh Tú (Celestial Thunderstorm): Cứ mỗi 6s giáng một tia sét 120 DMG  │
+│    xuống con quái vật có lượng máu cao nhất trên màn hình.                       │
+│ 3. Bàn Tay Vàng Midas (Golden Touch): Diệt quái nổ tung ra mưa tiền vàng & đá quý.│
+│ 4. Nhẫn Tình Yêu Vĩnh Hằng (Eternal Ring of Protection): Cả hai chia sẻ thanh máu│
+│    chung và giảm vĩnh viễn 40% toàn bộ sát thương từ Boss!                       │
+└──────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 5.1. Giai Đoạn 1: Bẫy Nam Châm Phá Giáp Tay
-* Golem vung hai nắm đấm đá khổng lồ gây sát thương lớn.
-* Trong phòng có 2 Bệ Dẫm Từ Trường ở hai góc đối diện.
-* **Cách hóa giải:** Người chơi dụ Golem đứng vào giữa đường nối 2 bệ dẫm $\rightarrow$ Chém kích hoạt cả 2 bệ $\rightarrow$ Lồng từ trường cực mạnh phóng ra ghim chặt 2 cánh tay đá của Golem vào tường trong $6\text{s}$ $\rightarrow$ Người chơi vòng ra sau lưng chém vỡ khớp vai của Boss!
+---
 
-### 5.2. Giai Đoạn 2: Xối Nước Dung Nham Làm Nứt Lõi Đá
-* Khi mất 2 tay, Golem quỳ xuống gầm thét, dung nham từ trong lồng ngực phun trào tạo thành màng chắn lửa thiêu rụi mọi thứ lại gần.
-* **Cách hóa giải:** Người chơi dùng Đuốc thắp sáng 2 Van Cắt Nước ngầm trên cao $\rightarrow$ Hồ nước lạnh trên trần trút xuống ào ạt $\rightarrow$ Hiện tượng co ngót nhiệt độ đột ngột làm lớp giáp đá vỡ toang, để lộ **Trái Tim Pha Lê** rực sáng bên trong ngực Boss!
+## PHẦN V: HỆ THỐNG ĐA KẾT THÚC DỰA TRÊN MỐC 20 NGÀY (BRANCHING MULTI-ENDINGS)
 
-### 5.3. Giai Đoạn 3: Cuồng Nộ Chấn Động & Đòn Kết Liễu
-* Mất lớp giáp bảo vệ, Golem bước vào trạng thái Cuồng Nộ (`Enrage`): Tốc độ tăng vọt, liên tục dậm chân tạo sóng chấn động $360^\circ$ lan tỏa khắp sàn đấu.
-* **Cách kết liễu:** Người chơi căn nhịp nhảy né sóng chấn động $\rightarrow$ Áp sát vung nhát kiếm quyết định chém vỡ Trái Tim Pha Lê!
-* Golem sụp đổ thành đống xỉ than vụn vỡ, làm rơi ra chiếc **Chìa Khóa Vàng Cổ Đại**.
+Cuộc hành trình sinh tồn của Quene & Lover được chấm điểm dựa trên **Số ngày sinh tồn (tối đa 20 Ngày)** và **Số lượng Đài Phong Ấn được kích hoạt (tối đa 5 Đảo)**:
+
+| Ending ID | Tên Kết Thúc | Điều Kiện Đạt Được | Ý Nghĩa Điện Ảnh Của Cutscene |
+| :--- | :--- | :--- | :--- |
+| **Ending 1** | **Chôn Vùi Dưới Màn Đêm (Lost to the Abyss)** | Cả hai cùng gục ngã trước Ngày 10, giải được $\le 2$ đài phong ấn. | Màn đêm nuốt chửng ngọn lửa trại. Hai nhân vật ôm chặt lấy nhau hóa thành tượng đá vĩnh hằng giữa quần đảo. Lời nhắc nhở về sự tàn khốc của màn đêm. |
+| **Ending 2** | **Lời Thề Rút Lui (Survivor's Oath)** | Sống sót từ Ngày $10\text{--}19$, giải được $3\text{--}4$ đài phong ấn, nhưng gục ngã trước đêm 20. | Cả hai dùng bè gỗ trốn thoát khỏi quần đảo lúc rạng đông. Dù chưa tiêu diệt được Boss tối thượng, họ vẫn hạnh phúc vì còn sống bên nhau và thề sẽ quay lại. |
+| **Ending 3** | **Ngọn Hải Đăng Hy Vọng (Beacon of Hope)** | Sống sót trọn vẹn **20 Ngày**, giải đủ 5 đài phong ấn, nhưng một trong hai người từng bị gục ngã $\ge 3$ lần. | Ánh sáng từ 5 đài phong ấn kích hoạt Cánh Cổng Thời Không. Quene và Lover nắm tay nhau bước qua cổng về vương quốc trong tiếng reo hò của muôn dân! |
+| **Ending 4** | **Tình Yêu Vĩnh Cửu (Eternal True Lovers — True Ending)** | Sống sót trọn vẹn **20 Ngày**, giải $100\%$ Puzzle, hạ gục Final Boss Ngày 20 và **không một ai bị gục ngã quá 1 lần**! | Bức thư tình kỷ niệm 1 năm xúc động hiện lên giữa bầu trời sao đêm không còn bóng tối. Hoạt cảnh 2 người khiêu vũ lãng mạn $360^\circ$ và **Mở Khóa Album Ảnh Kỷ Niệm 1 Năm Ngoài Đời Thật**! |
 
 ---
 
-## PHẦN VI: ĐOẠN KẾT GIẢI CỨU NGƯỜI YÊU (THE CLIMAX & CELEBRATION)
-
-1. Cô gái nhặt Chiếc Chìa Khóa Vàng, bước từng bước vững vàng tiến tới chiếc lồng sắt cổ treo giữa căn phòng ngục.
-2. **Tương tác phím `E`:** Tiếng xích sắt lách cách rơi xuống, cửa lồng bật mở.
-3. Chàng trai bước ra khỏi lồng sắt. Hai nhân vật ôm chầm lấy nhau (hoạt cảnh Pixel Art ôm nhau ấm áp, ánh mắt xúc động).
-4. Camera 3D Orbit quay chậm một vòng điện ảnh $360^\circ$ quanh đôi bạn trẻ dưới ánh sáng pha lê lung linh và những hạt bụi sáng rơi lấp lánh.
-5. Màn hình tối dần và hiện lên thông điệp kỷ niệm đặc biệt:
-   > *"Chúc mừng 1 năm bên nhau của chúng ta! Cảm ơn em vì đã luôn là người hùng tuyệt vời nhất trong cuộc đời anh."*
-6. Nhạc nền kỷ niệm của hai bạn cất lên trọn vẹn, trên màn hình xuất hiện nút bấm: **"Mở Album Ảnh Kỷ Niệm 1 Năm"** để xem lại toàn bộ hình ảnh hành trình tình yêu ngoài đời thật!
-
----
-*GDD Version 3.0 — Bản nâng cấp hoàn thiện tích hợp Hệ Sinh Thái Quái Vật & Cơ Chế Sinh Tồn Chiến Đấu Đỉnh Cao.*
+*GDD Version 4.0 — Tài liệu thiết kế chuẩn mực tích hợp trọn vẹn Cơ Chế Sinh Tồn Muck-like 20 Ngày, Hệ Thống Lõi Nâng Cấp TFT 3 Bậc và Giải Đố Đa Đảo Co-op.*
