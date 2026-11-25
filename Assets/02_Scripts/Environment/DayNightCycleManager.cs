@@ -149,5 +149,19 @@ namespace FindTheLover.Environment
                 }
             }
         }
+
+        /// <summary>
+        /// Restores saved day count and normalized time-of-day directly from GameData and refreshes lighting/fog.
+        /// </summary>
+        public void RestoreCycleState(int savedDay, float savedNormalizedTime)
+        {
+            _currentDay = Mathf.Max(1, savedDay);
+            _normalizedTime = Mathf.Repeat(savedNormalizedTime, 1f);
+            if (_config != null)
+            {
+                _isNight = _normalizedTime < _config.dayStartNormalized || _normalizedTime >= _config.nightStartNormalized;
+            }
+            UpdateAtmosphere();
+        }
     }
 }

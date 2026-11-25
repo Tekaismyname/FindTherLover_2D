@@ -161,6 +161,18 @@ namespace FindTheLover.Combat
             OnHealthChanged?.Invoke(_currentHealth, maxHealth);
         }
 
+        /// <summary>
+        /// Restores exact saved max health, current health, and active barrier shield from GameData.
+        /// </summary>
+        public void RestoreHealthState(float savedMaxHealth, float savedCurrentHealth, float savedShieldPoints)
+        {
+            maxHealth = Mathf.Max(1f, savedMaxHealth);
+            _currentHealth = Mathf.Clamp(savedCurrentHealth, 1f, maxHealth);
+            _shieldPoints = Mathf.Max(0f, savedShieldPoints);
+            _isDead = false;
+            OnHealthChanged?.Invoke(_currentHealth, maxHealth);
+        }
+
         public void Die()
         {
             _isDead = true;

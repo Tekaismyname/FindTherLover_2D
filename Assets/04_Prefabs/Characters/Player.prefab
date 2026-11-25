@@ -40,7 +40,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 82791181691666213}
-  - component: {fileID: 4612082592207175814}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -64,21 +63,6 @@ Transform:
   - {fileID: 5365652123154711377}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4612082592207175814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2201778240838621609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919eff03f0e44ff4ea49482e0bcf87c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Augments.PlayerAugmentStats
-  _enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &4529810322846837209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5392,6 +5376,7 @@ GameObject:
   - component: {fileID: 989695398807293406}
   - component: {fileID: 6453523674684737563}
   - component: {fileID: 7975025140750518954}
+  - component: {fileID: 7188339227493178721}
   m_Layer: 0
   m_Name: Quene_Player
   m_TagString: Player
@@ -5705,3 +5690,18 @@ MonoBehaviour:
   minLightIntensity: 0.4
   normalFlameColor: {r: 1, g: 0.65, b: 0.2, a: 1}
   soulFlameColor: {r: 0.15, g: 0.95, b: 1, a: 1}
+--- !u!114 &7188339227493178721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352934862687148613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919eff03f0e44ff4ea49482e0bcf87c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Augments.PlayerAugmentStats
+  _enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295

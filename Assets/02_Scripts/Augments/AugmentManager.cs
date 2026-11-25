@@ -235,12 +235,48 @@ namespace FindTheLover.Augments
             }
         }
 
+        /// <summary>
+        /// Returns a read-only snapshot of owned augment IDs and stack counts for GameData persistence.
+        /// </summary>
+        public IReadOnlyDictionary<string, int> GetActiveStacksSnapshot()
+        {
+            return _activeStacks;
+        }
+
+        /// <summary>
+        /// Clears active stacks and re-applies saved augments cleanly from GameData (preventing double-stacking).
+        /// </summary>
+        public void RestoreAugmentsFromData(List<(AugmentDataSO augment, int stacks)> savedAugments, IAugmentReceiver explicitReceiver = null)
+        {
+            _activeStacks.Clear();
+            _selectedHistory.Clear();
+            _isSelectionPending = false;
+            _currentOfferedChoices = null;
+
+            IAugmentReceiver receiver = explicitReceiver ?? LocatePlayerReceiver();
+            if (savedAugments == null) return;
+
+            for (int i = 0; i < savedAugments.Count; i++)
+            {
+                AugmentDataSO aug = savedAugments[i].augment;
+                int stacks = Mathf.Max(1, savedAugments[i].stacks);
+                if (aug == null) continue;
+
+                for (int s = 1; s <= stacks; s++)
+                {
+                    _activeStacks[aug.augmentId] = s;
+                    _selectedHistory.Add(aug);
+                    if (receiver != null) receiver.ApplyAugment(aug, s);
+                }
+            }
+        }
+
         private IAugmentReceiver LocatePlayerReceiver()
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
             {
-                IAugmentReceiver receiver = player.GetComponent<IAugmentReceiver>();
+                IAugmentReceiver receiver = player.GetComponentInChildren<IAugmentReceiver>() ?? player.GetComponent<IAugmentReceiver>();
                 if (receiver == null)
                 {
                     receiver = player.AddComponent<PlayerAugmentStats>();

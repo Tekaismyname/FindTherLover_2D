@@ -117,5 +117,53 @@ namespace FindTheLover.Items
             }
             return total;
         }
+
+        /// <summary>
+        /// Removes up to <paramref name="amount"/> of the specified item across slots.
+        /// </summary>
+        public bool RemoveItem(ItemDataSO item, int amount)
+        {
+            if (item == null || amount <= 0 || GetItemCount(item) < amount) return false;
+
+            int remaining = amount;
+            for (int i = slots.Count - 1; i >= 0 && remaining > 0; i--)
+            {
+                if (slots[i].itemData == item)
+                {
+                    int deduct = Mathf.Min(slots[i].quantity, remaining);
+                    slots[i].quantity -= deduct;
+                    remaining -= deduct;
+
+                    if (slots[i].quantity <= 0)
+                    {
+                        slots.RemoveAt(i);
+                    }
+                }
+            }
+
+            OnInventoryChanged?.Invoke();
+            return true;
+        }
+
+        /// <summary>
+        /// Replaces all inventory slots with a restored GameData snapshot and notifies HUD listeners.
+        /// </summary>
+        public void ClearAndLoadSlots(List<ItemStack> restoredSlots)
+        {
+            slots.Clear();
+            if (restoredSlots != null)
+            {
+                int limit = Mathf.Min(maxSlots, restoredSlots.Count);
+                for (int i = 0; i < limit; i++)
+                {
+                    if (restoredSlots[i] != null && restoredSlots[i].itemData != null && restoredSlots[i].quantity > 0)
+                    {
+                        slots.Add(new ItemStack(restoredSlots[i].itemData, restoredSlots[i].quantity));
+                    }
+                }
+            }
+
+            OnInventoryChanged?.Invoke();
+        }
     }
 }

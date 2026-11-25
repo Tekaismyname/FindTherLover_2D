@@ -117,6 +117,17 @@ namespace FindTheLover.Environment.Puzzles
             gameObject.SetActive(false);
         }
 
+        /// <summary>
+        /// Forces the barrier burned/intact state when restoring a saved GameData snapshot.
+        /// </summary>
+        public void ForceSetBurnedState(bool isBurned)
+        {
+            _isBurned = isBurned;
+            _isBurning = false;
+            if (_blockingCollider != null) _blockingCollider.enabled = !isBurned;
+            gameObject.SetActive(!isBurned);
+        }
+
         private void EnsurePlayerReference()
         {
             if (_playerTransform != null && _playerTorch != null) return;

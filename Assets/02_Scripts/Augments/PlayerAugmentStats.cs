@@ -95,6 +95,38 @@ namespace FindTheLover.Augments
         }
 
         /// <summary>
+        /// Resets all aggregated augment bonuses back to clean base values before reloading saved GameData.
+        /// Guarantees zero double-stacking when loading saves multiple times.
+        /// </summary>
+        public void ResetAllAugmentStats()
+        {
+            _moveSpeedBonus = 0f;
+            _damageBonus = 0f;
+            _lifestealPercent = 0f;
+            _harvestMultiplier = 1f;
+            _torchDurationBonus = 0f;
+            _damageReductionBonus = 0f;
+            _chainLightningTargets = 0;
+            _chainLightningDamageRatio = 0f;
+            _maxShieldCapacity = 0f;
+            _blazingDashDamage = 0f;
+            _toxicReboundDamage = 0f;
+            _celestialStrikeDamage = 0f;
+            _hasImmortalBond = false;
+            _immortalBondReady = false;
+            _bonusGoldDropMultiplier = 1f;
+
+            if (_locomotion != null) _locomotion.SetSpeedMultiplier(1f);
+            if (_playerCombat != null) _playerCombat.SetDamageMultiplier(1f);
+            if (_healthSystem != null)
+            {
+                _healthSystem.SetDamageReduction(0f);
+                _healthSystem.SetShieldPoints(0f);
+            }
+            if (_torchController != null) _torchController.SetBurnDurationMultiplier(1f);
+        }
+
+        /// <summary>
         /// IAugmentReceiver implementation: applies the chosen augment blueprint onto the player.
         /// </summary>
         public void ApplyAugment(AugmentDataSO augment, int newStackCount)

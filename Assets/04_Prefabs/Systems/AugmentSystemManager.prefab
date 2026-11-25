@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8810214198007806793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6763903650129075126}
+  - component: {fileID: 2535371224280732781}
+  - component: {fileID: 2433642765767197270}
+  m_Layer: 0
+  m_Name: AugmentSystemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6763903650129075126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810214198007806793}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2535371224280732781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810214198007806793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7781a086e0c0a4fb3f9eff6669a950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Augments.AugmentManager
+  _augmentCatalog:
+  - {fileID: 11400000, guid: ccb3cd00a7d230f4f95e34af552f6590, type: 2}
+  - {fileID: 11400000, guid: 5a1f94c0a3f3abd4f8d3c917082365c4, type: 2}
+  - {fileID: 11400000, guid: 90284a1590ee1864badea14ab500894a, type: 2}
+  - {fileID: 11400000, guid: 46595f4abbd73f140868e8a516b61088, type: 2}
+  - {fileID: 11400000, guid: fcc238c330a833f48be56d96b589a20f, type: 2}
+  - {fileID: 11400000, guid: 9c575ec3d3b54734781251778ba28453, type: 2}
+  - {fileID: 11400000, guid: 98b09e1259746f04eb64bb115ea5b4ab, type: 2}
+  - {fileID: 11400000, guid: 3b697f18e93d1a84f82a4bd8e66a43c7, type: 2}
+  - {fileID: 11400000, guid: 3dff5c792864e674f91a86bbf4e3c6e1, type: 2}
+  - {fileID: 11400000, guid: 04e6e9390f031984e86a70dba6a6859f, type: 2}
+  - {fileID: 11400000, guid: cfc263df554f28541b97a49a2f025dd2, type: 2}
+  - {fileID: 11400000, guid: 23d192b851ad0dd4b95337273b5e0824, type: 2}
+  - {fileID: 11400000, guid: e67276398720db3488465a7eeddb1427, type: 2}
+  - {fileID: 11400000, guid: fa3946a472cf9a5419bdecc726559a1a, type: 2}
+  - {fileID: 11400000, guid: cbe2cde39667f1640839cd6ec5950e8c, type: 2}
+  - {fileID: 11400000, guid: 3147ce4b23b688f4799a1f44962c73b9, type: 2}
+  - {fileID: 11400000, guid: 797678c761ffbe74693657e5aaeddd0d, type: 2}
+  - {fileID: 11400000, guid: f6fa7a19f327a08439774d200e38b334, type: 2}
+  _bronzeWeight: 0.55
+  _silverWeight: 0.32
+  _goldWeight: 0.13
+  _enableDebugOfferHotkey: 1
+--- !u!114 &2433642765767197270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810214198007806793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bb733df433d84448728f2d224adfee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Augments.AugmentDropController
+  _augmentOrbPrefab: {fileID: 6645354050225255738, guid: 786db11a19926994ba99df809d699606, type: 3}
+  _standardEnemyDropChance: 0.15
+  _eliteEnemyDropChance: 1
+  _dropHeightOffset: 0.9

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb92a4c5e50c5ed4b949b3989c027cb2, type: 3}
+  m_Name: Master_GameCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Core.Data.GameCatalogSO
+  items:
+  - {fileID: 11400000, guid: 05a7702f8f011c54890f9a34e0af25ad, type: 2}
+  - {fileID: 11400000, guid: 1aa87ad4142c52a429766db61cf095ad, type: 2}
+  equipmentItems:
+  - {fileID: 11400000, guid: a8562b4f13e87c74d9820d7c14bb35fd, type: 2}
+  - {fileID: 11400000, guid: 4dcc59da6ce9b864098418a5312f4cc0, type: 2}
+  augments:
+  - {fileID: 11400000, guid: ccb3cd00a7d230f4f95e34af552f6590, type: 2}
+  - {fileID: 11400000, guid: 5a1f94c0a3f3abd4f8d3c917082365c4, type: 2}
+  - {fileID: 11400000, guid: 90284a1590ee1864badea14ab500894a, type: 2}
+  - {fileID: 11400000, guid: 46595f4abbd73f140868e8a516b61088, type: 2}
+  - {fileID: 11400000, guid: fcc238c330a833f48be56d96b589a20f, type: 2}
+  - {fileID: 11400000, guid: 9c575ec3d3b54734781251778ba28453, type: 2}
+  - {fileID: 11400000, guid: e67276398720db3488465a7eeddb1427, type: 2}
+  - {fileID: 11400000, guid: fa3946a472cf9a5419bdecc726559a1a, type: 2}
+  - {fileID: 11400000, guid: cbe2cde39667f1640839cd6ec5950e8c, type: 2}
+  - {fileID: 11400000, guid: 3147ce4b23b688f4799a1f44962c73b9, type: 2}
+  - {fileID: 11400000, guid: 797678c761ffbe74693657e5aaeddd0d, type: 2}
+  - {fileID: 11400000, guid: f6fa7a19f327a08439774d200e38b334, type: 2}
+  - {fileID: 11400000, guid: 98b09e1259746f04eb64bb115ea5b4ab, type: 2}
+  - {fileID: 11400000, guid: 3b697f18e93d1a84f82a4bd8e66a43c7, type: 2}
+  - {fileID: 11400000, guid: 3dff5c792864e674f91a86bbf4e3c6e1, type: 2}
+  - {fileID: 11400000, guid: 04e6e9390f031984e86a70dba6a6859f, type: 2}
+  - {fileID: 11400000, guid: cfc263df554f28541b97a49a2f025dd2, type: 2}
+  - {fileID: 11400000, guid: 23d192b851ad0dd4b95337273b5e0824, type: 2}
+  enemies:
+  - {fileID: 11400000, guid: 1800b14f5f69d674f8cd395bdfd36652, type: 2}
+  - {fileID: 11400000, guid: 2f5c809bdb541664092d8c50744be05b, type: 2}
+  - {fileID: 11400000, guid: b543dc565f274d16b8ec08ff810aab6a, type: 2}
+  - {fileID: 11400000, guid: f67ea9fe9fe6f2c499ce6114280518d7, type: 2}
+  - {fileID: 11400000, guid: be78ac9dcb1d5ee4f821bf75b4585ff5, type: 2}
+  resources:
+  - {fileID: 11400000, guid: 594a27173d0a3354183e0200b48503c3, type: 2}
+  - {fileID: 11400000, guid: 48ee89121bf4bb342ba55d9f55f11255, type: 2}

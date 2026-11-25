@@ -208,6 +208,15 @@ namespace FindTheLover.Environment.Puzzles
             }
         }
 
+        /// <summary>
+        /// Forces the brazier lit/unlit state when restoring a saved GameData snapshot.
+        /// </summary>
+        public void ForceSetLitState(bool isLit)
+        {
+            _isLit = brazierRole == BrazierRole.SoulFlameAltar || isLit;
+            ApplyVisualState();
+        }
+
         private void ApplyVisualState()
         {
             Color flameColor = (brazierRole == BrazierRole.SoulFlameAltar)

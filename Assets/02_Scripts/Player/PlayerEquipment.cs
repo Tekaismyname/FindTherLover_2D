@@ -30,6 +30,9 @@ namespace FindTherLover.Player
         private Vector3 initialSocketScale;
         private Vector3 initialSocketPos;
 
+        /// <summary>Event broadcast whenever the player equips or unequips gear (consumed by GameDataManager).</summary>
+        public event System.Action<EquipmentItemDataSO> OnEquipmentChanged;
+
         public EquipmentItemDataSO CurrentEquippedData => currentData;
         public EquipmentType CurrentEquipmentType => currentData != null ? currentData.equipmentType : EquipmentType.None;
 
@@ -91,6 +94,7 @@ namespace FindTherLover.Player
             }
 
             Debug.Log($"[PlayerEquipment] Equipped: {newItem.displayName} ({newItem.equipmentType})");
+            OnEquipmentChanged?.Invoke(currentData);
         }
 
         /// <summary>
@@ -98,6 +102,7 @@ namespace FindTherLover.Player
         /// </summary>
         public void UnequipCurrentItem()
         {
+            bool hadItem = currentData != null || currentInstance != null;
             if (currentInstance != null)
             {
                 Destroy(currentInstance);
@@ -106,6 +111,7 @@ namespace FindTherLover.Player
             }
 
             currentData = null;
+            if (hadItem) OnEquipmentChanged?.Invoke(null);
         }
         
     

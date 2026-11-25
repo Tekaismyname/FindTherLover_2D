@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7011385693812744081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7425600769814548824}
+  - component: {fileID: 5404177733070433181}
+  m_Layer: 0
+  m_Name: GameDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7425600769814548824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011385693812744081}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5404177733070433181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011385693812744081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f089ec328b0b544adc1a6bb3e4682f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Core.GameDataManager
+  _masterCatalog: {fileID: 11400000, guid: 04f81883ea36fce48ae2969baf0c8a21, type: 2}
+  _defaultSaveSlot: survival_save_01
+  _autoSaveOnNewDay: 1
+  _enableDevQuickSaveHotkeys: 1
+  _currentData:
+    schemaVersion: 1
+    lastSavedUtc: 
+    world:
+      worldSeed: 20261119
+      currentDay: 1
+      normalizedTime: 0.25
+      shrinesActivated: 0
+      totalDownedCount: 0
+    player:
+      position: {x: 0, y: 0, z: 0}
+      rotationY: 0
+      currentHealth: 100
+      maxHealth: 100
+      shieldPoints: 0
+      torchFlameType: 1
+      torchRemainingFuel: 40
+      equippedItemId: 
+    inventorySlots: []
+    ownedAugments: []
+    worldObjectStates: []

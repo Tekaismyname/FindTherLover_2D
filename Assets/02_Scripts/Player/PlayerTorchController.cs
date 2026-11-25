@@ -160,6 +160,24 @@ namespace FindTheLover.Player
         }
 
         /// <summary>
+        /// Restores exact torch flame type and remaining burn duration from GameData.
+        /// </summary>
+        public void RestoreTorchState(TorchFlameType flameType, float remainingFuel)
+        {
+            RefreshSocketVisualReferences();
+            _currentFlameType = flameType;
+            _remainingBurnTime = Mathf.Clamp(remainingFuel, 0f, maxBurnDuration);
+            if (_remainingBurnTime <= 0f)
+            {
+                _currentFlameType = TorchFlameType.Unlit;
+            }
+
+            UpdateVisualFeedback();
+            OnFlameTypeChanged?.Invoke(_currentFlameType);
+            OnTorchFuelChanged?.Invoke(_remainingBurnTime, maxBurnDuration);
+        }
+
+        /// <summary>
         /// Completely extinguishes the torch when fuel runs out or doused.
         /// </summary>
         public void ExtinguishTorch()
