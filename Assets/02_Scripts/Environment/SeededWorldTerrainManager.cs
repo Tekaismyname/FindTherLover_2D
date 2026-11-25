@@ -51,6 +51,8 @@ namespace FindTheLover.Environment
         public SeededTerrainProfileSO EarlyGameProfile => _earlyGameProfile;
         public SeededTerrainProfileSO EndGameProfile => _endGameProfile;
 
+        private bool _runtimeTerrainDataCloned;
+
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -74,9 +76,39 @@ namespace FindTheLover.Environment
 
         private void Update()
         {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (_enableRuntimeRandomizeHotkey && Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
             {
                 RegenerateWithRandomSeed();
+            }
+#endif
+        }
+
+        /// <summary>
+        /// Clones TerrainData instances once in Play Mode / Standalone builds so runtime seed regeneration
+        /// never mutates original disk assets and keeps TerrainCollider physics synchronized.
+        /// </summary>
+        private void EnsureRuntimeTerrainDataCloned()
+        {
+            if (!Application.isPlaying || _runtimeTerrainDataCloned) return;
+            _runtimeTerrainDataCloned = true;
+
+            CloneTerrainDataForRuntime(_earlyGameTerrain);
+            CloneTerrainDataForRuntime(_endGameTerrain);
+        }
+
+        private static void CloneTerrainDataForRuntime(Terrain terrain)
+        {
+            if (terrain == null || terrain.terrainData == null) return;
+
+            TerrainData runtimeClone = Instantiate(terrain.terrainData);
+            runtimeClone.name = terrain.terrainData.name + "_RuntimeClone";
+            terrain.terrainData = runtimeClone;
+
+            TerrainCollider collider = terrain.GetComponent<TerrainCollider>();
+            if (collider != null)
+            {
+                collider.terrainData = runtimeClone;
             }
         }
 
@@ -98,6 +130,7 @@ namespace FindTheLover.Environment
         public void GenerateWorldWithSeed(int seed)
         {
             _worldSeed = seed;
+            EnsureRuntimeTerrainDataCloned();
 
             if (_earlyGameTerrain != null && _earlyGameProfile != null)
             {

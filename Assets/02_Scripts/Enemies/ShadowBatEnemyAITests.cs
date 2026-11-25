@@ -1,3 +1,4 @@
+#if UNITY_EDITOR || UNITY_INCLUDE_TESTS
 using NUnit.Framework;
 using UnityEngine;
 using FindTheLover.Combat;
@@ -71,3 +72,4 @@ namespace FindTheLover.Tests.Enemies
         }
     }
 }
+#endif

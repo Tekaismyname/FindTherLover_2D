@@ -55,10 +55,12 @@ namespace FindTheLover.Augments
 
         private void Update()
         {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (_enableDebugOfferHotkey && !_isSelectionPending && Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame)
             {
                 OfferAugmentSelection(null);
             }
+#endif
         }
 
         /// <summary>

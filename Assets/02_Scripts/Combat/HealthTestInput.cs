@@ -22,19 +22,21 @@ namespace FindTheLover.Combat
 
         private void Update()
         {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (_healthSystem == null) return;
 
-            // Press K: Simulate taking 20 damage
+            // Press K: Simulate taking 20 damage (Editor & Development Builds only)
             if (Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame)
             {
                 _healthSystem.TakeDamage(20f, transform.position, Vector3.back);
             }
 
-            // Press H: Simulate healing 20 health
+            // Press H: Simulate healing 20 health (Editor & Development Builds only)
             if (Keyboard.current != null && Keyboard.current.hKey.wasPressedThisFrame)
             {
                 _healthSystem.Heal(20f);
             }
+#endif
         }
     }
 }
