@@ -32,6 +32,8 @@ namespace FindTheLover.UI
         private CursorLockMode _previousCursorLockMode;
         private bool _previousCursorVisible;
 
+        public bool IsOpen => _isOpen;
+
         private void Start()
         {
             if (_modalRootPanel != null)
@@ -98,7 +100,10 @@ namespace FindTheLover.UI
             {
                 if (_cardSlots[i] == null) continue;
                 AugmentDataSO data = (choices != null && i < choices.Length) ? choices[i] : null;
-                _cardSlots[i].Bind(data, i, OnCardClicked);
+                int ownedLevel = (data != null && AugmentManager.Instance != null)
+                    ? AugmentManager.Instance.GetStackCount(data.augmentId)
+                    : 0;
+                _cardSlots[i].Bind(data, i, OnCardClicked, ownedLevel);
             }
 
             _previousCursorLockMode = Cursor.lockState;

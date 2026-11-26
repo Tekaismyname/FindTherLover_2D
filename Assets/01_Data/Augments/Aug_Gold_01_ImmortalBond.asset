@@ -22,5 +22,9 @@ MonoBehaviour:
   effectType: 20
   primaryValue: 0.6
   secondaryValue: 3
-  allowStacking: 0
-  maxStacks: 1
+  allowStacking: 1
+  maxStacks: 2
+  levelPrimaryMultipliers:
+  - 1
+  - 1.75
+  - 2.75

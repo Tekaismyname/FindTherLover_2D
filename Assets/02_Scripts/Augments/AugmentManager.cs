@@ -259,14 +259,17 @@ namespace FindTheLover.Augments
             for (int i = 0; i < savedAugments.Count; i++)
             {
                 AugmentDataSO aug = savedAugments[i].augment;
-                int stacks = Mathf.Max(1, savedAugments[i].stacks);
+                int finalLevel = Mathf.Clamp(savedAugments[i].stacks, 1, aug != null ? aug.MaxLevel : 1);
                 if (aug == null) continue;
 
-                for (int s = 1; s <= stacks; s++)
+                _activeStacks[aug.augmentId] = finalLevel;
+                for (int s = 1; s <= finalLevel; s++)
                 {
-                    _activeStacks[aug.augmentId] = s;
                     _selectedHistory.Add(aug);
-                    if (receiver != null) receiver.ApplyAugment(aug, s);
+                }
+                if (receiver != null)
+                {
+                    receiver.ApplyAugment(aug, finalLevel);
                 }
             }
         }

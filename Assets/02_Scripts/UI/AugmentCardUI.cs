@@ -42,9 +42,9 @@ namespace FindTheLover.UI
         }
 
         /// <summary>
-        /// Binds an AugmentDataSO blueprint to this card and updates all tier visual accents.
+        /// Binds an AugmentDataSO blueprint to this card and updates tier visual accents + Lv.1->Lv.3 upgrade badge.
         /// </summary>
-        public void Bind(AugmentDataSO augment, int slotIndex, Action<AugmentDataSO> onSelected)
+        public void Bind(AugmentDataSO augment, int slotIndex, Action<AugmentDataSO> onSelected, int currentOwnedLevel = 0)
         {
             _boundAugment = augment;
             _onSelectedCallback = onSelected;
@@ -57,12 +57,15 @@ namespace FindTheLover.UI
 
             gameObject.SetActive(true);
             Color tierColor = augment.GetTierAccentColor();
+            string upgradeBadge = AugmentDataSO.FormatUpgradeBadge(currentOwnedLevel, augment.MaxLevel);
+            bool isUpgrade = currentOwnedLevel > 0;
 
-            if (_borderGlowImage != null) _borderGlowImage.color = tierColor;
+            if (_borderGlowImage != null) _borderGlowImage.color = isUpgrade ? Color.Lerp(tierColor, Color.white, 0.28f) : tierColor;
             if (_tierRibbonImage != null) _tierRibbonImage.color = new Color(tierColor.r * 0.7f, tierColor.g * 0.7f, tierColor.b * 0.7f, 0.95f);
             if (_tierLabelText != null)
             {
-                _tierLabelText.text = augment.GetTierLabel();
+                string badgeHex = isUpgrade ? "#FFE066" : "#A8F0FF";
+                _tierLabelText.text = $"{augment.GetTierLabel()}  |  <color={badgeHex}>{upgradeBadge}</color>";
                 _tierLabelText.color = Color.white;
             }
 
@@ -74,7 +77,7 @@ namespace FindTheLover.UI
 
             if (_descriptionText != null)
             {
-                _descriptionText.text = augment.description;
+                _descriptionText.text = augment.GetLevelAwareDescription(currentOwnedLevel);
             }
 
             if (_iconImage != null)

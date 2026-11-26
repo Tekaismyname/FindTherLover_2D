@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using FindTheLover.Augments.Contracts;
 using FindTheLover.Augments.Data;
@@ -46,12 +47,22 @@ namespace FindTheLover.Augments
         private float _nextCelestialTime = 0f;
         private bool _hasImmortalBond = false;
         private bool _immortalBondReady = false;
+        private int _immortalBondCharges = 0;
         private float _bonusGoldDropMultiplier = 1f;
+        private float _baseMaxHealth = 100f;
+        private bool _baseHealthCaptured = false;
+
+        // Tracks exact owned augment levels (Lv.1..Lv.3) for deterministic zero-drift recalculation
+        private readonly Dictionary<AugmentDataSO, int> _ownedAugmentLevels = new Dictionary<AugmentDataSO, int>();
 
         public float HarvestMultiplier => _harvestMultiplier;
         public float BonusGoldDropMultiplier => _bonusGoldDropMultiplier;
         public float MoveSpeedMultiplier => 1f + _moveSpeedBonus;
         public float DamageMultiplier => 1f + _damageBonus;
+        public float LifestealPercent => _lifestealPercent;
+        public float DamageReductionBonus => _damageReductionBonus;
+        public int ChainLightningTargets => _chainLightningTargets;
+        public bool HasImmortalBondReady => _hasImmortalBond && _immortalBondReady;
 
         private void Awake()
         {
@@ -59,6 +70,12 @@ namespace FindTheLover.Augments
             _locomotion = GetComponent<PlayerLocomotion.PlayerLocomotion>();
             _playerCombat = GetComponent<PlayerCombat>();
             _torchController = GetComponent<PlayerTorchController>();
+
+            if (_healthSystem != null)
+            {
+                _baseMaxHealth = _healthSystem.MaxHealth;
+                _baseHealthCaptured = true;
+            }
         }
 
         private void OnEnable()
@@ -100,6 +117,13 @@ namespace FindTheLover.Augments
         /// </summary>
         public void ResetAllAugmentStats()
         {
+            _ownedAugmentLevels.Clear();
+            ClearRuntimeStatAccumulators();
+            PushStatsToSiblingComponents(flatHealthDelta: 0f);
+        }
+
+        private void ClearRuntimeStatAccumulators()
+        {
             _moveSpeedBonus = 0f;
             _damageBonus = 0f;
             _lifestealPercent = 0f;
@@ -114,125 +138,157 @@ namespace FindTheLover.Augments
             _celestialStrikeDamage = 0f;
             _hasImmortalBond = false;
             _immortalBondReady = false;
+            _immortalBondCharges = 0;
             _bonusGoldDropMultiplier = 1f;
-
-            if (_locomotion != null) _locomotion.SetSpeedMultiplier(1f);
-            if (_playerCombat != null) _playerCombat.SetDamageMultiplier(1f);
-            if (_healthSystem != null)
-            {
-                _healthSystem.SetDamageReduction(0f);
-                _healthSystem.SetShieldPoints(0f);
-            }
-            if (_torchController != null) _torchController.SetBurnDurationMultiplier(1f);
         }
 
         /// <summary>
-        /// IAugmentReceiver implementation: applies the chosen augment blueprint onto the player.
+        /// Deterministic idempotent stat recalculation across all owned Lv.1..Lv.3 augments.
+        /// Prevents stat drift when upgrading cards or loading JSON saves multiple times.
+        /// </summary>
+        public void RecalculateAllStats(IReadOnlyDictionary<AugmentDataSO, int> ownedLevels)
+        {
+            if (_healthSystem == null) _healthSystem = GetComponent<HealthSystem>();
+            if (_locomotion == null) _locomotion = GetComponent<PlayerLocomotion.PlayerLocomotion>();
+            if (_playerCombat == null) _playerCombat = GetComponent<PlayerCombat>();
+            if (_torchController == null) _torchController = GetComponent<PlayerTorchController>();
+
+            if (_healthSystem != null && !_baseHealthCaptured)
+            {
+                _baseMaxHealth = _healthSystem.MaxHealth;
+                _baseHealthCaptured = true;
+            }
+
+            float previousMaxHealth = _healthSystem != null ? _healthSystem.MaxHealth : _baseMaxHealth;
+            ClearRuntimeStatAccumulators();
+
+            float totalFlatHealthBonus = 0f;
+
+            if (ownedLevels != null)
+            {
+                foreach (var kvp in ownedLevels)
+                {
+                    AugmentDataSO augment = kvp.Key;
+                    int level = Mathf.Max(1, kvp.Value);
+                    if (augment == null) continue;
+
+                    float pVal = augment.GetPrimaryValueForLevel(level);
+                    float sVal = augment.GetSecondaryValueForLevel(level);
+
+                    switch (augment.effectType)
+                    {
+                        case AugmentEffectType.MoveSpeedPercent:
+                            _moveSpeedBonus += pVal;
+                            break;
+                        case AugmentEffectType.MaxHealthFlat:
+                            totalFlatHealthBonus += pVal;
+                            break;
+                        case AugmentEffectType.LifestealPercent:
+                            _lifestealPercent += pVal;
+                            break;
+                        case AugmentEffectType.HarvestYieldMultiplier:
+                            _harvestMultiplier += pVal;
+                            break;
+                        case AugmentEffectType.TorchDurationPercent:
+                            _torchDurationBonus += pVal;
+                            break;
+                        case AugmentEffectType.DamageReductionPercent:
+                        case AugmentEffectType.EternalRingProtection:
+                            _damageReductionBonus += pVal;
+                            break;
+                        case AugmentEffectType.ChainLightningOnHit:
+                            _chainLightningTargets += Mathf.Max(1, Mathf.RoundToInt(sVal));
+                            _chainLightningDamageRatio += pVal;
+                            break;
+                        case AugmentEffectType.BlazingDashTrail:
+                            _blazingDashDamage += pVal;
+                            break;
+                        case AugmentEffectType.RegeneratingShield:
+                            _maxShieldCapacity += pVal;
+                            _shieldRegenInterval = sVal > 0f ? sVal : 20f;
+                            _nextShieldRegenTime = Time.time + _shieldRegenInterval;
+                            break;
+                        case AugmentEffectType.ToxicReboundNova:
+                            _toxicReboundDamage += pVal;
+                            if (sVal > 0f) _toxicReboundRadius = sVal;
+                            break;
+                        case AugmentEffectType.PartnerDamageAura:
+                        case AugmentEffectType.WindSlashFinisher:
+                            _damageBonus += pVal;
+                            break;
+                        case AugmentEffectType.ImmortalLoverBond:
+                            _hasImmortalBond = true;
+                            _immortalBondCharges += level;
+                            _immortalBondReady = _immortalBondCharges > 0;
+                            break;
+                        case AugmentEffectType.CelestialThunderstorm:
+                            _celestialStrikeDamage += pVal;
+                            _celestialStrikeInterval = sVal > 0f ? sVal : 6f;
+                            _nextCelestialTime = Time.time + _celestialStrikeInterval;
+                            break;
+                        case AugmentEffectType.GoldenMidasTouch:
+                            _bonusGoldDropMultiplier += pVal;
+                            _harvestMultiplier += 0.5f * level;
+                            break;
+                        case AugmentEffectType.BerserkerFrenzy:
+                            _damageBonus += pVal;
+                            _moveSpeedBonus += sVal;
+                            break;
+                        case AugmentEffectType.ArcaneOverdrive:
+                            _damageBonus += pVal;
+                            _lifestealPercent += sVal;
+                            break;
+                    }
+                }
+            }
+
+            float targetMaxHp = _baseMaxHealth + totalFlatHealthBonus;
+            float hpDelta = targetMaxHp - previousMaxHealth;
+            PushStatsToSiblingComponents(hpDelta, targetMaxHp);
+        }
+
+        private void PushStatsToSiblingComponents(float flatHealthDelta, float? explicitTargetMaxHp = null)
+        {
+            if (_locomotion != null) _locomotion.SetSpeedMultiplier(MoveSpeedMultiplier);
+            if (_playerCombat != null) _playerCombat.SetDamageMultiplier(DamageMultiplier);
+            if (_torchController != null) _torchController.SetBurnDurationMultiplier(1f + _torchDurationBonus);
+
+            if (_healthSystem != null)
+            {
+                _healthSystem.SetDamageReduction(_damageReductionBonus);
+                if (_maxShieldCapacity > 0f)
+                {
+                    _healthSystem.SetShieldPoints(_maxShieldCapacity);
+                }
+                else
+                {
+                    _healthSystem.SetShieldPoints(0f);
+                }
+
+                if (explicitTargetMaxHp.HasValue && Mathf.Abs(explicitTargetMaxHp.Value - _healthSystem.MaxHealth) > 0.01f)
+                {
+                    _healthSystem.SetMaxHealth(explicitTargetMaxHp.Value, resetCurrentHealth: false);
+                    if (flatHealthDelta > 0.01f)
+                    {
+                        _healthSystem.Heal(flatHealthDelta);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// IAugmentReceiver implementation: records the augment's new level (Lv.1..Lv.3)
+        /// and performs a clean zero-drift recalculation across all active augments.
         /// </summary>
         public void ApplyAugment(AugmentDataSO augment, int newStackCount)
         {
             if (augment == null) return;
 
-            switch (augment.effectType)
-            {
-                // --- BRONZE TIER ---
-                case AugmentEffectType.MoveSpeedPercent:
-                    _moveSpeedBonus += augment.primaryValue;
-                    if (_locomotion != null) _locomotion.SetSpeedMultiplier(MoveSpeedMultiplier);
-                    break;
+            int level = Mathf.Clamp(newStackCount, 1, augment.MaxLevel);
+            _ownedAugmentLevels[augment] = level;
+            RecalculateAllStats(_ownedAugmentLevels);
 
-                case AugmentEffectType.MaxHealthFlat:
-                    if (_healthSystem != null)
-                    {
-                        float oldHealth = _healthSystem.CurrentHealth;
-                        _healthSystem.SetMaxHealth(_healthSystem.MaxHealth + augment.primaryValue, resetCurrentHealth: false);
-                        _healthSystem.Heal(augment.primaryValue + Mathf.Max(0f, oldHealth - _healthSystem.CurrentHealth));
-                    }
-                    break;
-
-                case AugmentEffectType.LifestealPercent:
-                    _lifestealPercent += augment.primaryValue;
-                    break;
-
-                case AugmentEffectType.HarvestYieldMultiplier:
-                    _harvestMultiplier += augment.primaryValue;
-                    break;
-
-                case AugmentEffectType.TorchDurationPercent:
-                    _torchDurationBonus += augment.primaryValue;
-                    if (_torchController != null) _torchController.SetBurnDurationMultiplier(1f + _torchDurationBonus);
-                    break;
-
-                case AugmentEffectType.DamageReductionPercent:
-                    _damageReductionBonus += augment.primaryValue;
-                    if (_healthSystem != null) _healthSystem.SetDamageReduction(_damageReductionBonus);
-                    break;
-
-                // --- SILVER TIER ---
-                case AugmentEffectType.ChainLightningOnHit:
-                    _chainLightningTargets += Mathf.Max(1, Mathf.RoundToInt(augment.secondaryValue));
-                    _chainLightningDamageRatio += augment.primaryValue;
-                    break;
-
-                case AugmentEffectType.BlazingDashTrail:
-                    _blazingDashDamage += augment.primaryValue;
-                    break;
-
-                case AugmentEffectType.RegeneratingShield:
-                    _maxShieldCapacity += augment.primaryValue;
-                    _shieldRegenInterval = augment.secondaryValue > 0f ? augment.secondaryValue : 20f;
-                    if (_healthSystem != null) _healthSystem.SetShieldPoints(_maxShieldCapacity);
-                    _nextShieldRegenTime = Time.time + _shieldRegenInterval;
-                    break;
-
-                case AugmentEffectType.ToxicReboundNova:
-                    _toxicReboundDamage += augment.primaryValue;
-                    if (augment.secondaryValue > 0f) _toxicReboundRadius = augment.secondaryValue;
-                    break;
-
-                case AugmentEffectType.PartnerDamageAura:
-                case AugmentEffectType.WindSlashFinisher:
-                    _damageBonus += augment.primaryValue;
-                    if (_playerCombat != null) _playerCombat.SetDamageMultiplier(DamageMultiplier);
-                    break;
-
-                // --- GOLD TIER ---
-                case AugmentEffectType.ImmortalLoverBond:
-                    _hasImmortalBond = true;
-                    _immortalBondReady = true;
-                    break;
-
-                case AugmentEffectType.CelestialThunderstorm:
-                    _celestialStrikeDamage += augment.primaryValue;
-                    _celestialStrikeInterval = augment.secondaryValue > 0f ? augment.secondaryValue : 6f;
-                    _nextCelestialTime = Time.time + _celestialStrikeInterval;
-                    break;
-
-                case AugmentEffectType.GoldenMidasTouch:
-                    _bonusGoldDropMultiplier += augment.primaryValue;
-                    _harvestMultiplier += 0.5f;
-                    break;
-
-                case AugmentEffectType.EternalRingProtection:
-                    _damageReductionBonus += augment.primaryValue;
-                    if (_healthSystem != null) _healthSystem.SetDamageReduction(_damageReductionBonus);
-                    break;
-
-                case AugmentEffectType.BerserkerFrenzy:
-                    _damageBonus += augment.primaryValue;
-                    _moveSpeedBonus += augment.secondaryValue;
-                    if (_playerCombat != null) _playerCombat.SetDamageMultiplier(DamageMultiplier);
-                    if (_locomotion != null) _locomotion.SetSpeedMultiplier(MoveSpeedMultiplier);
-                    break;
-
-                case AugmentEffectType.ArcaneOverdrive:
-                    _damageBonus += augment.primaryValue;
-                    _lifestealPercent += augment.secondaryValue;
-                    if (_playerCombat != null) _playerCombat.SetDamageMultiplier(DamageMultiplier);
-                    break;
-            }
-
-            Debug.Log($"<color=#FFD700>[PlayerAugmentStats]</color> Applied [{augment.tier}] {augment.displayName} (Stack x{newStackCount}).");
+            Debug.Log($"<color=#FFD700>[PlayerAugmentStats]</color> Applied [{augment.tier}] {augment.displayName} -> <b>LV.{level}</b>.");
         }
 
         private void HandleEnemyStruck(IDamageable primaryTarget, float dealtDamage, Vector3 hitPoint)

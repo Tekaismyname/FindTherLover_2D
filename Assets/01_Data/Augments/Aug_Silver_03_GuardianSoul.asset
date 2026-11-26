@@ -22,4 +22,8 @@ MonoBehaviour:
   primaryValue: 30
   secondaryValue: 20
   allowStacking: 1
-  maxStacks: 2
+  maxStacks: 3
+  levelPrimaryMultipliers:
+  - 1
+  - 1.75
+  - 2.75

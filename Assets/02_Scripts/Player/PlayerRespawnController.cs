@@ -17,6 +17,10 @@ namespace FindTheLover.Player
         [Tooltip("Spawn point anchor located beside the Campfire.")]
         [SerializeField] private Transform campfireSpawnPoint;
 
+        [Header("Singleplayer Modal Integration")]
+        [Tooltip("When false and SurvivalFlowModalUI exists in scene, waits for the player to click Respawn on the Game Over screen.")]
+        [SerializeField] private bool autoRespawnWithoutModal = false;
+
         private CharacterController _characterController;
 
         private void Awake()
@@ -37,8 +41,42 @@ namespace FindTheLover.Player
 
         private void HandlePlayerDeath()
         {
+            bool hasGameOverModal = Object.FindAnyObjectByType<FindTheLover.UI.SurvivalFlowModalUI>(FindObjectsInactive.Include) != null;
+            if (!autoRespawnWithoutModal && hasGameOverModal)
+            {
+                Debug.Log("[PlayerRespawnController] Player perished! Handing off to SurvivalFlowModalUI Game Over screen.");
+                return;
+            }
+
             Debug.Log("[PlayerRespawnController] Player perished! Teleporting to Campfire in 1.5s...");
             StartCoroutine(RespawnRoutine(1.5f));
+        }
+
+        /// <summary>
+        /// Immediately revives the player at full health beside the Campfire Sanctuary.
+        /// Invoked by SurvivalFlowModalUI when clicking "RESPAWN AT CAMPFIRE".
+        /// </summary>
+        public void RespawnNowAtCampfire()
+        {
+            if (_characterController != null) _characterController.enabled = false;
+
+            if (campfireSpawnPoint != null)
+            {
+                transform.position = campfireSpawnPoint.position + Vector3.up * 0.1f;
+            }
+            else
+            {
+                transform.position = new Vector3(0f, 10.2f, 0f);
+            }
+
+            if (_characterController != null) _characterController.enabled = true;
+
+            if (healthSystem != null)
+            {
+                healthSystem.SetMaxHealth(healthSystem.MaxHealth, resetCurrentHealth: true);
+            }
+
+            Debug.Log("[PlayerRespawnController] Player safely revived at Campfire Sanctuary!");
         }
 
         private IEnumerator RespawnRoutine(float delay)
@@ -51,27 +89,7 @@ namespace FindTheLover.Player
                 yield break;
             }
 
-            // Temporarily disable CharacterController to allow position displacement
-            if (_characterController != null) _characterController.enabled = false;
-
-            if (campfireSpawnPoint != null)
-            {
-                transform.position = campfireSpawnPoint.position + Vector3.up * 0.1f;
-            }
-            else
-            {
-                transform.position = Vector3.up * 0.5f;
-            }
-
-            if (_characterController != null) _characterController.enabled = true;
-
-            // Revive with 100% full health
-            if (healthSystem != null)
-            {
-                healthSystem.SetMaxHealth(healthSystem.MaxHealth, resetCurrentHealth: true);
-            }
-
-            Debug.Log("[PlayerRespawnController] Player safely revived at Campfire!");
+            RespawnNowAtCampfire();
         }
     }
 }
