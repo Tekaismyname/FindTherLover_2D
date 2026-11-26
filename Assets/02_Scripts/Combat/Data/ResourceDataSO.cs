@@ -7,23 +7,38 @@ namespace FindTheLover.Combat.Data
         Wood,
         Stone,
         Iron,
-        Bush
+        Bush,
+        Crystal,
+        Obsidian
     }
     /// <summary>
-    /// Data Layer Blueprint for harvestable resource nodes.
-    /// Encapsulates durability, hit juice feedback, and loot drop specifications.
+    /// Data Layer Blueprint for harvestable resource nodes (Trees, Stone Boulders, Iron Veins, Amber Crystals).
+    /// Encapsulates durability, required harvest tool, hit juice feedback, and loot drop specifications.
     /// </summary>
 
     [CreateAssetMenu(fileName = "NewResourceData", menuName = "FindTheLover/Resources/ResourceDataSO")]
     public class ResourceDataSO : ScriptableObject
     {
         [Header("Identity")]
-        [Tooltip("Descriptive name of the harverstable node.")]
+        [Tooltip("Descriptive name of the harvestable node.")]
         public string resourceName = "Oak Tree";
         public ResourceType resourceType = ResourceType.Wood;
 
+        [Header("Harvest Tool Requirements")]
+        [Tooltip("Optimal tool required to harvest or mine this node efficiently (Axe for Wood, Pickaxe for Stone/Ore/Crystal).")]
+        public HarvestToolType requiredTool = HarvestToolType.Axe;
+
+        [Tooltip("Damage multiplier when struck with the matching optimal tool.")]
+        [Range(1.0f, 5.0f)] public float toolEfficiencyMultiplier = 2.0f;
+
+        [Tooltip("Damage multiplier when struck with a non-matching tool (if requireExactTool is false).")]
+        [Range(0.0f, 1.0f)] public float wrongToolDamageMultiplier = 0.25f;
+
+        [Tooltip("When enabled, hard veins (Iron Ore, Amber Crystal, Obsidian) require the exact matching tool to deal damage.")]
+        public bool requireExactTool = false;
+
         [Header("Durability")]
-        [Tooltip("Maximun hit points before the node collapses.")]
+        [Tooltip("Maximum hit points before the node breaks.")]
         public float maxHealth = 60f;
 
         [Header("hit Juice & Feedback")]

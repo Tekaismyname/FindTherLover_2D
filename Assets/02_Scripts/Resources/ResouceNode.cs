@@ -20,12 +20,26 @@ namespace FindTheLover.Environment
         private Coroutine _shakeCoroutine;
         private bool _isDead = false;
 
-        //  IHarvestable
-        public HarvestToolType RequiredTool => HarvestToolType.Axe;
-        public float ToolEfficiencyMultiplier => 2.0f;
+        // IHarvestable (Data-Driven from ResourceDataSO!)
+        public HarvestToolType RequiredTool => resourceData != null ? resourceData.requiredTool : HarvestToolType.Axe;
+        public float ToolEfficiencyMultiplier => resourceData != null ? resourceData.toolEfficiencyMultiplier : 2.0f;
+        public ResourceDataSO ResourceData => resourceData;
 
         public float CurrentHealth => _currentHealth;
         public bool IsDead => _isDead;
+
+        /// <summary>
+        /// Assigns or overrides the blueprint data at runtime or in automated tests.
+        /// </summary>
+        public void ConfigureData(ResourceDataSO data)
+        {
+            resourceData = data;
+            if (resourceData != null)
+            {
+                _currentHealth = resourceData.maxHealth;
+                _isDead = false;
+            }
+        }
 
         private void Awake()
         {
@@ -137,17 +151,52 @@ namespace FindTheLover.Environment
             }
         }
 
+        /// <summary>
+        /// Evaluates tool compatibility (Pickaxe for Stone/Ore/Crystal, Axe for Wood) and applies mining/chopping damage.
+        /// </summary>
         public void Harvest(float baseDamage, HarvestToolType usedTool, Vector3 hitPoint)
         {
-            float finalDamage = baseDamage;
-            if (usedTool == RequiredTool)
-            {
-                finalDamage *= ToolEfficiencyMultiplier;
-                Debug.Log($"<color=yellow>[Harvest]</color> Correct tool ({usedTool}) used! Damage x{ToolEfficiencyMultiplier} = {finalDamage}");
-            }
+            if (_isDead) return;
 
             Vector3 hitNormal = (hitPoint - transform.position).normalized;
+            float finalDamage = ComputeHarvestDamage(baseDamage, usedTool, resourceData);
+
+            if (finalDamage <= 0f)
+            {
+                // Play elastic recoil bounce as tactile feedback that a stronger/matching tool is needed
+                if (_shakeCoroutine != null) StopCoroutine(_shakeCoroutine);
+                _shakeCoroutine = StartCoroutine(HitBounceRoutine(hitNormal));
+                Debug.Log($"<color=#FF9944>[Mining]</color> {resourceData?.resourceName ?? name} requires <b>{RequiredTool}</b>! Press [3] Pickaxe or [2] Axe.");
+                return;
+            }
+
+            if (usedTool == RequiredTool)
+            {
+                Debug.Log($"<color=yellow>[Harvest/Mine]</color> Optimal tool ({usedTool}) hit {resourceData?.resourceName ?? name} for {finalDamage:F1} DMG!");
+            }
+
             TakeDamage(finalDamage, hitPoint, hitNormal);
+        }
+
+        /// <summary>
+        /// Pure deterministic formula calculating harvest/mining damage based on tool match and blueprint rules.
+        /// </summary>
+        public static float ComputeHarvestDamage(float baseDamage, HarvestToolType usedTool, ResourceDataSO data)
+        {
+            if (baseDamage <= 0f) return 0f;
+            if (data == null) return baseDamage;
+
+            if (usedTool == data.requiredTool)
+            {
+                return baseDamage * Mathf.Max(1f, data.toolEfficiencyMultiplier);
+            }
+
+            if (data.requireExactTool)
+            {
+                return 0f;
+            }
+
+            return baseDamage * Mathf.Clamp01(data.wrongToolDamageMultiplier);
         }
     }
 }

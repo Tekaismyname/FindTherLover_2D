@@ -106,8 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Environment.DynamicBillboard
   mode: 0
-  activeDistance: 50
+  instantRotation: 1
   smoothRotationSpeed: 15
+  activeDistance: 50
+  lockYAxis: 1
 --- !u!65 &-6494583489444133971
 BoxCollider:
   m_ObjectHideFlags: 0

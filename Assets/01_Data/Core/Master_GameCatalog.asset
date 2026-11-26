@@ -67,3 +67,6 @@ MonoBehaviour:
   resources:
   - {fileID: 11400000, guid: 594a27173d0a3354183e0200b48503c3, type: 2}
   - {fileID: 11400000, guid: 48ee89121bf4bb342ba55d9f55f11255, type: 2}
+  - {fileID: 11400000, guid: 03c6f321e4970b742b76b9f803a66e96, type: 2}
+  - {fileID: 11400000, guid: d3e1ea5a4d7b6ef4697110ba0cd2f470, type: 2}
+  - {fileID: 11400000, guid: ab4d067c659954c43aabe3119e1369a0, type: 2}

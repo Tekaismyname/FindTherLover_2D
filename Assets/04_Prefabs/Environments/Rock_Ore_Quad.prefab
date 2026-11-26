@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8698492995512978908}
   - component: {fileID: 5203862235064070898}
   - component: {fileID: 8029859911599113111}
+  - component: {fileID: 7968903000860176285}
   m_Layer: 0
   m_Name: Rock_Ore_Quad
   m_TagString: Untagged
@@ -130,3 +131,16 @@ MonoBehaviour:
   smoothRotationSpeed: 15
   activeDistance: 50
   lockYAxis: 1
+--- !u!114 &7968903000860176285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251103085434881707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352d2c7414c6812458c56382c6e09023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Environment.ResourceNode
+  resourceData: {fileID: 11400000, guid: 03c6f321e4970b742b76b9f803a66e96, type: 2}

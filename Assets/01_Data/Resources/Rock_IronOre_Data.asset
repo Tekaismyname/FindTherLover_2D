@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ff8297ea5e3a74a9d9ed4f5671eb63, type: 3}
+  m_Name: Rock_IronOre_Data
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Combat.Data.ResourceDataSO
+  resourceName: Iron Ore Vein
+  resourceType: 2
+  requiredTool: 2
+  toolEfficiencyMultiplier: 2.2
+  wrongToolDamageMultiplier: 0
+  requireExactTool: 1
+  maxHealth: 130
+  hitShakeIntensity: 0.14
+  hitShakeDuration: 0.16
+  hitSound: {fileID: 0}
+  breakSound: {fileID: 0}
+  dropPrefab: {fileID: 154152484307240778, guid: 0a1002711f41d6e4daefeb8ee85cdbcc, type: 3}
+  minDropCount: 2
+  maxDropCount: 4
+  dropEjectionForce: 4.2

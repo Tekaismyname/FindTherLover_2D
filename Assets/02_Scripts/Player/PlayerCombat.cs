@@ -164,11 +164,17 @@ namespace FindTheLover.Combat
             // Gửi tọa độ vào BlendTree của đòn đánh
             animator.SetFloat(PosXHash, facing2D.x);
             animator.SetFloat(PosYHash, facing2D.y);
-            // Lật hình nhân vật khi đánh sang trái
+            // Reset flipX cleanly on Front/Back swings; only mirror on horizontal left swings
             if (spriteRenderer != null)
             {
-                if (facing2D.x > 0.05f) spriteRenderer.flipX = false;
-                else if (facing2D.x < -0.05f) spriteRenderer.flipX = true;
+                if (Mathf.Abs(facing2D.x) >= Mathf.Abs(facing2D.y) && facing2D.x < -0.15f)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else
+                {
+                    spriteRenderer.flipX = false;
+                }
             }
 
             // 1. Send ComboStep (1, 2, 3) and Trigger to Animator & Modular Hand Socket
@@ -196,15 +202,26 @@ namespace FindTheLover.Combat
             {
                 if (col.transform.root == transform.root) continue;
 
-                // A. Apply Damage via IDamageable
-                var damageable = col.GetComponentInParent<IDamageable>() ?? col.GetComponentInChildren<IDamageable>();
+                // A. Apply Damage (route harvestable trees/rocks through IHarvestable with active Pickaxe/Axe tool!)
+                var harvestable = col.GetComponentInParent<IHarvestable>() ?? col.GetComponentInChildren<IHarvestable>();
+                var damageable = harvestable ?? col.GetComponentInParent<IDamageable>() ?? col.GetComponentInChildren<IDamageable>();
                 if (damageable != null && !damageable.IsDead)
                 {
                     Vector3 hitPoint = col.ClosestPoint(hitboxCenter);
                     float gearBonus = _playerEquipment != null ? _playerEquipment.CurrentWeaponDamageBonus : 0f;
                     float finalDamage = (attackData.damage + gearBonus) * _damageMultiplier;
-                    damageable.TakeDamage(finalDamage, hitPoint, -worldFacing);
-                    OnEnemyStruck?.Invoke(damageable, finalDamage, hitPoint);
+
+                    if (harvestable != null)
+                    {
+                        HarvestToolType activeTool = _playerEquipment != null ? _playerEquipment.CurrentHarvestTool : HarvestToolType.None;
+                        float harvestPower = _playerEquipment != null ? _playerEquipment.CurrentHarvestPowerMultiplier : 1f;
+                        harvestable.Harvest(finalDamage * harvestPower, activeTool, hitPoint);
+                    }
+                    else
+                    {
+                        damageable.TakeDamage(finalDamage, hitPoint, -worldFacing);
+                        OnEnemyStruck?.Invoke(damageable, finalDamage, hitPoint);
+                    }
 
                     // B. Apply Knockback via IKnockbackable
                     var knockbackable = col.GetComponentInParent<Iknockbackable>() ?? col.GetComponentInChildren<Iknockbackable>();

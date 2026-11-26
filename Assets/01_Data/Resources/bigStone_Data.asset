@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ff8297ea5e3a74a9d9ed4f5671eb63, type: 3}
   m_Name: bigStone_Data
   m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Combat.ResourceDataSO
-  resourceName: Big Stone
+  resourceName: Stone Boulder
   resourceType: 1
-  maxHealth: 100
-  hitShakeIntensity: 0.2
-  hitShakeDuration: 0.18
+  requiredTool: 2
+  toolEfficiencyMultiplier: 2
+  wrongToolDamageMultiplier: 0.25
+  requireExactTool: 0
+  maxHealth: 80
+  hitShakeIntensity: 0.14
+  hitShakeDuration: 0.16
   hitSound: {fileID: 0}
   breakSound: {fileID: 0}
   dropPrefab: {fileID: 154152484307240778, guid: e31aacb918f38b84b8ecbb8c9ecc43e0, type: 3}
-  minDropCount: 3
-  maxDropCount: 5
-  dropEjectionForce: 4
+  minDropCount: 2
+  maxDropCount: 4
+  dropEjectionForce: 4.2

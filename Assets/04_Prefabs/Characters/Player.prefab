@@ -5204,6 +5204,8 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 2d53e8d2fc2c4da48baf11b7dd556f31, type: 2}
   pitchTransform: {fileID: 8436359395440279763}
   yawTransform: {fileID: 5365652123154711377}
+  lockVerticalPitch: 1
+  fixedPitchAngle: 15
   target: {fileID: 0}
   targetOffset: {x: 0, y: 1.2, z: 0}
   distance: 10.5
@@ -5673,6 +5675,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FindTherLover.Player.PlayerEquipment
   beltSocket: {fileID: 4678287898479310691}
   handOffsetRight: {x: 0.74, y: -0.78}
+  handOffsetSide: {x: 0.46, y: -0.76}
+  handOffsetBack: {x: 0.64, y: -0.68}
+  depthLayerZOffset: 0.08
   idleTiltAngle: -14
   initialEquipment: {fileID: 11400000, guid: acec4683bc276b7498d0112d24d70d9a, type: 2}
   swingForwardReach: 0.65

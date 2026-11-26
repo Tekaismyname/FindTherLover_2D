@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Combat.ResourceDataSO
   resourceName: Oak Tree
   resourceType: 0
+  requiredTool: 1
+  toolEfficiencyMultiplier: 2
+  wrongToolDamageMultiplier: 0.35
+  requireExactTool: 0
   maxHealth: 60
   hitShakeIntensity: 0.2
   hitShakeDuration: 0.18

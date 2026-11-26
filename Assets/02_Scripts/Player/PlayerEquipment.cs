@@ -19,8 +19,17 @@ namespace FindTherLover.Player
         [Tooltip("Pivot transform anchored near the character's hand/hip.")]
         [SerializeField] private Transform beltSocket;
 
-        [Tooltip("Hand anchor offset relative to character center when facing right.")]
+        [Tooltip("Hand anchor offset relative to character center when facing Front (South).")]
         [SerializeField] private Vector2 handOffsetRight = new Vector2(0.74f, -0.78f);
+
+        [Tooltip("Hand anchor offset when in Side profile (Right; mirrored automatically for Left).")]
+        [SerializeField] private Vector2 handOffsetSide = new Vector2(0.46f, -0.76f);
+
+        [Tooltip("Hand anchor offset when facing away (Back / North).")]
+        [SerializeField] private Vector2 handOffsetBack = new Vector2(0.64f, -0.68f);
+
+        [Tooltip("Small local Z separation (meters) to prevent 3D Z-fighting with the character sprite when orbiting horizontally.")]
+        [SerializeField] private float depthLayerZOffset = 0.08f;
 
         [Tooltip("Idle resting Z rotation angle (degrees) for modular sprites when facing right.")]
         [SerializeField] private float idleTiltAngle = -14f;
@@ -62,7 +71,45 @@ namespace FindTherLover.Player
         public EquipmentItemDataSO CurrentEquippedData => currentData;
         public EquipmentType CurrentEquipmentType => currentData != null ? currentData.equipmentType : EquipmentType.None;
         public float CurrentWeaponDamageBonus => currentData != null ? currentData.weaponDamageBonus : 0f;
+        public float CurrentHarvestPowerMultiplier => currentData != null ? Mathf.Max(0.5f, currentData.harvestPowerMultiplier) : 1f;
+        public HarvestToolType CurrentHarvestTool
+        {
+            get
+            {
+                if (currentData == null) return HarvestToolType.None;
+                return currentData.equipmentType switch
+                {
+                    EquipmentType.Axe => HarvestToolType.Axe,
+                    EquipmentType.Pickaxe => HarvestToolType.Pickaxe,
+                    _ => HarvestToolType.None
+                };
+            }
+        }
         public bool IsSwinging => _isSwinging;
+
+        public enum FacingDirection2D
+        {
+            Front,
+            Back,
+            Right,
+            Left
+        }
+
+        /// <summary>
+        /// Pure deterministic 4-way facing classifier based on camera-relative 2D movement input.
+        /// Eliminates flipX desync bugs when transitioning between side attacks and front/back walks.
+        /// </summary>
+        public static FacingDirection2D ResolveFacingDirection(Vector2 facing)
+        {
+            if (facing.sqrMagnitude < 0.01f) return FacingDirection2D.Front;
+
+            if (Mathf.Abs(facing.x) >= Mathf.Abs(facing.y) && Mathf.Abs(facing.x) > 0.2f)
+            {
+                return facing.x < 0f ? FacingDirection2D.Left : FacingDirection2D.Right;
+            }
+
+            return facing.y > 0.15f ? FacingDirection2D.Back : FacingDirection2D.Front;
+        }
 
         private void Awake()
         {
@@ -249,27 +296,37 @@ namespace FindTherLover.Player
         }
 
         /// <summary>
-        /// Dynamically positions the Modular Hand Socket at the character's hand, mirrors horizontally
-        /// based on facing direction, drives procedural swing rotation, and adjusts 2.5D SortingOrder.
+        /// Dynamically positions the Modular Hand Socket for all 4 character facing views (Front, Back, Left, Right),
+        /// applies Z-depth separation to eliminate 3D billboard Z-fighting during horizontal camera orbits,
+        /// drives procedural Ease-Out Cubic swing arcs, and adjusts 2.5D SortingOrder.
         /// </summary>
         public void UpdateSortingAndFlipping()
         {
             if (_playerLocomotion == null || _playerSpriteRenderer == null || beltSocket == null) return;
 
             Vector2 facing = _playerLocomotion.LastFacingDirection;
-            bool isFacingLeft = _playerSpriteRenderer.flipX || facing.x < -0.15f;
-            bool isFacingNorth = facing.y > 0.25f && Mathf.Abs(facing.x) < 0.65f;
+            FacingDirection2D facingDir = ResolveFacingDirection(facing);
 
-            // 1. Dynamic 2.5D Sorting Order: behind body when facing away (North), in front otherwise
+            // Prevent stale flipX left over from side attacks when walking Front/Back
+            if ((facingDir == FacingDirection2D.Front || facingDir == FacingDirection2D.Back) && _playerSpriteRenderer.flipX)
+            {
+                _playerSpriteRenderer.flipX = false;
+            }
+
+            bool isFacingLeft = facingDir == FacingDirection2D.Left;
+            bool isFacingBack = facingDir == FacingDirection2D.Back;
+            bool isSideProfile = facingDir == FacingDirection2D.Left || facingDir == FacingDirection2D.Right;
+
+            // 1. Dynamic 2.5D Sorting Order & Physical Z-depth separation (fixes Z-fighting during camera yaw!)
             if (_itemSpriteRenderer != null)
             {
-                _itemSpriteRenderer.sortingOrder = isFacingNorth
+                _itemSpriteRenderer.sortingOrder = isFacingBack
                     ? _playerSpriteRenderer.sortingOrder - 1
                     : _playerSpriteRenderer.sortingOrder + 2;
             }
 
             // 2. Compute current swing progress, angle, forward thrust, and scale punch
-            float zAngle = idleTiltAngle;
+            float zAngle = isFacingBack ? idleTiltAngle * 0.6f : idleTiltAngle;
             float reachX = 0f;
             float reachY = 0f;
             float scaleMult = 1f;
@@ -280,18 +337,34 @@ namespace FindTherLover.Player
                 zAngle = EvaluateSwingAngle(_activeStartAngle, _activeEndAngle, progress);
                 float punchCurve = Mathf.Sin(progress * Mathf.PI); // Peaks cleanly at mid-swing (0.5)
                 reachX = punchCurve * swingForwardReach;
-                reachY = punchCurve * 0.08f;
+                reachY = punchCurve * (isFacingBack ? 0.25f : 0.10f);
                 scaleMult = Mathf.Lerp(1f, swingScalePunch, punchCurve);
             }
 
-            // 3. Apply mirrored transform for Right vs Left facing directions
+            // 3. Select exact 4-way hand anchor offset + local Z separation
             float dirSign = isFacingLeft ? -1f : 1f;
-            beltSocket.localPosition = new Vector3((handOffsetRight.x + reachX) * dirSign, handOffsetRight.y + reachY, 0f);
+            Vector2 baseAnchor = facingDir switch
+            {
+                FacingDirection2D.Back => handOffsetBack,
+                FacingDirection2D.Left => handOffsetSide,
+                FacingDirection2D.Right => handOffsetSide,
+                _ => handOffsetRight
+            };
+
+            // DynamicBillboard faces away from camera along +Z (LookRotation(camForward)),
+            // so negative local Z is closer to the camera (in front of Quene), positive local Z is behind Quene.
+            float localZ = isFacingBack ? Mathf.Abs(depthLayerZOffset) : -Mathf.Abs(depthLayerZOffset);
+
+            // Mirror X cleanly when facing Left; keep Back hand tucked behind Quene's right side
+            float anchoredX = (baseAnchor.x + (isSideProfile ? reachX : reachX * 0.55f)) * dirSign;
+            float anchoredY = baseAnchor.y + reachY;
+
+            beltSocket.localPosition = new Vector3(anchoredX, anchoredY, localZ);
             beltSocket.localRotation = Quaternion.Euler(0f, 0f, zAngle * dirSign);
             beltSocket.localScale = new Vector3(
                 Mathf.Abs(initialSocketScale.x) * dirSign * scaleMult,
                 Mathf.Abs(initialSocketScale.y) * scaleMult,
-                initialSocketScale.z
+                Mathf.Abs(initialSocketScale.z)
             );
         }
 
