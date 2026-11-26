@@ -489,7 +489,10 @@ namespace FindTheLover.Environment
                     Terrain owner = FindTerrainUnderPoint(child.position);
                     if (owner == null) continue;
 
-                    SnapTransformToTerrain(child, owner, sinkPadding: 0.15f, hideIfUnderwater: true);
+                    // Rocks have slightly larger transparent bottom margins in 2.5D quads than tree trunks
+                    bool isRock = child.name.IndexOf("Rock", StringComparison.OrdinalIgnoreCase) >= 0;
+                    float padding = isRock ? 0.55f : 0.28f;
+                    SnapTransformToTerrain(child, owner, sinkPadding: padding, hideIfUnderwater: true, hideIfSteepCliff: true);
                     snappedCount++;
                 }
             }
@@ -499,17 +502,43 @@ namespace FindTheLover.Environment
         /// <summary>
         /// Aligns any world transform (whether bottom-pivoted 3D mesh or center-pivoted 2.5D Quad)
         /// cleanly onto the exact terrain surface beneath its XZ coordinates.
+        /// Automatically hides stray props that end up underwater or on sheer vertical mountain walls.
         /// </summary>
-        public static void SnapTransformToTerrain(Transform target, Terrain owner, float sinkPadding = 0.15f, bool hideIfUnderwater = false, float seaLevelY = 3.6f)
+        public static void SnapTransformToTerrain(
+            Transform target,
+            Terrain owner,
+            float sinkPadding = 0.28f,
+            bool hideIfUnderwater = false,
+            bool hideIfSteepCliff = false,
+            float seaLevelY = 3.6f,
+            float maxSlopeDegrees = 32f,
+            float maxElevationY = 22f)
         {
-            if (target == null || owner == null) return;
+            if (target == null || owner == null || owner.terrainData == null) return;
 
             Vector3 pos = target.position;
+            TerrainData td = owner.terrainData;
             float groundY = owner.SampleHeight(pos) + owner.transform.position.y;
 
-            if (hideIfUnderwater)
+            bool invalidPlacement = false;
+            if (hideIfUnderwater && groundY < seaLevelY)
             {
-                bool shouldBeActive = groundY >= seaLevelY;
+                invalidPlacement = true;
+            }
+            else if (hideIfSteepCliff)
+            {
+                float normX = Mathf.Clamp01((pos.x - owner.transform.position.x) / Mathf.Max(0.01f, td.size.x));
+                float normZ = Mathf.Clamp01((pos.z - owner.transform.position.z) / Mathf.Max(0.01f, td.size.z));
+                float slope = td.GetSteepness(normX, normZ);
+                if (slope > maxSlopeDegrees || groundY > maxElevationY)
+                {
+                    invalidPlacement = true;
+                }
+            }
+
+            if (hideIfUnderwater || hideIfSteepCliff)
+            {
+                bool shouldBeActive = !invalidPlacement;
                 if (target.gameObject.activeSelf != shouldBeActive)
                 {
                     target.gameObject.SetActive(shouldBeActive);
