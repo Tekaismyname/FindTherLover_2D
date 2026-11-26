@@ -466,10 +466,16 @@ namespace FindTheLover.Environment
             }
         }
 
-        private void RegroundSceneProps()
+        /// <summary>
+        /// Re-grounds every child prop (trees, rocks, interactables) across all registered parent containers
+        /// onto the exact surface of the terrain beneath them using Renderer/Collider bottom bounds,
+        /// preventing both floating trunks and half-buried 2.5D Quads after any seed regeneration.
+        /// </summary>
+        public int RegroundSceneProps()
         {
-            if (_propParentsToReground == null || _propParentsToReground.Length == 0) return;
+            if (_propParentsToReground == null || _propParentsToReground.Length == 0) return 0;
 
+            int snappedCount = 0;
             for (int p = 0; p < _propParentsToReground.Length; p++)
             {
                 Transform parent = _propParentsToReground[p];
@@ -478,15 +484,65 @@ namespace FindTheLover.Environment
                 for (int i = 0; i < parent.childCount; i++)
                 {
                     Transform child = parent.GetChild(i);
-                    Vector3 pos = child.position;
-                    Terrain owner = FindTerrainUnderPoint(pos);
-                    if (owner != null)
-                    {
-                        pos.y = owner.SampleHeight(pos) + owner.transform.position.y;
-                        child.position = pos;
-                    }
+                    if (child == null) continue;
+
+                    Terrain owner = FindTerrainUnderPoint(child.position);
+                    if (owner == null) continue;
+
+                    SnapTransformToTerrain(child, owner, sinkPadding: 0.15f, hideIfUnderwater: true);
+                    snappedCount++;
                 }
             }
+            return snappedCount;
+        }
+
+        /// <summary>
+        /// Aligns any world transform (whether bottom-pivoted 3D mesh or center-pivoted 2.5D Quad)
+        /// cleanly onto the exact terrain surface beneath its XZ coordinates.
+        /// </summary>
+        public static void SnapTransformToTerrain(Transform target, Terrain owner, float sinkPadding = 0.15f, bool hideIfUnderwater = false, float seaLevelY = 3.6f)
+        {
+            if (target == null || owner == null) return;
+
+            Vector3 pos = target.position;
+            float groundY = owner.SampleHeight(pos) + owner.transform.position.y;
+
+            if (hideIfUnderwater)
+            {
+                bool shouldBeActive = groundY >= seaLevelY;
+                if (target.gameObject.activeSelf != shouldBeActive)
+                {
+                    target.gameObject.SetActive(shouldBeActive);
+                }
+                if (!shouldBeActive) return;
+            }
+
+            float pivotToBottom = ComputePivotToBottomOffset(target);
+            pos.y = groundY + pivotToBottom - Mathf.Max(0f, sinkPadding);
+            target.position = pos;
+        }
+
+        /// <summary>
+        /// Measures the vertical distance from a transform's pivot down to its visual/collider base.
+        /// Returns ~0 for bottom-pivoted meshes and ~halfHeight for center-pivoted 2.5D Quads.
+        /// </summary>
+        public static float ComputePivotToBottomOffset(Transform target)
+        {
+            if (target == null) return 0f;
+
+            Renderer rend = target.GetComponent<Renderer>() ?? target.GetComponentInChildren<Renderer>();
+            if (rend != null && rend.bounds.size.y > 0.01f)
+            {
+                return Mathf.Max(0f, target.position.y - rend.bounds.min.y);
+            }
+
+            Collider col = target.GetComponent<Collider>() ?? target.GetComponentInChildren<Collider>();
+            if (col != null && col.bounds.size.y > 0.01f)
+            {
+                return Mathf.Max(0f, target.position.y - col.bounds.min.y);
+            }
+
+            return 0f;
         }
 
         private Terrain FindTerrainUnderPoint(Vector3 worldPos)
