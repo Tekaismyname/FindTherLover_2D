@@ -20,6 +20,12 @@ namespace FindTheLover.Environment
         private Coroutine _shakeCoroutine;
         private bool _isDead = false;
 
+        /// <summary>
+        /// Broadcast whenever any resource node is struck (finalDamage, hitPoint, wasBlockedByWrongTool, requiredTool).
+        /// Observed by DamageNumberSpawner to pop floating harvest numbers or "NEED PICKAXE!" warnings.
+        /// </summary>
+        public static event System.Action<float, Vector3, bool, HarvestToolType> OnAnyResourceHarvested;
+
         // IHarvestable (Data-Driven from ResourceDataSO!)
         public HarvestToolType RequiredTool => resourceData != null ? resourceData.requiredTool : HarvestToolType.Axe;
         public float ToolEfficiencyMultiplier => resourceData != null ? resourceData.toolEfficiencyMultiplier : 2.0f;
@@ -166,9 +172,12 @@ namespace FindTheLover.Environment
                 // Play elastic recoil bounce as tactile feedback that a stronger/matching tool is needed
                 if (_shakeCoroutine != null) StopCoroutine(_shakeCoroutine);
                 _shakeCoroutine = StartCoroutine(HitBounceRoutine(hitNormal));
+                OnAnyResourceHarvested?.Invoke(0f, hitPoint, true, RequiredTool);
                 Debug.Log($"<color=#FF9944>[Mining]</color> {resourceData?.resourceName ?? name} requires <b>{RequiredTool}</b>! Press [3] Pickaxe or [2] Axe.");
                 return;
             }
+
+            OnAnyResourceHarvested?.Invoke(finalDamage, hitPoint, false, RequiredTool);
 
             if (usedTool == RequiredTool)
             {

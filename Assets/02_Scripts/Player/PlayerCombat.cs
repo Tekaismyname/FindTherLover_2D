@@ -45,10 +45,14 @@ namespace FindTheLover.Combat
 
         // Internal combat state tracking
         private int currentComboIndex = 0;
+        private int _executingComboStep = 1;
         private float lastAttackTime = 0f;
         private bool isAttacking = false;
         private AttackDataSO lastExecutedAttack = null;
         private float _damageMultiplier = 1f;
+
+        /// <summary>1-based combo step of the currently executing attack (1, 2, or 3 for finisher crit).</summary>
+        public int CurrentExecutingComboStep => _executingComboStep;
 
         /// <summary>
         /// Invoked whenever a melee swing begins (comboStep, facing2D).
@@ -178,6 +182,7 @@ namespace FindTheLover.Combat
             }
 
             // 1. Send ComboStep (1, 2, 3) and Trigger to Animator & Modular Hand Socket
+            _executingComboStep = attackData.comboStep;
             animator.SetInteger("ComboStep", attackData.comboStep);
             OnAttackSwingStarted?.Invoke(attackData.comboStep, facing2D);
 

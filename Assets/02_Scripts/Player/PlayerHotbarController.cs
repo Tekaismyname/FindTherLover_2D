@@ -134,6 +134,7 @@ namespace FindTheLover.Player
             if (_inventory.RemoveItem(_consumableHealItem, 1))
             {
                 _healthSystem.Heal(_consumableHealAmount);
+                FindTheLover.UI.DamageNumberSpawner.Instance?.SpawnDamage(_consumableHealAmount, transform.position + Vector3.up * 1.4f, FindTheLover.UI.Data.DamagePopupStyle.Heal);
                 OnHotbarChanged?.Invoke(_activeSlotIndex);
                 return true;
             }
