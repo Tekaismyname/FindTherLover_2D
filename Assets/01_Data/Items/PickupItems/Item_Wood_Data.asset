@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: wood_log
   itemName: Wood Log
   itemType: 0
-  icon: {fileID: -5274341384832441721, guid: 086e794544d022945939c2533163bf0b, type: 3}
-  description: A sturdy piece of wood gathered from felled trees
+  icon: {fileID: 21300000, guid: 3a730985f78d72e4683e9fc3b0ae7c7b, type: 3}
+  description: Sturdy timber harvested from island trees.
   maxStack: 99
   worldPrefab: {fileID: 6306757200573387318, guid: 31b203235c3986a438581054b45a1948, type: 3}

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2187428160779490751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7004089488227312063}
+  - component: {fileID: 341092874683608172}
+  m_Layer: 0
+  m_Name: CraftingForge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7004089488227312063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187428160779490751}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341092874683608172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187428160779490751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93422e2ef640b764ba323af00668c838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Crafting.CraftingForge
+  _recipes:
+  - {fileID: 11400000, guid: 334328b19b334814990695bfec4bb80f, type: 2}
+  - {fileID: 11400000, guid: 31d433ed3c6888f41a762966a5807b20, type: 2}
+  - {fileID: 11400000, guid: 02cf7ed9d94616f42b76c5f339f3b476, type: 2}
+  - {fileID: 11400000, guid: e6ab239dc1f595a43a5afeabc704fcb3, type: 2}
+  - {fileID: 11400000, guid: dc3c532250d862346930ee6ae7d1106a, type: 2}
+  - {fileID: 11400000, guid: 11ce7bdd1617ce349ac7d8f282f124d4, type: 2}
+  - {fileID: 11400000, guid: 8002613b1a8cbca48975976463c4bab3, type: 2}
+  - {fileID: 11400000, guid: 35f76a98ebb98144fb1221cede3216ae, type: 2}
+  - {fileID: 11400000, guid: 5df54ffb99ed6fc42896fd76dd3157ed, type: 2}
+  - {fileID: 11400000, guid: 802ad22e815d0e24896b3a2c4c9ba3c9, type: 2}
+  - {fileID: 11400000, guid: c434b2d6f42a0f9438de1d5ba4a10f6c, type: 2}
+  - {fileID: 11400000, guid: fbab486fd2624eb4b95fe1d46fe47165, type: 2}
+  - {fileID: 11400000, guid: 57e3bedcb9e2d654bac9c59232d507ef, type: 2}
+  - {fileID: 11400000, guid: 7b49846b2b620354cb6c5c9dbec41644, type: 2}
+  _anvilCraftSFX: {fileID: 0}

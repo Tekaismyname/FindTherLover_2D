@@ -245,11 +245,14 @@ namespace FindTheLover.EditorTools
             {
                 // Already a prefab instance: apply overrides cleanly if linked to this path
                 string existingPath = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(sceneObj);
-                if (existingPath == prefabPath)
+                if (existingPath == prefabPath && PrefabUtility.IsOutermostPrefabInstanceRoot(sceneObj))
                 {
                     PrefabUtility.ApplyPrefabInstance(sceneObj, InteractionMode.AutomatedAction);
                     return true;
                 }
+
+                // Child inside another prefab instance: cannot re-connect child directly
+                return AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath) != null;
             }
 
             GameObject saved = PrefabUtility.SaveAsPrefabAssetAndConnect(sceneObj, prefabPath, InteractionMode.AutomatedAction, out bool success);
@@ -259,6 +262,10 @@ namespace FindTheLover.EditorTools
         private static bool SavePrefabTemplateOnly(GameObject sourceObj, string prefabPath)
         {
             if (sourceObj == null) return false;
+            if (PrefabUtility.IsPartOfPrefabInstance(sourceObj))
+            {
+                return AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath) != null;
+            }
             GameObject saved = PrefabUtility.SaveAsPrefabAsset(sourceObj, prefabPath, out bool success);
             return success && saved != null;
         }

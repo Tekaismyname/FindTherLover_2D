@@ -13,11 +13,32 @@ MonoBehaviour:
   m_Name: Master_GameCatalog
   m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Core.Data.GameCatalogSO
   items:
+  - {fileID: 11400000, guid: 9d4cf6c8814af664b98fd68b8afde0d9, type: 2}
+  - {fileID: 11400000, guid: d71fe395b6c63ff4baec595393fedff3, type: 2}
+  - {fileID: 11400000, guid: 05343c9859725f143ba10f1b75403c4e, type: 2}
+  - {fileID: 11400000, guid: 170ebfd38a7170445a4610b65f1c48c7, type: 2}
+  - {fileID: 11400000, guid: cf5f494f01384bc4f8fa8ae58609dece, type: 2}
+  - {fileID: 11400000, guid: 0ae48770859fe674e8eeec1d9f49754e, type: 2}
   - {fileID: 11400000, guid: 05a7702f8f011c54890f9a34e0af25ad, type: 2}
   - {fileID: 11400000, guid: 1aa87ad4142c52a429766db61cf095ad, type: 2}
   equipmentItems:
+  - {fileID: 11400000, guid: b2adf45c0f955784d876b560510f9c5d, type: 2}
+  - {fileID: 11400000, guid: 27701a431c06202459d56440e40dfc36, type: 2}
+  - {fileID: 11400000, guid: 66928e96fc28dc841ae767a0b55eadca, type: 2}
+  - {fileID: 11400000, guid: 46bbd61fb2970704aa1c6d8fa0953571, type: 2}
+  - {fileID: 11400000, guid: f28efc7e188301644818cbf6c518e520, type: 2}
   - {fileID: 11400000, guid: a8562b4f13e87c74d9820d7c14bb35fd, type: 2}
   - {fileID: 11400000, guid: 4dcc59da6ce9b864098418a5312f4cc0, type: 2}
+  - {fileID: 11400000, guid: 276e5867756a09946a8737c357a44a9c, type: 2}
+  - {fileID: 11400000, guid: 9f49b4d5747fc424cab4a3258274b3dd, type: 2}
+  - {fileID: 11400000, guid: 2380d6bde3a4a274681cc8294cefe530, type: 2}
+  - {fileID: 11400000, guid: 0d22dddb5925430479dbfa9b15c5d53f, type: 2}
+  - {fileID: 11400000, guid: 34e50be72e26ff5489c90c96c7a3cc54, type: 2}
+  - {fileID: 11400000, guid: 5f53318e77bb30147ae2f11913cc3058, type: 2}
+  - {fileID: 11400000, guid: c0c0538dff71b264e839e91f89f76893, type: 2}
+  - {fileID: 11400000, guid: f503b2c6aada42249b832fa6574b048b, type: 2}
+  - {fileID: 11400000, guid: 4a2f0eb056d528a42a2c48d0eb2b8265, type: 2}
+  - {fileID: 11400000, guid: acec4683bc276b7498d0112d24d70d9a, type: 2}
   augments:
   - {fileID: 11400000, guid: ccb3cd00a7d230f4f95e34af552f6590, type: 2}
   - {fileID: 11400000, guid: 5a1f94c0a3f3abd4f8d3c917082365c4, type: 2}

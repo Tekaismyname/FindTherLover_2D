@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e2eda20039c8547ac0435287fe907d, type: 3}
   m_Name: Item_Stone_Data
   m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Items.ItemDataSO
-  itemId: stone
+  itemId: stone_chunk
   itemName: Stone
   itemType: 0
-  icon: {fileID: 8920962701577012002, guid: 086e794544d022945939c2533163bf0b, type: 3}
-  description: 'A sturdy piece of Stone gathered from Rock
-
-'
+  icon: {fileID: 21300000, guid: 0f6f1c1eea2a8434f97ec89f18f61cb5, type: 3}
+  description: Solid stone mined from boulders.
   maxStack: 99
   worldPrefab: {fileID: 154152484307240778, guid: e31aacb918f38b84b8ecbb8c9ecc43e0, type: 3}

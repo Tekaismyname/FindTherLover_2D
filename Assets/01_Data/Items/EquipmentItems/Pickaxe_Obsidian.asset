@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb827fad259461459e2c186dd300101, type: 3}
+  m_Name: Pickaxe_Obsidian
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Equipment.Data.EquipmentItemDataSO
+  itemId: pickaxe_obsidian
+  displayName: Obsidian Pickaxe
+  equipmentType: 4
+  materialTier: 3
+  weaponDamageBonus: 24
+  harvestPowerMultiplier: 2.5
+  weaponSprite: {fileID: 21300000, guid: 0972b0967c4597948bb7b2c18b510fa3, type: 3}
+  tierTintColor: {r: 0.66, g: 0.36, b: 0.96, a: 1}
+  visualScale: 0.82
+  heldPrefab: {fileID: 0}
+  localOffset: {x: 0, y: 0, z: 0}
+  localRotation: {x: 0, y: 0, z: 0}
+  swingStartAngle: 80
+  swingEndAngle: -95
+  swingDuration: 0.24

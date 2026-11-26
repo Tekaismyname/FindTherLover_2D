@@ -5377,6 +5377,7 @@ GameObject:
   - component: {fileID: 6453523674684737563}
   - component: {fileID: 7975025140750518954}
   - component: {fileID: 7188339227493178721}
+  - component: {fileID: 1777978154062638670}
   m_Layer: 0
   m_Name: Quene_Player
   m_TagString: Player
@@ -5671,7 +5672,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FindTherLover.Player.PlayerEquipment
   beltSocket: {fileID: 4678287898479310691}
-  initialEquipment: {fileID: 11400000, guid: a8562b4f13e87c74d9820d7c14bb35fd, type: 2}
+  handOffsetRight: {x: 0.74, y: -0.78}
+  idleTiltAngle: -14
+  initialEquipment: {fileID: 11400000, guid: acec4683bc276b7498d0112d24d70d9a, type: 2}
+  swingForwardReach: 0.65
+  swingScalePunch: 1.18
 --- !u!114 &7975025140750518954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5705,3 +5710,22 @@ MonoBehaviour:
   _enemyLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1777978154062638670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352934862687148613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c701d19ddeae01941a4575acd026cb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Player.PlayerHotbarController
+  _equipmentSlots:
+  - {fileID: 11400000, guid: acec4683bc276b7498d0112d24d70d9a, type: 2}
+  - {fileID: 11400000, guid: f28efc7e188301644818cbf6c518e520, type: 2}
+  - {fileID: 11400000, guid: 34e50be72e26ff5489c90c96c7a3cc54, type: 2}
+  - {fileID: 11400000, guid: 4dcc59da6ce9b864098418a5312f4cc0, type: 2}
+  _consumableHealItem: {fileID: 11400000, guid: 05343c9859725f143ba10f1b75403c4e, type: 2}
+  _consumableHealAmount: 25

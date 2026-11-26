@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b67dcf4b4e43a4aa35c165eb5a1999, type: 3}
+  m_Name: Recipe_14_SurvivalTorch
+  m_EditorClassIdentifier: Assembly-CSharp::FindTheLover.Crafting.Data.CraftingRecipeSO
+  recipeId: recipe_14_survivaltorch
+  displayName: Survival Torch
+  description: Forged stone blade (+12 melee DMG). Upgrades Hotbar Slot 1.
+  tier: 0
+  ingredients:
+  - item: {fileID: 11400000, guid: 1aa87ad4142c52a429766db61cf095ad, type: 2}
+    requiredAmount: 3
+  resultEquipment: {fileID: 11400000, guid: 4dcc59da6ce9b864098418a5312f4cc0, type: 2}
+  resultItem: {fileID: 0}
+  resultItemQuantity: 1

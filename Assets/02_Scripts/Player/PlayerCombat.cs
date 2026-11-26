@@ -39,6 +39,7 @@ namespace FindTheLover.Combat
 
         [SerializeField] private SpriteRenderer spriteRenderer;
         private PlayerLocomotion.PlayerLocomotion _locomotion;
+        private FindTherLover.Player.PlayerEquipment _playerEquipment;
         private static readonly int PosXHash = Animator.StringToHash("PosX");
         private static readonly int PosYHash = Animator.StringToHash("PosY");
 
@@ -48,6 +49,12 @@ namespace FindTheLover.Combat
         private bool isAttacking = false;
         private AttackDataSO lastExecutedAttack = null;
         private float _damageMultiplier = 1f;
+
+        /// <summary>
+        /// Invoked whenever a melee swing begins (comboStep, facing2D).
+        /// Consumed by PlayerEquipment to drive procedural Modular Hand Socket weapon swings.
+        /// </summary>
+        public event System.Action<int, Vector2> OnAttackSwingStarted;
 
         /// <summary>
         /// Invoked whenever a melee strike damages a target (target, finalDamage, hitPoint).
@@ -72,6 +79,10 @@ namespace FindTheLover.Combat
             if (_locomotion == null)
             {
                 _locomotion = GetComponent<PlayerLocomotion.PlayerLocomotion>();
+            }
+            if (_playerEquipment == null)
+            {
+                _playerEquipment = GetComponent<FindTherLover.Player.PlayerEquipment>();
             }
             if (spriteRenderer == null)
             {
@@ -160,8 +171,9 @@ namespace FindTheLover.Combat
                 else if (facing2D.x < -0.05f) spriteRenderer.flipX = true;
             }
 
-            // 1. Send ComboStep (1, 2, 3) and Trigger to Animator
+            // 1. Send ComboStep (1, 2, 3) and Trigger to Animator & Modular Hand Socket
             animator.SetInteger("ComboStep", attackData.comboStep);
+            OnAttackSwingStarted?.Invoke(attackData.comboStep, facing2D);
 
             if (!string.IsNullOrEmpty(attackData.animatorTrigger))
             {
@@ -189,7 +201,8 @@ namespace FindTheLover.Combat
                 if (damageable != null && !damageable.IsDead)
                 {
                     Vector3 hitPoint = col.ClosestPoint(hitboxCenter);
-                    float finalDamage = attackData.damage * _damageMultiplier;
+                    float gearBonus = _playerEquipment != null ? _playerEquipment.CurrentWeaponDamageBonus : 0f;
+                    float finalDamage = (attackData.damage + gearBonus) * _damageMultiplier;
                     damageable.TakeDamage(finalDamage, hitPoint, -worldFacing);
                     OnEnemyStruck?.Invoke(damageable, finalDamage, hitPoint);
 

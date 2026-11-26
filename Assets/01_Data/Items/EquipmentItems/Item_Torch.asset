@@ -15,6 +15,15 @@ MonoBehaviour:
   itemId: item_torch
   displayName: Handheld torch
   equipmentType: 1
+  materialTier: 0
+  weaponDamageBonus: 0
+  harvestPowerMultiplier: 1
+  weaponSprite: {fileID: 21300000, guid: 478d3f0bb8360d943914b7b12fccf783, type: 3}
+  tierTintColor: {r: 1, g: 1, b: 1, a: 1}
+  visualScale: 0.78
   heldPrefab: {fileID: 104823038707295548, guid: 0667e82c609f5274d9ab196b9e04fffe, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   localRotation: {x: 0, y: 0, z: 0}
+  swingStartAngle: 55
+  swingEndAngle: -105
+  swingDuration: 0.22

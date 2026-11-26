@@ -50,7 +50,7 @@ MonoBehaviour:
   _enableDevQuickSaveHotkeys: 1
   _currentData:
     schemaVersion: 1
-    lastSavedUtc: 
+    lastSavedUtc: 2026-11-26T02:07:22.0792494Z
     world:
       worldSeed: 20261119
       currentDay: 1
@@ -58,14 +58,22 @@ MonoBehaviour:
       shrinesActivated: 0
       totalDownedCount: 0
     player:
-      position: {x: 0, y: 0, z: 0}
+      position: {x: 0, y: 10, z: 0}
       rotationY: 0
-      currentHealth: 100
+      currentHealth: 0
       maxHealth: 100
       shieldPoints: 0
-      torchFlameType: 1
-      torchRemainingFuel: 40
+      torchFlameType: 0
+      torchRemainingFuel: 0
       equippedItemId: 
     inventorySlots: []
     ownedAugments: []
-    worldObjectStates: []
+    worldObjectStates:
+    - objectId: brazier:Soul_Flame_Altar
+      isActivated: 0
+    - objectId: brazier:Brazier_Checkpoint_02
+      isActivated: 0
+    - objectId: brazier:Brazier_Checkpoint_01
+      isActivated: 0
+    - objectId: thorngate:Thorn_Barrier_Gate
+      isActivated: 0

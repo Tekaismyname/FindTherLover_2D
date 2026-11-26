@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FindTheLover.Combat;
-using Unity.VisualScripting;
 
 namespace FindTheLover.Player
 {
